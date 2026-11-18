@@ -14,6 +14,8 @@ sayfa İngilizce/Türkçe olarak gösterilir (sağ üstteki `[TR]` / `[EN]` dü�
 | Araştırma alanı / proje | `data/themes.json` — yayınlar `theme` alanındaki `id` ile buraya bağlanır |
 | Uygulama / ekran görüntüsü | `data/apps.json` — görseller `assets/img/` altına (tercihen `.webp`) |
 | Profil, istatistikler, kitap | `data/profile.json` |
+| Deneyim zaman çizelgesi | `data/experience.json` (`to: null` → "devam ediyor") |
+| Ar-Ge projeleri | `data/projects.json` (`to: null` → "devam ediyor") |
 | Arayüz metinleri (TR/EN) | `assets/js/app.js` içindeki `UI` nesnesi |
 
 Alan değerleri:

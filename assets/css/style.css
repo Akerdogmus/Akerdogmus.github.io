@@ -88,6 +88,31 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .loc { margin-top: 10px; display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
 .loc svg { width: 15px; height: 15px; }
 
+/* Experience timeline */
+.exp { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.exp__head { display: flex; gap: 12px; align-items: center; font-size: 14px; line-height: 1.35; }
+.exp__head b { font-weight: 600; }
+.exp__place { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.exp__roles { list-style: none; padding: 0 0 0 15px; margin: 10px 0 0; border-left: 1px solid var(--line-strong); margin-left: 15px; display: flex; flex-direction: column; gap: 10px; }
+.exp__role { position: relative; display: flex; font-size: 13px; line-height: 1.4; padding-left: 4px; }
+.exp__role b { font-weight: 600; }
+.exp__dot { position: absolute; left: -24px; top: 4px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line-strong); }
+.exp__dot--now { border-color: var(--ok); background: var(--ok); }
+.exp__when { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+/* R&D projects */
+.proj__note { color: var(--muted); font-size: 12px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+.proj { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.proj__top { display: flex; gap: 12px; align-items: center; }
+.proj__head { min-width: 0; }
+.proj__name { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--accent); }
+.proj__when { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.proj__state { padding: 0 6px; border-radius: 4px; border: 1px solid var(--line-strong); }
+.proj__state--live { border-color: #2E5E37; color: var(--ok); }
+.proj__full { font-size: 13px; font-weight: 600; line-height: 1.35; }
+.proj__sum { font-size: 12.5px; line-height: 1.55; color: var(--text-2); }
+
 /* Terminal stats + years */
 .term { font-family: var(--mono); font-size: 13px; line-height: 1.9; padding: 18px 20px; }
 .term .prompt { color: var(--ok); }
@@ -108,6 +133,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .cover { flex: 0 0 96px; width: 96px; height: auto; aspect-ratio: 205 / 300; border-radius: 3px; object-fit: cover; box-shadow: 0 12px 24px -12px rgba(0,0,0,.9); }
 .book__body { min-width: 0; }
 .book__title { margin-top: 4px; font-size: 17px; font-weight: 700; line-height: 1.25; }
+.book__authors { margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: var(--text); }
+.book__authors span { color: var(--muted); }
 .book__desc { margin-top: 12px; font-size: 13px; line-height: 1.55; color: var(--text-2); }
 .book__more summary { margin-top: 8px; min-height: 32px; display: inline-flex; align-items: center; font-family: var(--mono); font-size: 12px; color: var(--accent); cursor: pointer; list-style: none; }
 .book__more summary::-webkit-details-marker { display: none; }

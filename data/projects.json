@@ -1,0 +1,102 @@
+[
+  {
+    "name": "CLEARS",
+    "full": "Carbon Footprint with Hyperspectral Mapping and Digital Twin",
+    "icon": "wave",
+    "from": "2025-01", "to": null,
+    "summary": {
+      "en": "Carbon-footprint monitoring for maritime transport: hyperspectral image analysis plus a vessel digital twin that tracks greenhouse-gas emissions along routes, for port authorities and EEXI/CII compliance.",
+      "tr": "Deniz taşımacılığı için karbon ayak izi izleme: hiperspektral görüntü analizi ve gemilerin rotalarındaki sera gazı salımını izleyen dijital ikiz; liman otoriteleri ve EEXI/CII uyumu için."
+    }
+  },
+  {
+    "name": "DECARBiz",
+    "full": "Decarbonization Project Management Platform for Industries and Businesses",
+    "icon": "leaf",
+    "from": "2024-03", "to": null,
+    "summary": {
+      "en": "A software platform that automates data collection, tracks energy-related carbon-reduction activities and reports them for funding and verification. EUROGIA2030 project with FARADAI, Cranfield University, Vestel and others.",
+      "tr": "Veri toplamayı otomatikleştiren, enerjiyle ilgili karbon azaltım faaliyetlerini izleyip fonlama ve doğrulama için raporlayan yazılım platformu. FARADAI, Cranfield Üniversitesi, Vestel ve diğer ortaklarla EUROGIA2030 projesi."
+    }
+  },
+  {
+    "name": "Sa4CPS",
+    "full": "Secure situational awareness for critical cyber-physical systems",
+    "icon": "shield",
+    "from": "2024-03", "to": null,
+    "summary": {
+      "en": "Secure situational awareness for ports and other critical cyber-physical systems, combining AI-enabled IoT with a zero-trust, distributed-ledger approach shared by multiple stakeholders.",
+      "tr": "Limanlar ve diğer kritik siber-fiziksel sistemler için güvenli durumsal farkındalık; yapay zekâlı IoT'yi çok paydaşlı, sıfır güven ve dağıtık defter yaklaşımıyla birleştirir."
+    }
+  },
+  {
+    "name": "SmartEM",
+    "full": "Open reference architecture for engineering model spaces",
+    "icon": "layers",
+    "from": "2023-10", "to": null,
+    "summary": {
+      "en": "A reference architecture for reusing, exchanging and combining engineering models, with AI-assisted surrogate models built from heterogeneous data and IP management for model exploitation.",
+      "tr": "Mühendislik modellerinin yeniden kullanımı, paylaşımı ve birleştirilmesi için referans mimari; heterojen veriden yapay zekâ destekli vekil modeller ve model kullanımı için fikri mülkiyet yönetimi."
+    }
+  },
+  {
+    "name": "OPEVA",
+    "full": "OPtimization of Electric Vehicle Autonomy",
+    "icon": "battery",
+    "from": "2023-01", "to": null,
+    "summary": {
+      "en": "Tackles range anxiety, price and charging limits to speed up EV adoption. Co-funded by the Key Digital Technologies Joint Undertaking under Horizon Europe.",
+      "tr": "Elektrikli araçların yaygınlaşması için menzil kaygısı, fiyat ve şarj kısıtlarını ele alır. Horizon Europe kapsamında Key Digital Technologies Joint Undertaking destekli."
+    }
+  },
+  {
+    "name": "TASTI",
+    "full": "Application-Tailored Synthetic Image Generation",
+    "icon": "sparkles",
+    "from": "2023-01", "to": null,
+    "summary": {
+      "en": "A modular framework of transferable technology for synthetic image generation tailored to each application, usable at industrial scale.",
+      "tr": "Uygulamaya göre uyarlanmış sentetik görüntü üretimi için endüstriyel ölçekte kullanılabilen, aktarılabilir teknolojilerden oluşan modüler çerçeve."
+    }
+  },
+  {
+    "name": "USWA",
+    "full": "Ultra Scalable Wireless Access",
+    "icon": "radio",
+    "from": "2023-01", "to": null,
+    "summary": {
+      "en": "Research on DECT-2020 NR mesh radio for industrial IoT without spectrum licences: power-grid quality monitoring and machine condition monitoring towards digital twins.",
+      "tr": "Spektrum lisansı gerektirmeyen endüstriyel IoT için DECT-2020 NR mesh radyo araştırması: elektrik şebekesi kalite izleme ve dijital ikize yönelik makine durum izleme."
+    }
+  },
+  {
+    "name": "EFICAS",
+    "full": "Energy Efficient Heterogeneous AI-Framework for Smart Mobile and Embedded Systems",
+    "icon": "chip",
+    "from": "2022-01", "to": "2024-09",
+    "summary": {
+      "en": "A scalable software platform for energy-efficient deployment of AI on heterogeneous multicore hardware, from local and distributed computation to cloud offloading.",
+      "tr": "Yapay zekâ algoritmalarını heterojen çok çekirdekli donanımlarda enerji verimli çalıştıran ölçeklenebilir yazılım platformu; yerel, dağıtık ve bulut hesaplamayı kapsar."
+    }
+  },
+  {
+    "name": "MUWO",
+    "full": "Multi-method workspace for highly scalable production lines",
+    "icon": "factory",
+    "from": "2022-01", "to": "2024-01",
+    "summary": {
+      "en": "Flexible, scalable production through multi-method workstations; a transmutable simulation validates configurations and AI/ML optimises the production setup.",
+      "tr": "Çok yöntemli iş istasyonlarıyla esnek ve ölçeklenebilir üretim; dönüştürülebilir simülasyon yapılandırmayı doğrular, YZ/ML üretim düzenini optimize eder."
+    }
+  },
+  {
+    "name": "VALU3S",
+    "full": "Verification and Validation of Automated Systems' Safety and Security",
+    "icon": "robot",
+    "from": "2020-05", "to": "2023-07",
+    "summary": {
+      "en": "ECSEL JU project building a multi-domain V&V framework to cut the time and cost of verifying automated systems for safety, cybersecurity and privacy. 41 partners from 10 countries.",
+      "tr": "Otomatik sistemlerin emniyet, siber güvenlik ve mahremiyet doğrulamasının süre ve maliyetini düşüren çok alanlı V&V çerçevesi geliştiren ECSEL JU projesi. 10 ülkeden 41 ortak."
+    }
+  }
+]

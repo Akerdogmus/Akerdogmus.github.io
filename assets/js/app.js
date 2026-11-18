@@ -5,7 +5,11 @@
   var UI = {
     en: {
       skip: 'Skip to content',
-      navMap: './research-map', navBook: './book', navApps: './apps',
+      navMap: './research-map', navBook: './book', navApps: './apps', navProjects: './projects',
+      projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
+      expTitle: '// experience', present: 'present', ongoing: 'ongoing', done: 'completed',
+      authors: 'Authors',
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       langBtn: '[TR]', langLabel: "Türkçe'ye geç",
       heroEyebrow: '// what I work on', heroTitle: 'From robot inspection cells to local LLMs',
       mapEyebrow: '// research map', mapTitle: 'Themes, projects, papers & code',
@@ -27,7 +31,11 @@
     },
     tr: {
       skip: 'İçeriğe geç',
-      navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar',
+      navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar', navProjects: './projeler',
+      projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
+      expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'devam ediyor', done: 'tamamlandı',
+      authors: 'Yazarlar',
+      months: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
       langBtn: '[EN]', langLabel: 'Switch to English',
       heroEyebrow: '// neler üzerinde çalışıyorum', heroTitle: "Robot denetim hücrelerinden lokal LLM'lere",
       mapEyebrow: '// araştırma haritası', mapTitle: 'Alanlar, projeler, yayınlar ve kod',
@@ -73,7 +81,13 @@
     blocks: svg('<rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><path d="M17.25 14v7"></path><path d="M13.75 17.5h7"></path>', 26),
     battery: svg('<rect x="2" y="7" width="17" height="10" rx="2"></rect><path d="M22 11v2"></path><path d="M11.5 8.5l-3 4h4l-3 4"></path>', 26),
     cap: svg('<path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path><path d="M22 10v6"></path>', 26),
-    wave: svg('<path d="M2 12h3l2.5-7 4 14 3.5-10 2 3H22"></path>', 26)
+    wave: svg('<path d="M2 12h3l2.5-7 4 14 3.5-10 2 3H22"></path>', 26),
+    leaf: svg('<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"></path><path d="M2 21c0-3 1.9-5.4 5.2-6.1"></path>', 26),
+    shield: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path>', 26),
+    layers: svg('<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>', 26),
+    radio: svg('<circle cx="12" cy="12" r="2"></circle><path d="M16.2 7.8a6 6 0 0 1 0 8.4"></path><path d="M7.8 16.2a6 6 0 0 1 0-8.4"></path><path d="M19.1 4.9a10 10 0 0 1 0 14.2"></path><path d="M4.9 19.1a10 10 0 0 1 0-14.2"></path>', 26),
+    chip: svg('<rect x="6" y="6" width="12" height="12" rx="2"></rect><rect x="9.5" y="9.5" width="5" height="5"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path>', 26),
+    factory: svg('<path d="M2 20V9l6 4V9l6 4V4h4l2 16z"></path><path d="M2 20h20"></path>', 26)
   };
   var THEME_DEFAULT_ICON = { vv: 'robot', genai: 'sparkles', nocode: 'blocks', ev: 'battery', edu: 'cap', other: 'wave' };
 
@@ -126,6 +140,33 @@
       (focus ? '<div class="focus__list">' + focus + '</div>' : '') +
       '<nav class="links" aria-label="Profiles">' + links + '</nav>' +
       '<p class="loc">' + ICON.pin + esc(L(p.location)) + '</p>';
+  }
+
+  function ym(s) { if (!s) return ''; var p = s.split('-'); return t('months')[+p[1] - 1] + ' ' + p[0]; }
+
+  function renderExperience() {
+    var items = D.experience.map(function (e) {
+      var roles = e.roles.map(function (r) {
+        var when = r.from ? ym(r.from) + ' – ' + (r.to ? ym(r.to) : t('present')) : '';
+        var note = r.note ? L(r.note) : '';
+        return '<li class="exp__role"><span class="exp__dot' + (r.to ? '' : ' exp__dot--now') + '" aria-hidden="true"></span>' +
+          '<span><b>' + esc(L(r.title)) + '</b><span class="exp__when">' + esc([when, note].filter(Boolean).join(' · ')) + '</span></span></li>';
+      }).join('');
+      return '<div class="exp__org"><div class="exp__head"><span class="ico ico--soft">' + (ICON[e.icon] || '') + '</span>' +
+        '<span><b>' + esc(L(e.org)) + '</b>' + (e.place ? '<span class="exp__place">' + esc(L(e.place)) + '</span>' : '') + '</span></div>' +
+        '<ul class="exp__roles">' + roles + '</ul></div>';
+    }).join('');
+    $('experience').innerHTML = '<p id="expTitle" class="eyebrow">' + esc(t('expTitle')) + '</p>' + items;
+  }
+
+  function renderProjects() {
+    $('projectList').innerHTML = D.projects.map(function (p) {
+      var live = !p.to;
+      return '<article class="card proj"><div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
+        '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(ym(p.from) + ' – ' + (p.to ? ym(p.to) : '')) +
+        '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(live ? t('ongoing') : t('done')) + '</span></span></div></div>' +
+        '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p></article>';
+    }).join('');
   }
 
   function renderStats() {
@@ -198,6 +239,7 @@
       '<div class="book__row" style="margin-top:12px">' +
       (b.cover ? '<img class="cover" src="' + esc(b.cover) + '" alt="' + esc(t('coverAlt')) + '" width="205" height="300" loading="lazy">' : '') +
       '<div class="book__body"><h2 id="bookTitle" class="book__title">' + esc(b.title) + '</h2>' +
+      (b.authors ? '<p class="book__authors"><span>' + esc(t('authors')) + ':</span> ' + esc(b.authors) + '</p>' : '') +
       '<p class="book__meta">' + esc(b.publisher) + (b.edition ? '<br>' + esc(L(b.edition)) : '') + ' · ' + b.pages + ' ' + esc(t('pages')) +
       '<br>ISBN ' + esc(b.isbn) + (b.editor ? '<br>' + esc(t('editor')) + ': ' + esc(b.editor) : '') + '</p></div></div>' +
       bookDesc(L(b.description)) +
@@ -231,7 +273,7 @@
   }
 
   function renderAll() {
-    renderStatic(); renderProfile(); renderStats(); renderThemes(); renderBook(); renderApps();
+    renderStatic(); renderProfile(); renderExperience(); renderStats(); renderProjects(); renderThemes(); renderBook(); renderApps();
   }
 
   document.addEventListener('click', function (e) {
@@ -250,9 +292,9 @@
   function get(path) { return fetch(path, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(path); return r.json(); }); }
 
   renderStatic();
-  Promise.all([get('data/profile.json'), get('data/publications.json'), get('data/themes.json'), get('data/apps.json')])
+  Promise.all([get('data/profile.json'), get('data/publications.json'), get('data/themes.json'), get('data/apps.json'), get('data/experience.json'), get('data/projects.json')])
     .then(function (r) {
-      D = { profile: r[0], pubs: r[1].slice().sort(function (a, b) { return b.year - a.year; }), themes: r[2], apps: r[3] };
+      D = { profile: r[0], pubs: r[1].slice().sort(function (a, b) { return b.year - a.year; }), themes: r[2], apps: r[3], experience: r[4], projects: r[5] };
       renderAll();
     })
     .catch(function () {
