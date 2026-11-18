@@ -8,7 +8,7 @@
       navMap: './research-map', navBook: './book', navApps: './apps', navProjects: './projects',
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
-      about: 'About', aboutTitle: 'about me', statsTitle: '// stats',
+      about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -37,7 +37,7 @@
       navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar', navProjects: './projeler',
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
-      about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler',
+      about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -87,6 +87,7 @@
     clockSm: svg('<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>', 11),
     homeSm: svg('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>', 11),
     buildingSm: svg('<rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path>', 11),
+    userSm: svg('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>', 14),
     chartSm: svg('<path d="M3 3v18h18"></path><rect x="7" y="12" width="3" height="5"></rect><rect x="12" y="8" width="3" height="9"></rect><rect x="17" y="5" width="3" height="12"></rect>', 14),
     info: svg('<circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>', 14),
     factory: svg('<path d="M2 20V9l6 4V9l6 4V4h4l2 16z"></path><path d="M2 20h20"></path>'),
@@ -164,8 +165,8 @@
     var focus = (p.focus || []).map(function (f) {
       return '<span class="focus">' + (ICON[f.icon + 'Sm'] || '') + esc(L(f.label)) + '</span>';
     }).join('');
-    $('profile').innerHTML =
-      '<div class="profile__top"><div class="avatar" aria-hidden="true">' + avatar + '</div>' +
+    $('profile').innerHTML = cardHead(ICON.userSm, t('profileTitle'), L(p.location)) +
+      '<div class="profile__body"><div class="profile__top"><div class="avatar" aria-hidden="true">' + avatar + '</div>' +
       '<p class="status"><span class="pulse" aria-hidden="true"></span>' + esc(L(p.status)) + '</p></div>' +
       '<h1 class="name">' + esc(p.name) + '</h1>' +
       '<ul class="roles">' + roles + '</ul>' +
@@ -174,8 +175,7 @@
         (p.thesis.ref ? '<span class="thesis__ref">' + esc(t('thesisRef')) + ' ' + esc(p.thesis.ref) + '</span>' : '') + '</span></div>' : '') +
       aboutBox(p.summary) +
       (focus ? '<div class="focus__list">' + focus + '</div>' : '') +
-      '<nav class="links" aria-label="Profiles">' + links + '</nav>' +
-      '<p class="loc">' + ICON.pin + esc(L(p.location)) + '</p>';
+      '<nav class="links" aria-label="Profiles">' + links + '</nav></div>';
   }
 
   // "2024-03" → "Mar 2024"; a bare year ("2025") stays as is
@@ -256,7 +256,7 @@
     D.pubs.forEach(function (x) { c[x.year] = (c[x.year] || 0) + 1; });
     var ys = Object.keys(c).sort().reverse();
     var max = Math.max.apply(null, ys.map(function (y) { return c[y]; }));
-    $('stats').innerHTML = cardHead(ICON.chartSm, t('statsTitle'), 'ResearchGate · ' + p.stats.asOf) +
+    $('stats').innerHTML = cardHead(ICON.chartSm, t('statsTitle'), ym(p.stats.asOf)) +
       '<div class="term__body"><div><span class="prompt">$</span> ' + esc(t('statsCmd')) + '</div>' +
       '<div class="stats__grid">' + p.stats.items.map(function (s) {
         return '<span>' + esc(labels[s.key]) + ' <b>' + esc(s.value) + '</b></span>';

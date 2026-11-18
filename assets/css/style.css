@@ -60,7 +60,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .rail { flex: 1 1 360px; max-width: 420px; display: flex; flex-direction: column; gap: 14px; }
 
 /* Profile */
-.profile { padding: 24px; }
+.profile { padding: 0; overflow: hidden; }
+.profile__body { padding: 20px 24px 22px; }
 .avatar { width: 80px; height: 80px; border-radius: 12px; background: var(--accent); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 26px; font-weight: 700; overflow: hidden; }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
 .profile__top { display: flex; align-items: center; gap: 14px; }
@@ -103,8 +104,11 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .exp { padding: 0 0 18px; display: flex; flex-direction: column; gap: 18px; overflow: hidden; }
 /* Shared amber card header (experience, stats, book) */
 .chead { display: flex; align-items: center; gap: 8px; padding: 12px 20px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(242,184,75,0.06), rgba(242,184,75,0)); font-family: var(--mono); font-size: 12px; color: var(--accent); }
-.chead__icon { display: inline-flex; color: var(--accent); }
-.chead__badge { margin-left: auto; padding: 2px 8px; border-radius: 999px; border: 1px solid #4A3B1A; background: var(--accent-soft); font-size: 11px; color: var(--accent); white-space: nowrap; }
+.chead__icon { flex: 0 0 auto; display: inline-flex; color: var(--accent); }
+.chead__icon svg { display: block; }
+.chead { line-height: 1.4; min-height: 46px; }
+.chead > span:nth-child(2) { flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chead__badge { margin-left: auto; padding: 2px 8px; border-radius: 999px; border: 1px solid #4A3B1A; background: var(--accent-soft); font-size: 11px; color: var(--accent); white-space: nowrap; flex: 0 0 auto; }
 .exp__org { padding: 0 20px; }
 .exp__head { display: flex; gap: 12px; align-items: center; font-size: 14px; line-height: 1.35; }
 .exp__headtxt { flex: 1; min-width: 0; }
