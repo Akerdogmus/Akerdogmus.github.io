@@ -9,7 +9,7 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
-      myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
+      demo: 'demo', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -39,7 +39,7 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
-      myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
+      demo: 'demo', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -89,6 +89,7 @@
     clockSm: svg('<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>', 11),
     homeSm: svg('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>', 11),
     buildingSm: svg('<rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path>', 11),
+    playSm: svg('<polygon points="6 4 20 12 6 20 6 4"></polygon>', 10),
     folderSm: svg('<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>', 14),
     monitorSm: svg('<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>', 14),
     readerSm: svg('<path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"></path><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"></path>', 14),
@@ -240,6 +241,19 @@
       (badge ? '<span class="chead__badge">' + esc(badge) + '</span>' : '') + '</div>';
   }
 
+  // Card media: silent loop (poster when the visitor prefers reduced motion), logo or figure.
+  // Cards without media keep an empty slot so rows stay aligned.
+  function projMedia(p) {
+    var m = p.media;
+    if (!m) return '<div class="proj__slot" aria-hidden="true"></div>';
+    var alt = esc(L(m.alt));
+    var img = m.type === 'loop'
+      ? '<picture><source media="(prefers-reduced-motion: reduce)" srcset="' + esc(m.poster) + '"><img src="' + esc(m.src) + '" alt="' + alt + '" width="640" height="360" loading="lazy" decoding="async"></picture>'
+      : '<img src="' + esc(m.src) + '" alt="' + alt + '" loading="lazy" decoding="async">';
+    return '<figure class="proj__media proj__media--' + esc(m.type) + '">' + img +
+      (m.type === 'loop' ? '<span class="proj__badge">' + ICON.playSm + esc(t('demo')) + '</span>' : '') + '</figure>';
+  }
+
   // My share of the project's run so far (bar) + what I did (chips and a highlighted deliverable)
   function involvement(p, now) {
     var projEnd = p.to ? (p.to < now ? p.to : now) : now;
@@ -273,7 +287,7 @@
       var live = !p.left && !p.done && (!p.to || planned);
       var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : ((live || p.left) ? ym(p.from) + ' –' : ym(p.from));
       var stateLabel = p.left ? t('left') : (live ? t('ongoing') : t('done'));
-      return '<article class="card proj"><div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
+      return '<article class="card proj">' + projMedia(p) + '<div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
         '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
         '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(stateLabel) + '</span></span></div></div>' +
         '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p>' +

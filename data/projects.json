@@ -25,6 +25,14 @@
       "icon": "wave",
       "en": "Hyperspectral image analysis software (in development)",
       "tr": "Hiperspektral görüntü analiz yazılımı (geliştiriliyor)"
+    },
+    "media": {
+      "type": "logo",
+      "src": "assets/media/clears-logo.webp",
+      "alt": {
+        "en": "CLEARS project logo",
+        "tr": "CLEARS proje logosu"
+      }
     }
   },
   {
@@ -48,6 +56,14 @@
     "my": {
       "from": "2024-03",
       "to": "2026-08"
+    },
+    "media": {
+      "type": "logo",
+      "src": "assets/media/decarbiz-logo.webp",
+      "alt": {
+        "en": "DECARBiz project logo",
+        "tr": "DECARBiz proje logosu"
+      }
     }
   },
   {
@@ -122,6 +138,15 @@
       "icon": "battery",
       "en": "Data acquisition software for electric vehicles",
       "tr": "Elektrikli araçtan veri toplama yazılımı"
+    },
+    "media": {
+      "type": "loop",
+      "src": "assets/media/opeva-loop.webp",
+      "poster": "assets/media/opeva-poster.webp",
+      "alt": {
+        "en": "Test drive of the Musoshi L5 electric vehicle with the HMI tablet",
+        "tr": "HMI tabletiyle Musoshi L5 elektrikli araç test sürüşü"
+      }
     }
   },
   {
@@ -150,6 +175,15 @@
       "icon": "sparkles",
       "en": "Synthetic image generation software (automotive)",
       "tr": "Sentetik görüntü üretim yazılımı (otomotiv)"
+    },
+    "media": {
+      "type": "loop",
+      "src": "assets/media/tasti-loop.webp",
+      "poster": "assets/media/tasti-poster.webp",
+      "alt": {
+        "en": "TASTI platform generating synthetic inspection images",
+        "tr": "TASTI platformunda sentetik denetim görüntüleri üretimi"
+      }
     }
   },
   {
@@ -168,7 +202,15 @@
         "en": "R&D team lead",
         "tr": "Ar-Ge ekip yürütücülüğü"
       }
-    ]
+    ],
+    "media": {
+      "type": "figure",
+      "src": "assets/media/uswa-locations.webp",
+      "alt": {
+        "en": "Simulated machine and AGV locations in a factory (USWA localisation study)",
+        "tr": "Fabrikada simüle edilen makine ve AGV konumları (USWA konumlandırma çalışması)"
+      }
+    }
   },
   {
     "name": "EFICAS",
@@ -186,7 +228,16 @@
         "en": "R&D team lead",
         "tr": "Ar-Ge ekip yürütücülüğü"
       }
-    ]
+    ],
+    "media": {
+      "type": "loop",
+      "src": "assets/media/eficas-loop.webp",
+      "poster": "assets/media/eficas-poster.webp",
+      "alt": {
+        "en": "Custom computer-vision model detecting people on a robot camera",
+        "tr": "Robot kamerasında insan algılayan özel görüntü işleme modeli"
+      }
+    }
   },
   {
     "name": "MUWO",
@@ -214,6 +265,15 @@
       "icon": "factory",
       "en": "Factory digital twin software",
       "tr": "Fabrika dijital ikiz yazılımı"
+    },
+    "media": {
+      "type": "loop",
+      "src": "assets/media/muwo-loop.webp",
+      "poster": "assets/media/muwo-poster.webp",
+      "alt": {
+        "en": "Factory digital twin in Unity with live machine states",
+        "tr": "Unity'de canlı makine durumlarıyla fabrika dijital ikizi"
+      }
     }
   },
   {
@@ -244,6 +304,15 @@
       "tr": "Robotik test uygulaması: robot doğrulaması için kamera hata enjeksiyon aracı CamFITool",
       "url": "https://github.com/inomuh/camfitool",
       "linkLabel": "GitHub"
+    },
+    "media": {
+      "type": "loop",
+      "src": "assets/media/valu3s-loop.webp",
+      "poster": "assets/media/valu3s-poster.webp",
+      "alt": {
+        "en": "SRVT simulation of the ROKOS robotic inspection cell around a bus chassis",
+        "tr": "Otobüs şasesi etrafındaki ROKOS robotik denetim hücresinin SRVT simülasyonu"
+      }
     }
   }
 ]

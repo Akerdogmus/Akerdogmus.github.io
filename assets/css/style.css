@@ -133,7 +133,7 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .proj { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
 /* Line up the sections of cards that sit side by side: top, title, summary, involvement, chips, deliverable */
 @supports (grid-template-rows: subgrid) {
-  .proj { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 10px; align-content: start; }
+  .proj { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 10px; align-content: start; }
 }
 .proj__top { display: flex; gap: 12px; align-items: center; }
 .proj__head { min-width: 0; }
@@ -150,6 +150,12 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .proj__bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #C8922C, var(--accent)); }
 .proj__chips { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; }
 .proj__slot { min-height: 0; }
+.proj__media { position: relative; margin: -18px -18px 4px; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--bg-deep); }
+.proj__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.proj__media--logo, .proj__media--figure { background: #F4F1EA; }
+.proj__media--logo img { object-fit: contain; padding: 6% 12%; }
+.proj__media--figure img { object-fit: contain; padding: 4%; }
+.proj__badge { position: absolute; left: 10px; top: 10px; display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; background: rgba(13,17,23,0.82); border: 1px solid #4A3B1A; font-family: var(--mono); font-size: 10.5px; color: var(--accent); }
 .proj__deliv { display: flex; gap: 8px; align-items: center; align-self: stretch; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); border: 1px solid #4A3B1A; font-size: 12.5px; line-height: 1.45; color: var(--text); }
 .proj__delivIcon { flex: 0 0 auto; display: inline-flex; color: var(--accent); }
 .proj__delivIcon svg { width: 16px; height: 16px; }
