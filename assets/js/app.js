@@ -245,7 +245,9 @@
   // Cards without media keep an empty slot so rows stay aligned.
   function projMedia(p) {
     var m = p.media;
-    if (!m) return '<div class="proj__slot" aria-hidden="true"></div>';
+    // no media: a patterned banner with the project icon keeps every card the same shape
+    if (!m) return '<figure class="proj__media proj__media--icon" aria-hidden="true"><span class="proj__bigicon">' +
+      (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span><span class="proj__bannername">' + esc(p.name) + '</span></figure>';
     var alt = esc(L(m.alt));
     var img = m.type === 'loop'
       ? '<picture><source media="(prefers-reduced-motion: reduce)" srcset="' + esc(m.poster) + '"><img src="' + esc(m.src) + '" alt="' + alt + '" width="640" height="360" loading="lazy" decoding="async"></picture>'
