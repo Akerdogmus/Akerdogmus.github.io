@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alim Kerem Erdoğmuş — Research &amp; Software</title>
+  <meta name="description" content="Alim Kerem Erdoğmuş: industrial AI, generative models for visual inspection, verification of robotic systems. Publications, book and open-source software.">
+  <meta name="author" content="Alim Kerem Erdoğmuş">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alim Kerem Erdoğmuş — Research &amp; Software">
+  <meta property="og:description" content="Publications, book and open-source software on industrial AI and robotics.">
+  <meta property="og:image" content="https://akerdogmus.github.io/assets/img/nexus.webp">
+  <meta name="theme-color" content="#0D1117">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top">~/akerdogmus<span class="caret">_</span></a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#map" data-i18n="navMap">./research-map</a>
+        <a href="#book" data-i18n="navBook">./book</a>
+        <a href="#apps" data-i18n="navApps">./apps</a>
+        <button type="button" class="lang" id="langToggle" aria-label="Türkçe'ye geç">[TR]</button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" class="wrap layout">
+    <aside class="side" aria-label="Profile">
+      <div class="card profile" id="profile"></div>
+      <div class="card term" id="stats"></div>
+      <div class="card years" id="years"></div>
+    </aside>
+
+    <main id="main" class="content">
+      <section id="map" aria-labelledby="mapTitle">
+        <p class="eyebrow" data-i18n="mapEyebrow">// research map</p>
+        <h2 id="mapTitle" class="h2" data-i18n="mapTitle">Themes, projects, papers &amp; code</h2>
+        <div class="tabs" role="group" id="themeTabs"></div>
+        <div class="themes" id="themes"></div>
+      </section>
+
+      <section id="book" class="card book" aria-labelledby="bookTitle"></section>
+    </main>
+  </div>
+
+  <section id="apps" class="apps" aria-labelledby="appsTitle">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="appsEyebrow">// apps &amp; software</p>
+      <div class="apps__head">
+        <h2 id="appsTitle" class="h1" data-i18n="appsTitle">Things I've built</h2>
+        <a class="mono" href="https://github.com/Akerdogmus">github.com/Akerdogmus →</a>
+      </div>
+      <div class="featured" id="featured"></div>
+      <h3 class="eyebrow eyebrow--muted tools__title" data-i18n="toolsTitle">// robotics &amp; simulation tools</h3>
+      <div class="tools" id="tools"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year">2026</span> A. K. Erdoğmuş · Eskişehir</span>
+      <span data-i18n="built">built with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <noscript><p class="wrap">This site needs JavaScript to list publications and apps. Profiles: <a href="https://github.com/Akerdogmus">GitHub</a> · <a href="https://www.researchgate.net/profile/Alim-Erdogmus">ResearchGate</a></p></noscript>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

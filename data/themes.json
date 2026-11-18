@@ -1,0 +1,68 @@
+[
+  {
+    "id": "vv",
+    "short": { "en": "V&V", "tr": "Doğrulama" },
+    "project": "VALU3S · H2020 ECSEL",
+    "name": { "en": "Verification & validation of robotic systems", "tr": "Robotik sistemlerin doğrulanması ve onaylanması" },
+    "description": {
+      "en": "Camera fault injection (CamFITool), simulation-based robot verification (SRVT) and motion-planning benchmarks for an automotive inspection cell.",
+      "tr": "Otomotiv denetim hücresi için kamera hata enjeksiyonu (CamFITool), simülasyon tabanlı robot doğrulama (SRVT) ve hareket planlama karşılaştırmaları."
+    },
+    "repos": [{ "name": "Robotic_Controller_Interface", "url": "https://github.com/Akerdogmus/Robotic_Controller_Interface" }]
+  },
+  {
+    "id": "genai",
+    "short": { "en": "GenAI", "tr": "Üretken YZ" },
+    "project": "TASTI",
+    "name": { "en": "Generative AI for industrial inspection", "tr": "Endüstriyel denetim için üretken yapay zekâ" },
+    "description": {
+      "en": "Synthetic defect images with Stable Diffusion and LoRA, generative anomaly detection and the SynthVision Suite.",
+      "tr": "Stable Diffusion ve LoRA ile sentetik hata görüntüleri, üretken anomali tespiti ve SynthVision Suite."
+    },
+    "repos": [{ "name": "industrial-ai-nexus", "url": "https://akerdogmus.github.io/industrial-ai-nexus/" }]
+  },
+  {
+    "id": "nocode",
+    "short": { "en": "No-code", "tr": "Kodsuz" },
+    "project": "EFICAS",
+    "name": { "en": "No-code AI for domain experts", "tr": "Alan uzmanları için kodsuz yapay zekâ" },
+    "description": {
+      "en": "Platforms that let non-programmers build and deploy AI models, with FIWARE-based real-time data.",
+      "tr": "Programlama bilmeyenlerin YZ modeli kurup çalıştırabildiği, FIWARE tabanlı gerçek zamanlı veriyle çalışan platformlar."
+    },
+    "repos": [{ "name": "interaktif-prompt-muh-alistirmalari", "url": "https://github.com/Akerdogmus/interaktif-prompt-muh-alistirmalari" }]
+  },
+  {
+    "id": "ev",
+    "short": { "en": "EV", "tr": "Elektrikli araç" },
+    "project": "OPEVA · EU",
+    "name": { "en": "Electric vehicle data", "tr": "Elektrikli araç verisi" },
+    "description": {
+      "en": "Edge data acquisition, HMI panels and open datasets for state-of-charge and range estimation.",
+      "tr": "Uç cihazla veri toplama, HMI panelleri ve şarj durumu (SoC) ile menzil tahmini için açık veri setleri."
+    },
+    "repos": []
+  },
+  {
+    "id": "edu",
+    "short": { "en": "Education", "tr": "Eğitim" },
+    "project": "U-Plat · HAMER",
+    "name": { "en": "Robotics education", "tr": "Robotik eğitimi" },
+    "description": {
+      "en": "Virtual robotics lab, modular educational robots and the ROS book.",
+      "tr": "Sanal robotik laboratuvarı, modüler eğitim robotları ve ROS kitabı."
+    },
+    "repos": [{ "name": "hamer", "url": "https://github.com/Akerdogmus/hamer" }]
+  },
+  {
+    "id": "other",
+    "short": { "en": "Other", "tr": "Diğer" },
+    "project": { "en": "Independent", "tr": "Bağımsız" },
+    "name": { "en": "Other work", "tr": "Diğer çalışmalar" },
+    "description": {
+      "en": "Hyperspectral greenhouse-gas detection and a service robot for elderly care.",
+      "tr": "Hiperspektral sera gazı tespiti ve yaşlı bakımı için servis robotu."
+    },
+    "repos": []
+  }
+]

@@ -1,0 +1,204 @@
+[
+  {
+    "year": 2026,
+    "title": "Eşleştirilmiş Süzgeç Kestiricisinde Kazanç Yanlılığı ve Karar Kapısı: spectgen ile EMIT Sahnelerinde Kapalı Döngü Doğrulama",
+    "titleAlt": "Gain Bias and the Decision Gate in a Matched Filter Estimator: Closed-Loop Validation on EMIT Scenes with spectgen",
+    "authors": "A. K. Erdoğmuş",
+    "venue": "Conference paper",
+    "type": "conference",
+    "theme": "other",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  },
+  {
+    "year": 2025,
+    "title": "Synthvision Suite: A Modular and Comprehensive No-Code AI Platform for End-to-End Synthetic Image Generation and Evaluation",
+    "authors": "A. K. Erdoğmuş, M. O. Taş",
+    "venue": "ASYU 2025",
+    "type": "conference",
+    "theme": "genai",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2025,
+    "title": "Performance Evaluation of Generative AI Models in Industrial Quality Control: A Case Study in Bus Chassis White-Body Inspection",
+    "authors": "T. Uz, A. K. Erdoğmuş, D. Bayar, Ö. Şahabaş, G. Çokünlü, M. O. Taş",
+    "venue": "ASYU 2025",
+    "type": "conference",
+    "theme": "genai",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2025,
+    "title": "EFICAS: Empowering Non-Experts to Build AI Applications via No-Code Development",
+    "authors": "H. A. Samanlı, M. Özberk, M. T. Yılmaz, Z. T. Cem, D. Bayar, A. K. Erdoğmuş, M. O. Taş",
+    "venue": "ASYU 2025",
+    "type": "conference",
+    "theme": "nocode",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2025,
+    "title": "A dataset for state of charge and range estimation of an L5 type electric vehicle that is used for Urban Logistic",
+    "authors": "A. A. Polat, S. Bozkurt, İ. Sarıçiçek, … A. Yazıcı",
+    "venue": "Data in Brief",
+    "type": "article",
+    "theme": "ev",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  },
+  {
+    "year": 2025,
+    "title": "A novel verification tool suite for industrial robotic systems evaluation results",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "Pamukkale University Journal of Engineering Sciences",
+    "type": "article",
+    "theme": "vv",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2025,
+    "title": "Multi-Partner Project: Electric Vehicle Data Acquisition and Valorisation: A Perspective from the OPEVA Project",
+    "authors": "A. Kanak, S. Ergün, I. Arif, … F. Gelati",
+    "venue": "Conference paper",
+    "type": "conference",
+    "theme": "ev",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2024,
+    "title": "Synthetic Image Generation with Stable Diffusion and Trained LoRA Model for Industrial Areas",
+    "authors": "M. T. Yılmaz, A. K. Erdoğmuş, D. Bayar, … G. Çökünlü",
+    "venue": "ASYU 2024",
+    "type": "conference",
+    "theme": "genai",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2024,
+    "title": "Elektrikli Araçlar İçin Gerçek Zamanlı Veri Toplama Cihazı ve HMI Panel Geliştirme: Musoshi L5 EV Üzerinde Örnek Uygulama",
+    "titleAlt": "Real-Time Data Acquisition Device and HMI Panel Development for Electric Vehicles: Sample Application on Musoshi L5 EV",
+    "authors": "M. Özberk, A. K. Erdoğmuş, H. Ateş, A. Kafalı, O. Ulu, M. T. Yılmaz, M. O. Taş, M. Atav",
+    "venue": "TOK 2024 — Otomatik Kontrol Ulusal Toplantısı",
+    "type": "conference",
+    "theme": "ev",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  },
+  {
+    "year": 2024,
+    "title": "Endüstriyel Alanlarda Uzman Olmayanlar için Kodsuz Yapay Zekâ Uygulama Geliştirme Platformu",
+    "titleAlt": "No Code Artificial Intelligence Application Development Platform for Non-Experts in Industrial Areas",
+    "authors": "H. Ateş, H. Biçer, M. T. Yılmaz, O. Ulu, M. O. Taş, A. K. Erdoğmuş, A. Kafalı",
+    "venue": "TOK 2024 — Otomatik Kontrol Ulusal Toplantısı",
+    "type": "conference",
+    "theme": "nocode",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2024,
+    "title": "Kamera Hata Enjeksiyon Aracı ile Kamera Tabanlı Robotik Denetleme Sisteminin Doğrulanması ve Onaylanması",
+    "titleAlt": "Verification and Validation of a Camera-Based Robotic Inspection System with a Camera Fault Injection Tool",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "Eskişehir Osmangazi Üniversitesi Mühendislik ve Mimarlık Fakültesi Dergisi",
+    "type": "article",
+    "theme": "vv",
+    "url": "https://dergipark.org.tr/tr/pub/ogummf/issue/84150/1348531"
+  },
+  {
+    "year": 2023,
+    "title": "Verification Toolchain of Industrial Robot Inspection Cell for Quality Control of Automotive Body-in-white",
+    "authors": "C. Bağlum, A. K. Erdoğmuş, U. Yayan",
+    "venue": "ASYU 2023",
+    "type": "conference",
+    "theme": "vv",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2022,
+    "title": "Development of a Fault Injection Tool & Dataset for Verification of Camera Based Perception in Robotic Systems",
+    "authors": "U. Yayan, A. K. Erdoğmuş",
+    "venue": "Eskişehir Osmangazi Üniversitesi Mühendislik ve Mimarlık Fakültesi Dergisi",
+    "type": "article",
+    "theme": "vv",
+    "url": "https://dergipark.org.tr/en/pub/ogummf/issue/74024/1054761"
+  },
+  {
+    "year": 2022,
+    "title": "Development of Virtual Robotic Laboratory and Materials for Education and Research",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "Bilecik Şeyh Edebali Üniversitesi Fen Bilimleri Dergisi",
+    "type": "article",
+    "theme": "edu",
+    "url": "https://dergipark.org.tr/en/pub/bseufbd/issue/70447/1089501"
+  },
+  {
+    "year": 2021,
+    "title": "Development of Educational Robot and User Interfaces for Robotic Applications",
+    "authors": "A. K. Erdoğmuş, B. Yarış, F. Vatansever, … H. S. Yavuz",
+    "venue": "Conference paper",
+    "type": "conference",
+    "theme": "edu",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  },
+  {
+    "year": 2021,
+    "title": "Fuzzy-based Health Monitoring and Voice Assistance Featured Autonomous Elderly Care Service Robot",
+    "authors": "M. B. Yelaldi, V. Öztürk, A. Gün, … R. Edizkan",
+    "venue": "Conference paper",
+    "type": "conference",
+    "theme": "other",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2021,
+    "title": "Araç Şaselerinin Kalite Kontrolü için Simülasyon Tabanlı Otonom Endüstriyel Robot Test Sistemi Geliştirilmesi",
+    "titleAlt": "Development of Simulation-Based Testing for an Automated Robot Cell for Quality Inspection of Automotive Body-in-White",
+    "authors": "A. K. Erdoğmuş, M. Karaca, U. Yayan, G. Çökünlü",
+    "venue": "TOK 2021 — Otomatik Kontrol Türk Milli Komitesi Ulusal Kongresi",
+    "type": "conference",
+    "theme": "vv",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+  },
+  {
+    "year": 2021,
+    "title": "Endüstriyel Robot Hareket Planlama Algoritmaları Performans Karşılaştırması",
+    "titleAlt": "Industrial Robot Motion Planning Algorithms Performance Benchmarking",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "Journal of Scientific Technology and Engineering Research",
+    "type": "article",
+    "theme": "vv",
+    "url": "https://dergipark.org.tr/tr/pub/jster/issue/61588/979689",
+    "fullText": true
+  },
+  {
+    "year": 2021,
+    "title": "Manipulation of Camera Sensor Data via Fault Injection for Anomaly Detection Studies in Verification and Validation Activities For AI",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "Preprint",
+    "type": "preprint",
+    "theme": "vv",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  },
+  {
+    "year": 2021,
+    "title": "Virtual Robotic Laboratory Compatible Mobile Robots for Education and Research",
+    "authors": "A. K. Erdoğmuş, U. Yayan",
+    "venue": "IEEE INISTA 2021",
+    "type": "conference",
+    "theme": "edu",
+    "url": "https://ieeexplore.ieee.org/document/9548503"
+  },
+  {
+    "year": 2020,
+    "title": "Robot Operating System Compatible Mobile Robots for Education and Research",
+    "authors": "A. K. Erdoğmuş, D. Özüpek Taş, M. Karaca, U. Yayan",
+    "venue": "Preprint",
+    "type": "preprint",
+    "theme": "edu",
+    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "fullText": true
+  }
+]

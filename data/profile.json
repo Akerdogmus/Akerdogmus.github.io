@@ -1,0 +1,42 @@
+{
+  "name": "Alim Kerem Erdoğmuş",
+  "initials": "AKE",
+  "handle": "akerdogmus",
+  "status": { "en": "open to collaboration", "tr": "iş birliğine açık" },
+  "roles": {
+    "en": ["AI Tech Lead, ACD Veri Mühendisliği", "MSc student, Eskişehir Osmangazi University"],
+    "tr": ["AI Tech Lead, ACD Veri Mühendisliği", "Yüksek lisans öğrencisi, Eskişehir Osmangazi Üniversitesi"]
+  },
+  "summary": {
+    "en": "Industrial AI, generative models for visual inspection, and verification of robotic systems.",
+    "tr": "Endüstriyel yapay zekâ, görsel denetim için üretken modeller ve robotik sistemlerin doğrulanması."
+  },
+  "location": { "en": "Eskişehir, TR", "tr": "Eskişehir, Türkiye" },
+  "links": [
+    { "label": "github/Akerdogmus", "url": "https://github.com/Akerdogmus", "icon": "code" },
+    { "label": "researchgate", "url": "https://www.researchgate.net/profile/Alim-Erdogmus", "icon": "book" }
+  ],
+  "stats": {
+    "source": "researchgate",
+    "asOf": "2026-11",
+    "items": [
+      { "key": "publications", "value": "21" },
+      { "key": "books", "value": "1" },
+      { "key": "citations", "value": "46" },
+      { "key": "reads", "value": "1,575" }
+    ]
+  },
+  "book": {
+    "title": "ROS ile Robotik Uygulamalar",
+    "publisher": "Nobel Akademik Yayıncılık",
+    "pages": 200,
+    "isbn": "978-625-417-418-6",
+    "authors": "Uğur Yayan, Alim Kerem Erdoğmuş",
+    "description": {
+      "en": "A hands-on Turkish guide to the Robot Operating System: from ROS fundamentals to example applications and simulation environments. Co-authored with Uğur Yayan.",
+      "tr": "Robot İşletim Sistemi'ne (ROS) uygulamalı bir giriş: temel kavramlardan örnek uygulamalara ve simülasyon ortamlarına. Uğur Yayan ile birlikte."
+    },
+    "url": "https://www.nobelyayin.com/ros-ile-robotik-uygulamalar-18224.html",
+    "altUrl": "https://www.kitapyurdu.com/kitap/ros-ile-robotik-uygulamalar/614727.html"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "featured": [
+    {
+      "id": "nexus",
+      "name": "industrial-ai-nexus",
+      "kind": { "en": "Web platform", "tr": "Web platformu" },
+      "bar": "akerdogmus.github.io/industrial-ai-nexus",
+      "tagline": {
+        "en": "Tailored AI solutions for industrial use cases, in one browser demo.",
+        "tr": "Endüstriyel kullanım senaryolarına özel YZ çözümleri, tek bir tarayıcı demosunda."
+      },
+      "description": {
+        "en": "A zero-install, fully client-side platform that turns seven industrial AI scenarios into interactive simulations with real-time data streams.",
+        "tr": "Yedi endüstriyel YZ senaryosunu gerçek zamanlı veri akışlı etkileşimli simülasyonlara dönüştüren, kurulum gerektirmeyen, tamamen tarayıcıda çalışan bir platform."
+      },
+      "features": {
+        "en": [
+          ["Predictive maintenance", "failure risk from CNC vibration and temperature data."],
+          ["Digital twin & OEE", "bottleneck analysis on a bottling line."],
+          ["Vision quality control", "real-time defect segmentation."],
+          ["Energy, planning, anomaly detection", "tariff-aware scheduling and Z-score anomalies."],
+          ["AI Copilot", "ask the factory data in natural language (RAG + LLM simulation)."]
+        ],
+        "tr": [
+          ["Kestirimci bakım", "CNC titreşim ve sıcaklık verisinden arıza riski."],
+          ["Dijital ikiz ve OEE", "şişeleme hattında darboğaz analizi."],
+          ["Görüntüyle kalite kontrol", "gerçek zamanlı hata segmentasyonu."],
+          ["Enerji, planlama, anomali tespiti", "tarifeye duyarlı çizelgeleme ve Z-skor anomalileri."],
+          ["AI Copilot", "fabrika verisini doğal dille sorgulama (RAG + LLM simülasyonu)."]
+        ]
+      },
+      "stack": ["TypeScript", "React", "Three.js", "Vite", "GitHub Pages"],
+      "shots": [
+        { "label": { "en": "Overview", "tr": "Genel bakış" }, "src": "assets/img/nexus.webp", "w": 1470, "h": 1138,
+          "alt": "Industrial AI Nexus dashboard with seven AI module cards and live KPIs" }
+      ],
+      "live": "https://akerdogmus.github.io/industrial-ai-nexus/",
+      "code": "https://github.com/Akerdogmus/industrial-ai-nexus"
+    },
+    {
+      "id": "fastread",
+      "name": "fastread",
+      "kind": { "en": "Desktop app", "tr": "Masaüstü uygulaması" },
+      "bar": "fastread — reader",
+      "tagline": {
+        "en": "Read papers side by side with a local-LLM translation, and let your notes grow into a knowledge graph.",
+        "tr": "Makaleleri yerel LLM çevirisiyle yan yana oku; notların zamanla bir bilgi ağına dönüşsün."
+      },
+      "description": {
+        "en": "Original PDF on the left, translation on the right. Translation runs on a local LLM through LM Studio, so papers never leave your machine.",
+        "tr": "Solda orijinal PDF, sağda çevirisi. Çeviri LM Studio üzerinden yerel bir LLM ile yapılır; makaleler bilgisayarından çıkmaz."
+      },
+      "features": {
+        "en": [
+          ["Layout-aware translation", "headings, columns and footnotes rebuilt; tables and figures kept as images, only captions translated."],
+          ["Highlights & margin notes", "selecting text saves a highlight with a comment marker."],
+          ["Obsidian-style links", "[[note]] links build a knowledge graph across papers."],
+          ["APA 7 citations", "metadata drafted from the first page, confirmed by you."]
+        ],
+        "tr": [
+          ["Sayfa düzenini koruyan çeviri", "başlık, sütun ve dipnotlar yeniden kurulur; tablo ve şekiller görüntü olarak korunur, yalnızca başlıkları çevrilir."],
+          ["Alıntılar ve kenar notları", "metin seçince yorum işaretli bir alıntı kaydedilir."],
+          ["Obsidian tarzı bağlantılar", "[[not]] bağlantılarıyla makaleler arası bilgi ağı oluşur."],
+          ["APA 7 künyesi", "ilk sayfadan çıkarılan taslak künyeyi sen onaylarsın."]
+        ]
+      },
+      "stack": ["TypeScript", "Electron", "React", "PDF.js", "LM Studio"],
+      "shots": [
+        { "label": { "en": "Reader", "tr": "Okuyucu" }, "src": "assets/img/fastread-reader.webp", "w": 1500, "h": 940,
+          "alt": "fastread reader with the original PDF and its Turkish translation side by side" },
+        { "label": { "en": "Library", "tr": "Kütüphane" }, "src": "assets/img/fastread-library.webp", "w": 1500, "h": 940,
+          "alt": "fastread paper library" },
+        { "label": { "en": "Knowledge graph", "tr": "Bilgi ağı" }, "src": "assets/img/fastread-graph.webp", "w": 1500, "h": 940,
+          "alt": "fastread knowledge graph of linked notes" }
+      ],
+      "live": "",
+      "code": "https://github.com/Akerdogmus/fastread"
+    },
+    {
+      "id": "forklift",
+      "name": "forklift-simulator-web",
+      "kind": { "en": "3D simulator", "tr": "3D simülatör" },
+      "bar": "forklift sim · MQTT connected",
+      "tagline": {
+        "en": "A physics-based 3D forklift simulator that streams telemetry over MQTT.",
+        "tr": "Telemetrisini MQTT üzerinden yayınlayan, fizik tabanlı 3D forklift simülatörü."
+      },
+      "description": {
+        "en": "Drive a forklift in the browser and watch kinematics, motor, force and hydraulic values update live, ready to feed data pipelines and dashboards.",
+        "tr": "Tarayıcıda forklift sür; kinematik, motor, kuvvet ve hidrolik değerleri canlı güncellensin, veri hatlarına ve panolara hazır aksın."
+      },
+      "features": {
+        "en": [
+          ["Real-time controls", "throttle, brake, steering, fork height and tilt."],
+          ["Physics outputs", "speed, torque, forces, stability and hydraulics."],
+          ["MQTT telemetry", "JSON payloads at 5 Hz."],
+          ["Optional Octave engine", "server-side physics, with a JavaScript fallback."]
+        ],
+        "tr": [
+          ["Gerçek zamanlı kontrol", "gaz, fren, direksiyon, çatal yüksekliği ve eğimi."],
+          ["Fizik çıktıları", "hız, tork, kuvvetler, denge ve hidrolik."],
+          ["MQTT telemetrisi", "5 Hz'de JSON veri paketleri."],
+          ["İsteğe bağlı Octave motoru", "sunucu tarafı fizik, JavaScript yedeğiyle."]
+        ]
+      },
+      "stack": ["JavaScript", "Three.js", "MQTT", "Octave"],
+      "shots": [
+        { "label": { "en": "Simulator", "tr": "Simülatör" }, "src": "assets/img/forklift.webp", "w": 1600, "h": 727,
+          "alt": "Forklift simulator with a 3D forklift, drive and load controls, and telemetry panels" }
+      ],
+      "live": "",
+      "code": "https://github.com/Akerdogmus/forklift-simulator-web"
+    }
+  ],
+  "tools": [
+    {
+      "name": "hamer",
+      "description": {
+        "en": "ROS Melodic & Noetic packages for HAMER, the Halikarnas Modular Educational Robot: bringup, SLAM, navigation, simulation and teleop.",
+        "tr": "Halikarnas Modüler Eğitim Robotu (HAMER) için ROS Melodic ve Noetic paketleri: donanım, SLAM, navigasyon, simülasyon ve teleop."
+      },
+      "meta": "Python · ROS · ★ 7",
+      "url": "https://github.com/Akerdogmus/hamer",
+      "img": "assets/img/hamer2.webp",
+      "alt": "HAMER robot in a Gazebo simulation"
+    },
+    {
+      "name": "MultiCameraController",
+      "description": {
+        "en": "Drop-in Unity package: add cameras to a scene and switch between them with a single controller.",
+        "tr": "Unity için hazır paket: sahneye kameralar ekle, tek bir kontrolcüyle aralarında geçiş yap."
+      },
+      "meta": "C# · Unity",
+      "url": "https://github.com/Akerdogmus/MultiCameraController",
+      "img": "assets/img/multicam.webp",
+      "alt": "Unity example scene with multiple camera views"
+    },
+    {
+      "name": "Robotic_Controller_Interface",
+      "description": {
+        "en": "Simple GUI to drive ROS robots and read their live odometry.",
+        "tr": "ROS robotlarını sürmek ve anlık konumlarını okumak için basit arayüz."
+      },
+      "meta": "Python · ROS · ★ 2",
+      "url": "https://github.com/Akerdogmus/Robotic_Controller_Interface",
+      "img": "assets/img/rci.webp",
+      "alt": "Robot controller interface with direction buttons and a position readout"
+    }
+  ]
+}
