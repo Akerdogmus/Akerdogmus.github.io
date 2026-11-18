@@ -9,7 +9,7 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
-      demo: 'demo', toProject: 'Go to the project card',
+      demo: 'demo', toProject: 'Go to the project card', swipeHint: '← swipe for more →', showLess: '− show less', showMore: function (n) { return '+ ' + n + ' more papers'; },
       pubCard: '// publication', abstract: 'Abstract', close: 'Close', readDoi: 'Read (publisher)', readRG: 'Read on ResearchGate', readSource: 'Read',
       excerpt: 'Only the beginning of the abstract is available here; the full text is at the link below.', noAbstract: 'The abstract is not available here; use the link below to read the paper.', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
@@ -42,7 +42,7 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
-      demo: 'demo', toProject: 'Proje kartına git',
+      demo: 'demo', toProject: 'Proje kartına git', swipeHint: '← kaydırarak diğerlerini gör →', showLess: '− daralt', showMore: function (n) { return '+ ' + n + ' yayın daha'; },
       pubCard: '// yayın', abstract: 'Özet', close: 'Kapat', readDoi: 'Oku (yayıncı)', readRG: "ResearchGate'te oku", readSource: 'Oku',
       excerpt: 'Burada özetin yalnızca başı var; tamamı aşağıdaki bağlantıda.', noAbstract: 'Bu yayının özeti burada yok; okumak için aşağıdaki bağlantıyı kullanın.', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
@@ -129,7 +129,7 @@
   };
   var THEME_DEFAULT_ICON = { vv: 'robot', genai: 'sparkles', nocode: 'blocks', ev: 'battery', edu: 'cap', other: 'wave' };
 
-  var state = { lang: initialLang(), theme: 'all', shots: {} };
+  var state = { lang: initialLang(), theme: 'all', shots: {}, openThemes: {} };
   var D = null;
 
   function initialLang() {
@@ -168,7 +168,12 @@
 
   function renderProfile() {
     var p = D.profile;
-    var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="80" height="80">' : esc(p.initials);
+    // animated (blinking) portrait; visitors who prefer reduced motion get the still one
+    var avatar = p.photo
+      ? (p.photoAnim
+        ? '<picture><source media="(prefers-reduced-motion: reduce)" srcset="' + esc(p.photo) + '"><img src="' + esc(p.photoAnim) + '" alt="" width="80" height="80"></picture>'
+        : '<img src="' + esc(p.photo) + '" alt="" width="80" height="80">')
+      : esc(p.initials);
     var links = p.links.map(function (l) {
       return '<a class="link" href="' + esc(l.url) + '"><span class="ico">' + (ICON[l.icon] || '') + '</span><span>' + esc(l.label) + '</span><span class="link__arrow" aria-hidden="true">↗</span></a>';
     }).join('');
@@ -381,7 +386,11 @@
         '<h3 class="theme__name">' + esc(L(th.name)) + '</h3></div>' +
         '<p class="theme__desc">' + esc(L(th.description)) + '</p>' +
         (repos ? '<div class="repos">' + repos + '</div>' : '') +
-        '<ul class="papers">' + papers + '</ul></div></article>';
+        // on phones long lists fold after 3 papers (CSS); the button is only shown there
+        '<ul class="papers' + (ps.length > 3 && !state.openThemes[th.id] ? ' is-folded' : '') + '">' + papers + '</ul>' +
+        (ps.length > 3 ? '<button type="button" class="papers__more" data-unfold="' + esc(th.id) + '">' +
+          esc(state.openThemes[th.id] ? t('showLess') : t('showMore')(ps.length - 3)) + '</button>' : '') +
+        '</div></article>';
     }).join('');
   }
 
@@ -490,6 +499,8 @@
       var inside = e.target.closest('[data-proj]');
       if (inside) { e.preventDefault(); closePub(); focusProject(inside.getAttribute('data-proj')); return; }
     }
+    var uf = e.target.closest('[data-unfold]');
+    if (uf) { var id = uf.getAttribute('data-unfold'); state.openThemes[id] = !state.openThemes[id]; renderThemes(); return; }
     var pub = e.target.closest('[data-pub]');
     if (pub && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) && openPub(+pub.getAttribute('data-pub'))) { e.preventDefault(); return; }
     var pt = e.target.closest('[data-proj]');
