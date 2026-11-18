@@ -4,7 +4,7 @@
     "title": "Eşleştirilmiş Süzgeç Kestiricisinde Kazanç Yanlılığı ve Karar Kapısı: spectgen ile EMIT Sahnelerinde Kapalı Döngü Doğrulama",
     "titleAlt": "Gain Bias and the Decision Gate in a Matched Filter Estimator: Closed-Loop Validation on EMIT Scenes with spectgen",
     "authors": "A. K. Erdoğmuş",
-    "venue": "Conference paper",
+    "venue": "TOK 2026 — Otomatik Kontrol Ulusal Toplantısı, Ankara",
     "type": "conference",
     "theme": "other",
     "url": "https://www.researchgate.net/publication/415570147_Eslestirilmis_Suzgec_Kestiricisinde_Kazanc_Yanliligi_ve_Karar_Kapisi_spectgen_ile_EMIT_Sahnelerinde_Kapali_Dongu_Dogrulama_Gain_Bias_and_the_Decision_Gate_in_a_Matched_Filter_Estimator_Closed-Loop_Val",
@@ -12,7 +12,8 @@
     "projects": [
       "CLEARS"
     ],
-    "abstract": "Uydu tabanlı hiperspektral gözlemlerden sera gazı anomalilerinin tespiti ve nicelenmesinde kullanılan eşleştirilmiş süzgeçlerde, hedef imzası arka plan ortalaması üzerinden oluşturulurken fiziksel bozulma pikselin kendi spektrumuyla ölçeklenmektedir. Bu duyarlılık uyumsuzluğu literatürde bilinmektedir; çalışmada uyumsuzluk, gazsız arka plan ile enjeksiyon sonrası gözlem ayrıştırılarak kovaryans-ağırlıklı kapalı form bir artımsal kazanç ifadesiyle nicelenmekte ve ek enjeksiyon gerektirmeden hesaplanan tanısal bir duyarlılık haritası elde edilmektedir. İfade, arka plan istatistikleri sabit tutularak dört gerçek EMIT sahnesindeki 64 sonda noktasında doğrulanmıştır (r=1,000, eğim 0,944); istatistikler enjekte edilmiş sahneden yeniden kestirildiğinde eğim 0,796'ya inmekte ve aradaki %15,7 hedef kirlenmesi bileşenini vermektedir. Analitik kazanç, gaz retrieval penceresindeki yerel/küresel reflektans oranıyla r=0,9985 düzeyinde ilişkilidir. Uçtan uca düzeltme katsayısı analiz kapsamına bağlıdır (altı sahnede 384/128 oranı 1,12-1,37); kestirici kazancı bu bağımlılığı göstermediğinden etki maskeleme adımından kaynaklanmaktadır. Karar aşamasında sahne-koşullu eşikleme ve boş dağılımın üst yüzdeliğinden boyutlandırılan bileşen kapısı önerilmiş; 512 boş gerçekleştirmede yanlış alarm oranı %1,37, bağımsız doğrulama kümesinde %2,23 ölçülmüştür. Tüm ölçümler spectgen platformuyla üretilmiştir."
+    "abstract": "Uydu tabanlı hiperspektral gözlemlerden sera gazı anomalilerinin tespiti ve nicelenmesinde kullanılan eşleştirilmiş süzgeçlerde, hedef imzası arka plan ortalaması üzerinden oluşturulurken fiziksel bozulma pikselin kendi spektrumuyla ölçeklenmektedir. Bu duyarlılık uyumsuzluğu literatürde bilinmektedir; çalışmada uyumsuzluk, gazsız arka plan ile enjeksiyon sonrası gözlem ayrıştırılarak kovaryans-ağırlıklı kapalı form bir artımsal kazanç ifadesiyle nicelenmekte ve ek enjeksiyon gerektirmeden hesaplanan tanısal bir duyarlılık haritası elde edilmektedir. İfade, arka plan istatistikleri sabit tutularak dört gerçek EMIT sahnesindeki 64 sonda noktasında doğrulanmıştır (r=1,000, eğim 0,944); istatistikler enjekte edilmiş sahneden yeniden kestirildiğinde eğim 0,796'ya inmekte ve aradaki %15,7 hedef kirlenmesi bileşenini vermektedir. Analitik kazanç, gaz retrieval penceresindeki yerel/küresel reflektans oranıyla r=0,9985 düzeyinde ilişkilidir. Uçtan uca düzeltme katsayısı analiz kapsamına bağlıdır (altı sahnede 384/128 oranı 1,12-1,37); kestirici kazancı bu bağımlılığı göstermediğinden etki maskeleme adımından kaynaklanmaktadır. Karar aşamasında sahne-koşullu eşikleme ve boş dağılımın üst yüzdeliğinden boyutlandırılan bileşen kapısı önerilmiş; 512 boş gerçekleştirmede yanlış alarm oranı %1,37, bağımsız doğrulama kümesinde %2,23 ölçülmüştür. Tüm ölçümler spectgen platformuyla üretilmiştir.",
+    "doi": "10.5281/zenodo.24241773"
   },
   {
     "year": 2025,
@@ -251,16 +252,17 @@
   {
     "year": 2021,
     "title": "Manipulation of Camera Sensor Data via Fault Injection for Anomaly Detection Studies in Verification and Validation Activities For AI",
-    "authors": "A. K. Erdoğmuş, U. Yayan",
-    "venue": "Preprint",
+    "authors": "A. K. Erdoğmuş, M. Karaca, U. Yayan",
+    "venue": "arXiv preprint (arXiv:2108.13803)",
     "type": "preprint",
     "theme": "vv",
-    "url": "https://www.researchgate.net/publication/354268595_Manipulation_of_Camera_Sensor_Data_via_Fault_Injection_for_Anomaly_Detection_Studies_in_Verification_and_Validation_Activities_For_AI",
+    "url": "https://arxiv.org/abs/2108.13803",
     "fullText": true,
     "projects": [
       "VALU3S"
     ],
-    "abstract": "In this study, the creation of a database consisting of images obtained as a result of deformation in the images recorded by these cameras by injecting errors into the robot camera nodes and the alternative uses of this database are explained. The study is based on an existing camera fault injection software that injects faults into the cameras of the ROKOS robot arms while the system is running and collects the normal and faulty images recorded during this injection. The database obtained in the study is a source for detecting anomalies that may occur in robotic systems. The ROKOS system has been developed on the inspection of the parts in a bus body-in-white with the help of the cameras on the ROKOS robot arms, right and left. The simulation-based robot verification testing tool (SRVT) system is a system that has emerged by simulating these robots and the chassis in the Gazebo environment, performing and implementing the trajectory planning with the MoveIt planner, and integrating the ROS Smach structure and mission communication. This system is being developed within the scope of the VALU3S project to create a V&V system in the robotics field. Within the scope of this study, a database of 10000 images was created, consisting of 5000 normal and 5000 faulty images. Faulty pictures were obtained by injecting seven different image fault types, including erosion, dilusion, opening, closing, gradient, motion-blur and partial loss, at different times when the robot was in operation. This database consists of images taken by the ROKOS system from the vehicle during a bus chassis inspection mission."
+    "abstract": "In this study, the creation of a database consisting of images obtained as a result of deformation in the images recorded by these cameras by injecting errors into the robot camera nodes and the alternative uses of this database are explained. The study is based on an existing camera fault injection software that injects faults into the cameras of the ROKOS robot arms while the system is running and collects the normal and faulty images recorded during this injection. The database obtained in the study is a source for detecting anomalies that may occur in robotic systems. The ROKOS system has been developed on the inspection of the parts in a bus body-in-white with the help of the cameras on the ROKOS robot arms, right and left. The simulation-based robot verification testing tool (SRVT) system is a system that has emerged by simulating these robots and the chassis in the Gazebo environment, performing and implementing the trajectory planning with the MoveIt planner, and integrating the ROS Smach structure and mission communication. This system is being developed within the scope of the VALU3S project to create a V&V system in the robotics field. Within the scope of this study, a database of 10000 images was created, consisting of 5000 normal and 5000 faulty images. Faulty pictures were obtained by injecting seven different image fault types, including erosion, dilusion, opening, closing, gradient, motion-blur and partial loss, at different times when the robot was in operation. This database consists of images taken by the ROKOS system from the vehicle during a bus chassis inspection mission.",
+    "doi": "10.48550/arXiv.2108.13803"
   },
   {
     "year": 2021,
@@ -277,11 +279,12 @@
     "year": 2020,
     "title": "Robot Operating System Compatible Mobile Robots for Education and Research",
     "authors": "A. K. Erdoğmuş, D. Özüpek Taş, M. Karaca, U. Yayan",
-    "venue": "Preprint",
+    "venue": "arXiv preprint (arXiv:2012.12527)",
     "type": "preprint",
     "theme": "edu",
-    "url": "https://www.researchgate.net/publication/347797057_Robot_Operating_System_Compatible_Mobile_Robots_for_Education_and_Research",
+    "url": "https://arxiv.org/abs/2012.12527",
     "fullText": true,
-    "abstract": "The use of mobile robots has inevitably increased in recent years. The increase in the companies that produce products in this field, the popularity of the studies in the robotic field and the technological competence to serve many different areas have revealed this increase in usage. The importance of mobile robots used as health, education, pro-duction, logistics, defense industry and space equipment is now more important than before. The fact that robotic education can be reduced to a very young age, the production and coding of simple robots with easily accessible parts is also an important factor in this field. At this point, the effect of educational robots on the spread of robotic technol-ogy cannot be denied."
+    "abstract": "The use of mobile robots has inevitably increased in recent years. The increase in the companies that produce products in this field, the popularity of the studies in the robotic field and the technological competence to serve many different areas have revealed this increase in usage. The importance of mobile robots used as health, education, pro-duction, logistics, defense industry and space equipment is now more important than before. The fact that robotic education can be reduced to a very young age, the production and coding of simple robots with easily accessible parts is also an important factor in this field. At this point, the effect of educational robots on the spread of robotic technol-ogy cannot be denied.",
+    "doi": "10.48550/arXiv.2012.12527"
   }
 ]
