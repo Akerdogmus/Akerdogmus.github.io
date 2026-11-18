@@ -7,6 +7,7 @@
       skip: 'Skip to content',
       navMap: './research-map', navBook: './book', navApps: './apps',
       langBtn: '[TR]', langLabel: "Türkçe'ye geç",
+      heroEyebrow: '// what I work on', heroTitle: 'From robot inspection cells to local LLMs',
       mapEyebrow: '// research map', mapTitle: 'Themes, projects, papers & code',
       appsEyebrow: '// apps & software', appsTitle: "Things I've built",
       toolsTitle: '// robotics & simulation tools',
@@ -27,6 +28,7 @@
       skip: 'İçeriğe geç',
       navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar',
       langBtn: '[EN]', langLabel: 'Switch to English',
+      heroEyebrow: '// neler üzerinde çalışıyorum', heroTitle: "Robot denetim hücrelerinden lokal LLM'lere",
       mapEyebrow: '// araştırma haritası', mapTitle: 'Alanlar, projeler, yayınlar ve kod',
       appsEyebrow: '// uygulamalar ve yazılım', appsTitle: 'Geliştirdiklerim',
       toolsTitle: '// robotik ve simülasyon araçları',
@@ -128,6 +130,7 @@
 
     var list = state.theme === 'all' ? D.themes : D.themes.filter(function (th) { return th.id === state.theme; });
     var types = t('type');
+    $('themes').classList.toggle('themes--single', list.length === 1);
     $('themes').innerHTML = list.map(function (th) {
       var repos = (th.repos || []).map(function (r) { return '<a class="repo" href="' + esc(r.url) + '">' + ICON.codeSm + esc(r.name) + '</a>'; }).join('');
       var papers = papersOf(th.id).map(function (p) {
@@ -198,6 +201,7 @@
       state.lang = state.lang === 'tr' ? 'en' : 'tr';
       try { localStorage.setItem('lang', state.lang); } catch (err) {}
       if (D) renderAll(); else renderStatic();
+      document.dispatchEvent(new Event('langchange'));
     }
   });
 
