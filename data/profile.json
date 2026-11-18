@@ -4,10 +4,16 @@
   "photo": "assets/img/avatar.webp",
   "handle": "akerdogmus",
   "status": { "en": "now: local & industrial LLMs", "tr": "şu an: lokal ve endüstriyel LLM'ler" },
-  "roles": {
-    "en": ["AI Tech Lead, ACD Veri Mühendisliği", "MSc student, Eskişehir Osmangazi University"],
-    "tr": ["AI Tech Lead, ACD Veri Mühendisliği", "Yüksek lisans öğrencisi, Eskişehir Osmangazi Üniversitesi"]
-  },
+  "roles": [
+    { "icon": "briefcase", "title": "AI Tech Lead", "org": "ACD Veri Mühendisliği" },
+    { "icon": "cap", "title": { "en": "MSc student, Electrical & Electronics Eng.", "tr": "Yüksek lisans, Elektrik-Elektronik Müh." }, "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" } }
+  ],
+  "focus": [
+    { "icon": "chip", "label": { "en": "Local LLMs", "tr": "Lokal LLM" } },
+    { "icon": "sparkles", "label": { "en": "Generative AI", "tr": "Üretken YZ" } },
+    { "icon": "robot", "label": { "en": "Robotics V&V", "tr": "Robotik V&V" } },
+    { "icon": "eye", "label": { "en": "Visual inspection", "tr": "Görsel denetim" } }
+  ],
   "summary": {
     "en": "Industrial AI, generative models for visual inspection, and verification of robotic systems.",
     "tr": "Endüstriyel yapay zekâ, görsel denetim için üretken modeller ve robotik sistemlerin doğrulanması."

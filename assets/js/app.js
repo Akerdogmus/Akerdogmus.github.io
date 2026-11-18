@@ -58,7 +58,13 @@
     book: svg('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>'),
     linkedin: svg('<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>'),
     pin: svg('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>'),
-    codeSm: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 14)
+    codeSm: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 14),
+    briefcase: svg('<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path>'),
+    cap: svg('<path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path>'),
+    chipSm: svg('<rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path>', 13),
+    sparklesSm: svg('<path d="M11 3l1.9 4.9L18 10l-5.1 2.1L11 17l-1.9-4.9L4 10l5.1-2.1z"></path><path d="M19 15l.8 2.1 2.2.9-2.2.9-.8 2.1-.8-2.1-2.2-.9 2.2-.9z"></path>', 13),
+    robotSm: svg('<path d="M3 21h11"></path><path d="M6 21v-3l3.5-5"></path><circle cx="9.5" cy="13" r="1.6"></circle><path d="M10.8 12l5.2-4.4"></path><circle cx="16.5" cy="7.2" r="1.6"></circle><path d="M17.8 8.4l2.4 2.4"></path>', 13),
+    eyeSm: svg('<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"></path><circle cx="12" cy="12" r="3"></circle>', 13)
   };
   // One icon per research theme (themes.json may name another with "icon")
   var THEME_ICON = {
@@ -102,14 +108,24 @@
   function renderProfile() {
     var p = D.profile;
     var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="80" height="80">' : esc(p.initials);
-    var links = p.links.map(function (l) { return '<a href="' + esc(l.url) + '">' + (ICON[l.icon] || '') + esc(l.label) + '</a>'; }).join('');
+    var links = p.links.map(function (l) {
+      return '<a class="link" href="' + esc(l.url) + '"><span class="ico">' + (ICON[l.icon] || '') + '</span><span>' + esc(l.label) + '</span><span class="link__arrow" aria-hidden="true">↗</span></a>';
+    }).join('');
+    var roles = (Array.isArray(p.roles) ? p.roles : []).map(function (r) {
+      return '<li class="role"><span class="ico ico--soft">' + (ICON[r.icon] || '') + '</span><span><b>' + esc(L(r.title)) + '</b><br><span class="role__org">' + esc(L(r.org)) + '</span></span></li>';
+    }).join('');
+    var focus = (p.focus || []).map(function (f) {
+      return '<span class="focus">' + (ICON[f.icon + 'Sm'] || '') + esc(L(f.label)) + '</span>';
+    }).join('');
     $('profile').innerHTML =
-      '<div class="avatar" aria-hidden="true">' + avatar + '</div>' +
-      '<p class="status">● ' + esc(L(p.status)) + '</p>' +
+      '<div class="profile__top"><div class="avatar" aria-hidden="true">' + avatar + '</div>' +
+      '<p class="status"><span class="pulse" aria-hidden="true"></span>' + esc(L(p.status)) + '</p></div>' +
       '<h1 class="name">' + esc(p.name) + '</h1>' +
-      '<p class="roles">' + L(p.roles).map(esc).join('<br>') + '</p>' +
+      '<ul class="roles">' + roles + '</ul>' +
       '<p class="summary">' + esc(L(p.summary)) + '</p>' +
-      '<nav class="links" aria-label="Profiles">' + links + '<span>' + ICON.pin + esc(L(p.location)) + '</span></nav>';
+      (focus ? '<div class="focus__list">' + focus + '</div>' : '') +
+      '<nav class="links" aria-label="Profiles">' + links + '</nav>' +
+      '<p class="loc">' + ICON.pin + esc(L(p.location)) + '</p>';
   }
 
   function renderStats() {
