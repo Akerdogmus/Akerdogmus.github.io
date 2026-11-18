@@ -8,7 +8,7 @@
       navMap: './research-map', navBook: './book', navApps: './apps', navProjects: './projects',
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
-      about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile',
+      about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -37,7 +37,7 @@
       navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar', navProjects: './projeler',
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
-      about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil',
+      about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -87,6 +87,10 @@
     clockSm: svg('<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>', 11),
     homeSm: svg('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>', 11),
     buildingSm: svg('<rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path>', 11),
+    folderSm: svg('<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>', 14),
+    monitorSm: svg('<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>', 14),
+    readerSm: svg('<path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"></path><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"></path>', 14),
+    cubeSm: svg('<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="M3.3 7L12 12l8.7-5M12 22V12"></path>', 14),
     userSm: svg('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>', 14),
     chartSm: svg('<path d="M3 3v18h18"></path><rect x="7" y="12" width="3" height="5"></rect><rect x="12" y="8" width="3" height="9"></rect><rect x="17" y="5" width="3" height="12"></rect>', 14),
     info: svg('<circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>', 14),
@@ -293,13 +297,13 @@
           (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') +
           (p.doi ? '<a class="badge badge--doi" href="https://doi.org/' + esc(p.doi) + '">DOI ' + esc(p.doi) + '</a>' : '') + '</span></li>';
       }).join('');
-      return '<article class="card theme"><div class="theme__top"><span class="theme__icon">' + icon + '</span>' +
-        '<div class="theme__head"><div class="theme__meta"><span class="chip">' + esc(L(th.project)) + '</span>' +
-        '<span class="theme__count">' + esc(t('papers')(ps.length)) + '</span></div>' +
-        '<h3 class="theme__name">' + esc(L(th.name)) + '</h3></div></div>' +
+      // project tag becomes the shared amber header; paper count is its pill
+      return '<article class="card theme">' + cardHead(ICON.folderSm, '// ' + L(th.project), t('papers')(ps.length)) +
+        '<div class="theme__body"><div class="theme__top"><span class="theme__icon">' + icon + '</span>' +
+        '<h3 class="theme__name">' + esc(L(th.name)) + '</h3></div>' +
         '<p class="theme__desc">' + esc(L(th.description)) + '</p>' +
         (repos ? '<div class="repos">' + repos + '</div>' : '') +
-        '<ul class="papers">' + papers + '</ul></article>';
+        '<ul class="papers">' + papers + '</ul></div></article>';
     }).join('');
   }
 
@@ -326,6 +330,8 @@
       (b.altUrl ? '<a class="btn" href="' + esc(b.altUrl) + '">' + esc(t('otherStore')) + '</a>' : '') + '</div></div>';
   }
 
+  var APP_ICON = { nexus: 'monitor', fastread: 'reader', forklift: 'cube' };
+
   function renderApps() {
     $('featured').innerHTML = D.apps.featured.map(function (a) {
       var cur = state.shots[a.id] || 0;
@@ -334,9 +340,10 @@
         return '<button type="button" class="tab" data-app="' + esc(a.id) + '" data-shot="' + j + '" aria-pressed="' + (j === cur) + '">' + esc(L(sh.label)) + '</button>';
       }).join('') + '</div>' : '';
       var feats = L(a.features).slice(0, 3).map(function (f) { return '<li><span><b>' + esc(f[0]) + '</b> — ' + esc(f[1]) + '</span></li>'; }).join('');
-      return '<article class="card app">' +
+      var kindIcon = ICON[(a.icon || APP_ICON[a.id] || 'monitor') + 'Sm'] || ICON.monitorSm;
+      return '<article class="card app">' + cardHead(kindIcon, '// ' + L(a.kind), a.live ? t('liveBadge') : a.stack[0]) +
         '<img class="app__shot" src="' + esc(s.src) + '" alt="' + esc(s.alt) + '" width="' + s.w + '" height="' + s.h + '" loading="lazy" decoding="async">' +
-        '<div class="app__body"><div class="app__top"><h3 class="app__name">' + esc(a.name) + '</h3><span class="app__kind">' + esc(L(a.kind)) + '</span></div>' +
+        '<div class="app__body"><h3 class="app__name">' + esc(a.name) + '</h3>' +
         thumbs +
         '<p class="app__tag">' + esc(L(a.tagline)) + '</p>' +
         '<ul class="feats">' + feats + '</ul>' +
