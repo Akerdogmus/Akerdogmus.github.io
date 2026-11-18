@@ -260,8 +260,7 @@
     "projects": [
       "VALU3S"
     ],
-    "abstract": "In this study, the creation of a database consisting of images obtained as a result of deformation in the images recorded by these cameras by injecting errors into the robot camera nodes and the alternative uses of this database are explained. The study is based on an existing camera fault injection software that injects faults into the cameras of…",
-    "abstractExcerpt": true
+    "abstract": "In this study, the creation of a database consisting of images obtained as a result of deformation in the images recorded by these cameras by injecting errors into the robot camera nodes and the alternative uses of this database are explained. The study is based on an existing camera fault injection software that injects faults into the cameras of the ROKOS robot arms while the system is running and collects the normal and faulty images recorded during this injection. The database obtained in the study is a source for detecting anomalies that may occur in robotic systems. The ROKOS system has been developed on the inspection of the parts in a bus body-in-white with the help of the cameras on the ROKOS robot arms, right and left. The simulation-based robot verification testing tool (SRVT) system is a system that has emerged by simulating these robots and the chassis in the Gazebo environment, performing and implementing the trajectory planning with the MoveIt planner, and integrating the ROS Smach structure and mission communication. This system is being developed within the scope of the VALU3S project to create a V&V system in the robotics field. Within the scope of this study, a database of 10000 images was created, consisting of 5000 normal and 5000 faulty images. Faulty pictures were obtained by injecting seven different image fault types, including erosion, dilusion, opening, closing, gradient, motion-blur and partial loss, at different times when the robot was in operation. This database consists of images taken by the ROKOS system from the vehicle during a bus chassis inspection mission."
   },
   {
     "year": 2021,
@@ -283,7 +282,6 @@
     "theme": "edu",
     "url": "https://www.researchgate.net/publication/347797057_Robot_Operating_System_Compatible_Mobile_Robots_for_Education_and_Research",
     "fullText": true,
-    "abstract": "The use of mobile robots has inevitably increased in recent years. The increase in the companies that produce products in this field, the popularity of the studies in the robotic field and the technological competence to serve many different areas have revealed this increase in usage. The importance of mobile robots used as health, education, pro-d…",
-    "abstractExcerpt": true
+    "abstract": "The use of mobile robots has inevitably increased in recent years. The increase in the companies that produce products in this field, the popularity of the studies in the robotic field and the technological competence to serve many different areas have revealed this increase in usage. The importance of mobile robots used as health, education, pro-duction, logistics, defense industry and space equipment is now more important than before. The fact that robotic education can be reduced to a very young age, the production and coding of simple robots with easily accessible parts is also an important factor in this field. At this point, the effect of educational robots on the spread of robotic technol-ogy cannot be denied."
   }
 ]
