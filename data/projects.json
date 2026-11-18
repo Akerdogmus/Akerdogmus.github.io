@@ -8,6 +8,23 @@
     "summary": {
       "en": "Carbon-footprint monitoring for maritime transport: hyperspectral image analysis plus a vessel digital twin that tracks greenhouse-gas emissions along routes, for port authorities and EEXI/CII compliance.",
       "tr": "Deniz taşımacılığı için karbon ayak izi izleme: hiperspektral görüntü analizi ve gemilerin rotalarındaki sera gazı salımını izleyen dijital ikiz; liman otoriteleri ve EEXI/CII uyumu için."
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      },
+      {
+        "icon": "code",
+        "en": "Software development",
+        "tr": "Yazılım geliştirme"
+      }
+    ],
+    "deliverable": {
+      "icon": "wave",
+      "en": "Hyperspectral image analysis software (in development)",
+      "tr": "Hiperspektral görüntü analiz yazılımı (geliştiriliyor)"
     }
   },
   {
@@ -15,36 +32,69 @@
     "full": "Decarbonization Project Management Platform for Industries and Businesses",
     "icon": "leaf",
     "from": "2024-03",
-    "to": "2026-08",
+    "to": null,
     "summary": {
       "en": "A software platform that automates data collection, tracks energy-related carbon-reduction activities and reports them for funding and verification. EUROGIA2030 project with FARADAI, Cranfield University, Vestel and others.",
       "tr": "Veri toplamayı otomatikleştiren, enerjiyle ilgili karbon azaltım faaliyetlerini izleyip fonlama ve doğrulama için raporlayan yazılım platformu. FARADAI, Cranfield Üniversitesi, Vestel ve diğer ortaklarla EUROGIA2030 projesi."
     },
-    "left": true
+    "left": true,
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      }
+    ],
+    "my": {
+      "from": "2024-03",
+      "to": "2026-08"
+    }
   },
   {
     "name": "Sa4CPS",
     "full": "Secure situational awareness for critical cyber-physical systems",
     "icon": "shield",
     "from": "2024-03",
-    "to": "2026-08",
+    "to": null,
     "summary": {
       "en": "Secure situational awareness for ports and other critical cyber-physical systems, combining AI-enabled IoT with a zero-trust, distributed-ledger approach shared by multiple stakeholders.",
       "tr": "Limanlar ve diğer kritik siber-fiziksel sistemler için güvenli durumsal farkındalık; yapay zekâlı IoT'yi çok paydaşlı, sıfır güven ve dağıtık defter yaklaşımıyla birleştirir."
     },
-    "left": true
+    "left": true,
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      }
+    ],
+    "my": {
+      "from": "2024-03",
+      "to": "2026-08"
+    }
   },
   {
     "name": "SmartEM",
     "full": "Open reference architecture for engineering model spaces",
     "icon": "layers",
     "from": "2023-10",
-    "to": "2026-08",
+    "to": null,
     "summary": {
       "en": "A reference architecture for reusing, exchanging and combining engineering models, with AI-assisted surrogate models built from heterogeneous data and IP management for model exploitation.",
       "tr": "Mühendislik modellerinin yeniden kullanımı, paylaşımı ve birleştirilmesi için referans mimari; heterojen veriden yapay zekâ destekli vekil modeller ve model kullanımı için fikri mülkiyet yönetimi."
     },
-    "left": true
+    "left": true,
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      }
+    ],
+    "my": {
+      "from": "2023-10",
+      "to": "2026-08"
+    }
   },
   {
     "name": "OPEVA",
@@ -55,6 +105,23 @@
     "summary": {
       "en": "Tackles range anxiety, price and charging limits to speed up EV adoption. Co-funded by the Key Digital Technologies Joint Undertaking under Horizon Europe.",
       "tr": "Elektrikli araçların yaygınlaşması için menzil kaygısı, fiyat ve şarj kısıtlarını ele alır. Horizon Europe kapsamında Key Digital Technologies Joint Undertaking destekli."
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      },
+      {
+        "icon": "code",
+        "en": "Software development",
+        "tr": "Yazılım geliştirme"
+      }
+    ],
+    "deliverable": {
+      "icon": "battery",
+      "en": "Data acquisition software for electric vehicles",
+      "tr": "Elektrikli araçtan veri toplama yazılımı"
     }
   },
   {
@@ -66,6 +133,23 @@
     "summary": {
       "en": "A modular framework of transferable technology for synthetic image generation tailored to each application, usable at industrial scale.",
       "tr": "Uygulamaya göre uyarlanmış sentetik görüntü üretimi için endüstriyel ölçekte kullanılabilen, aktarılabilir teknolojilerden oluşan modüler çerçeve."
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      },
+      {
+        "icon": "code",
+        "en": "Software development",
+        "tr": "Yazılım geliştirme"
+      }
+    ],
+    "deliverable": {
+      "icon": "sparkles",
+      "en": "Synthetic image generation software (automotive)",
+      "tr": "Sentetik görüntü üretim yazılımı (otomotiv)"
     }
   },
   {
@@ -77,7 +161,14 @@
     "summary": {
       "en": "Research on DECT-2020 NR mesh radio for industrial IoT without spectrum licences: power-grid quality monitoring and machine condition monitoring towards digital twins.",
       "tr": "Spektrum lisansı gerektirmeyen endüstriyel IoT için DECT-2020 NR mesh radyo araştırması: elektrik şebekesi kalite izleme ve dijital ikize yönelik makine durum izleme."
-    }
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      }
+    ]
   },
   {
     "name": "EFICAS",
@@ -88,7 +179,14 @@
     "summary": {
       "en": "A scalable software platform for energy-efficient deployment of AI on heterogeneous multicore hardware, from local and distributed computation to cloud offloading.",
       "tr": "Yapay zekâ algoritmalarını heterojen çok çekirdekli donanımlarda enerji verimli çalıştıran ölçeklenebilir yazılım platformu; yerel, dağıtık ve bulut hesaplamayı kapsar."
-    }
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      }
+    ]
   },
   {
     "name": "MUWO",
@@ -99,6 +197,23 @@
     "summary": {
       "en": "Flexible, scalable production through multi-method workstations; a transmutable simulation validates configurations and AI/ML optimises the production setup.",
       "tr": "Çok yöntemli iş istasyonlarıyla esnek ve ölçeklenebilir üretim; dönüştürülebilir simülasyon yapılandırmayı doğrular, YZ/ML üretim düzenini optimize eder."
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      },
+      {
+        "icon": "code",
+        "en": "Software development",
+        "tr": "Yazılım geliştirme"
+      }
+    ],
+    "deliverable": {
+      "icon": "factory",
+      "en": "Factory digital twin software",
+      "tr": "Fabrika dijital ikiz yazılımı"
     }
   },
   {
@@ -110,6 +225,25 @@
     "summary": {
       "en": "ECSEL JU project building a multi-domain V&V framework to cut the time and cost of verifying automated systems for safety, cybersecurity and privacy. 41 partners from 10 countries.",
       "tr": "Otomatik sistemlerin emniyet, siber güvenlik ve mahremiyet doğrulamasının süre ve maliyetini düşüren çok alanlı V&V çerçevesi geliştiren ECSEL JU projesi. 10 ülkeden 41 ortak."
+    },
+    "contrib": [
+      {
+        "icon": "users",
+        "en": "R&D team lead",
+        "tr": "Ar-Ge ekip yürütücülüğü"
+      },
+      {
+        "icon": "code",
+        "en": "Software development",
+        "tr": "Yazılım geliştirme"
+      }
+    ],
+    "deliverable": {
+      "icon": "robot",
+      "en": "Robotic test application: CamFITool, camera fault injection for robot V&V",
+      "tr": "Robotik test uygulaması: robot doğrulaması için kamera hata enjeksiyon aracı CamFITool",
+      "url": "https://github.com/inomuh/camfitool",
+      "linkLabel": "GitHub"
     }
   }
 ]

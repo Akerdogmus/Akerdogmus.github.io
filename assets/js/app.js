@@ -9,6 +9,7 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
+      myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -38,6 +39,7 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
+      myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -238,6 +240,28 @@
       (badge ? '<span class="chead__badge">' + esc(badge) + '</span>' : '') + '</div>';
   }
 
+  // My share of the project's run so far (bar) + what I did (chips and a highlighted deliverable)
+  function involvement(p, now) {
+    var projEnd = p.to ? (p.to < now ? p.to : now) : now;
+    var my = p.my || {};
+    var myFrom = my.from || p.from, myTo = my.to || projEnd;
+    var total = monthsBetween(p.from, projEnd) || 1;
+    var mine = Math.min(total, monthsBetween(myFrom, myTo) || 0);
+    var pct = Math.round(mine / total * 100);
+    var offset = Math.round(((monthsBetween(p.from, myFrom) || 1) - 1) / total * 100);
+    var finished = p.to && p.to <= now;
+    var note = pct >= 100 ? (finished ? t('fullRun') : t('sinceStart')) : ym(myFrom) + ' – ' + ym(myTo);
+    var chips = (p.contrib || []).map(function (c) {
+      return '<span class="xchip">' + (ICON[c.icon + 'Sm'] || ICON[c.icon] || '') + esc(L(c)) + '</span>';
+    }).join('');
+    var dl = p.deliverable;
+    var deliverable = dl ? '<p class="proj__deliv"><span class="proj__delivIcon">' + (THEME_ICON[dl.icon] || '') + '</span><span>' + esc(L(dl)) +
+      (dl.url ? ' <a href="' + esc(dl.url) + '">' + esc(dl.linkLabel || 'link') + ' ↗</a>' : '') + '</span></p>' : '';
+    return '<div class="proj__inv"><div class="proj__invHead"><span>' + esc(t('myShare')) + '</span><span class="proj__pct">%' + pct + ' · ' + esc(note) + '</span></div>' +
+      '<div class="proj__bar" role="img" aria-label="' + esc(t('myShare') + ': %' + pct) + '"><span style="margin-left:' + offset + '%;width:' + Math.min(pct, 100 - offset) + '%"></span></div>' +
+      (chips ? '<div class="proj__chips">' + chips + '</div>' : '') + deliverable + '</div>';
+  }
+
   function renderProjects() {
     $('projectList').innerHTML = D.projects.map(function (p) {
       // Status: "left" = my part ended (project may go on); a future "to" = planned end, still active;
@@ -245,12 +269,13 @@
       var now = new Date().toISOString().slice(0, 7);
       var planned = p.to && p.to > now;
       var live = !p.left && !p.done && (!p.to || planned);
-      var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : (live ? ym(p.from) + ' –' : ym(p.from));
+      var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : ((live || p.left) ? ym(p.from) + ' –' : ym(p.from));
       var stateLabel = p.left ? t('left') : (live ? t('ongoing') : t('done'));
       return '<article class="card proj"><div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
         '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
         '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(stateLabel) + '</span></span></div></div>' +
-        '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p></article>';
+        '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p>' +
+        involvement(p, now) + '</article>';
     }).join('');
   }
 
