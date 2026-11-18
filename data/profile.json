@@ -1,7 +1,7 @@
 {
   "name": "Alim Kerem Erdoğmuş",
   "initials": "AKE",
-  "photo": "assets/img/avatar.webp",
+  "photo": "assets/img/avatar.webp?v=3",
   "handle": "akerdogmus",
   "status": {
     "en": "currently working on local & industrial LLMs",
@@ -161,5 +161,5 @@
     "url": "https://www.nobelyayin.com/ros-ile-robotik-uygulamalar-18224.html",
     "altUrl": "https://www.kitapyurdu.com/kitap/ros-ile-robotik-uygulamalar/614727.html"
   },
-  "photoAnim": "assets/img/avatar-anim.webp"
+  "photoAnim": "assets/img/avatar-anim.webp?v=3"
 }
