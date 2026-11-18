@@ -9,7 +9,7 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
-      demo: 'demo', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
+      demo: 'demo', toProject: 'Go to the project card', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -39,7 +39,7 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
-      demo: 'demo', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
+      demo: 'demo', toProject: 'Proje kartına git', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -241,6 +241,22 @@
       (badge ? '<span class="chead__badge">' + esc(badge) + '</span>' : '') + '</div>';
   }
 
+  function projId(name) { return 'proj-' + String(name).toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
+
+  // Jump from a publication's project tag to the project card and make the card flash briefly
+  function focusProject(name) {
+    var el = document.getElementById(projId(name));
+    if (!el) return false;
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    el.classList.remove('proj--flash'); void el.offsetWidth;   // restart the animation on repeated clicks
+    el.classList.add('proj--flash');
+    clearTimeout(el._flashT); el._flashT = setTimeout(function () { el.classList.remove('proj--flash'); }, 3200);
+    try { el.focus({ preventScroll: true }); } catch (e) {}
+    if (history.replaceState) history.replaceState(null, '', '#' + projId(name));
+    return true;
+  }
+
   // Card media: silent loop (poster when the visitor prefers reduced motion), logo or figure.
   // Cards without media keep an empty slot so rows stay aligned.
   function projMedia(p) {
@@ -294,7 +310,7 @@
       var live = !p.left && !p.done && (!p.to || planned);
       var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : ((live || p.left) ? ym(p.from) + ' –' : ym(p.from));
       var stateLabel = p.left ? t('left') : (live ? t('ongoing') : t('done'));
-      return '<article class="card proj' + (p.media ? '' : ' proj--nomedia') + '">' + projMedia(p) + '<div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
+      return '<article class="card proj' + (p.media ? '' : ' proj--nomedia') + '" id="' + projId(p.name) + '" tabindex="-1">' + projMedia(p) + '<div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
         '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
         '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(stateLabel) + '</span></span></div></div>' +
         '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p>' +
@@ -343,7 +359,10 @@
           '<span class="paper__meta"><span>' + p.year + '</span><span>·</span><span>' + esc(p.venue) + '</span>' +
           '<span class="badge">' + esc(types[p.type] || p.type) + '</span>' +
           (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') +
-          (p.doi ? '<a class="badge badge--doi" href="https://doi.org/' + esc(p.doi) + '">DOI ' + esc(p.doi) + '</a>' : '') + '</span></li>';
+          (p.doi ? '<a class="badge badge--doi" href="https://doi.org/' + esc(p.doi) + '">DOI ' + esc(p.doi) + '</a>' : '') +
+          (p.projects || []).map(function (n) {
+            return '<a class="badge badge--proj" href="#' + projId(n) + '" data-proj="' + esc(n) + '" title="' + esc(t('toProject')) + '">' + ICON.folderSm + esc(n) + '</a>';
+          }).join('') + '</span></li>';
       }).join('');
       // project tag becomes the shared amber header; paper count is its pill
       return '<article class="card theme">' + cardHead(ICON.folderSm, '// ' + L(th.project), t('papers')(ps.length)) +
@@ -411,6 +430,8 @@
   }
 
   document.addEventListener('click', function (e) {
+    var pt = e.target.closest('[data-proj]');
+    if (pt && focusProject(pt.getAttribute('data-proj'))) { e.preventDefault(); return; }
     var tab = e.target.closest('[data-theme]');
     if (tab) { state.theme = tab.getAttribute('data-theme'); renderThemes(); return; }
     var sh = e.target.closest('[data-shot]');
@@ -430,6 +451,9 @@
     .then(function (r) {
       D = { profile: r[0], pubs: r[1].slice().sort(function (a, b) { return b.year - a.year; }), themes: r[2], apps: r[3], experience: r[4], projects: r[5] };
       renderAll();
+      // a shared link like #proj-valu3s lands on and highlights that card
+      var hit = D.projects.filter(function (p) { return '#' + projId(p.name) === location.hash; })[0];
+      if (hit) focusProject(hit.name);
     })
     .catch(function () {
       $('themes').innerHTML = '<p class="error">' + esc(t('loadError')) + '</p>';

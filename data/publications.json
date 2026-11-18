@@ -8,7 +8,10 @@
     "type": "conference",
     "theme": "other",
     "url": "https://www.researchgate.net/publication/415570147_Eslestirilmis_Suzgec_Kestiricisinde_Kazanc_Yanliligi_ve_Karar_Kapisi_spectgen_ile_EMIT_Sahnelerinde_Kapali_Dongu_Dogrulama_Gain_Bias_and_the_Decision_Gate_in_a_Matched_Filter_Estimator_Closed-Loop_Val",
-    "fullText": true
+    "fullText": true,
+    "projects": [
+      "CLEARS"
+    ]
   },
   {
     "year": 2025,
@@ -18,7 +21,10 @@
     "type": "conference",
     "theme": "genai",
     "url": "https://doi.org/10.1109/ASYU67174.2025.11208487",
-    "doi": "10.1109/ASYU67174.2025.11208487"
+    "doi": "10.1109/ASYU67174.2025.11208487",
+    "projects": [
+      "TASTI"
+    ]
   },
   {
     "year": 2025,
@@ -28,7 +34,10 @@
     "type": "conference",
     "theme": "genai",
     "url": "https://doi.org/10.1109/ASYU67174.2025.11208495",
-    "doi": "10.1109/ASYU67174.2025.11208495"
+    "doi": "10.1109/ASYU67174.2025.11208495",
+    "projects": [
+      "TASTI"
+    ]
   },
   {
     "year": 2025,
@@ -38,7 +47,10 @@
     "type": "conference",
     "theme": "nocode",
     "url": "https://doi.org/10.1109/ASYU67174.2025.11208481",
-    "doi": "10.1109/ASYU67174.2025.11208481"
+    "doi": "10.1109/ASYU67174.2025.11208481",
+    "projects": [
+      "EFICAS"
+    ]
   },
   {
     "year": 2025,
@@ -49,7 +61,10 @@
     "theme": "ev",
     "url": "https://doi.org/10.1016/j.dib.2025.111933",
     "doi": "10.1016/j.dib.2025.111933",
-    "fullText": true
+    "fullText": true,
+    "projects": [
+      "OPEVA"
+    ]
   },
   {
     "year": 2025,
@@ -59,7 +74,10 @@
     "type": "article",
     "theme": "vv",
     "url": "https://doi.org/10.5505/pajes.2025.37200",
-    "doi": "10.5505/pajes.2025.37200"
+    "doi": "10.5505/pajes.2025.37200",
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2025,
@@ -69,7 +87,10 @@
     "type": "conference",
     "theme": "ev",
     "url": "https://doi.org/10.23919/DATE64628.2025.10992740",
-    "doi": "10.23919/DATE64628.2025.10992740"
+    "doi": "10.23919/DATE64628.2025.10992740",
+    "projects": [
+      "OPEVA"
+    ]
   },
   {
     "year": 2024,
@@ -79,7 +100,10 @@
     "type": "conference",
     "theme": "genai",
     "url": "https://doi.org/10.1109/ASYU62119.2024.10757052",
-    "doi": "10.1109/ASYU62119.2024.10757052"
+    "doi": "10.1109/ASYU62119.2024.10757052",
+    "projects": [
+      "TASTI"
+    ]
   },
   {
     "year": 2024,
@@ -90,7 +114,10 @@
     "type": "conference",
     "theme": "ev",
     "url": "https://www.researchgate.net/publication/386370896_Real-Time_Data_Acquisition_Device_and_HMI_Panel_Development_for_Electric_Vehicles_Sample_Application_on_Musoshi_L5_EV",
-    "fullText": true
+    "fullText": true,
+    "projects": [
+      "OPEVA"
+    ]
   },
   {
     "year": 2024,
@@ -100,7 +127,10 @@
     "venue": "TOK 2024 — Otomatik Kontrol Ulusal Toplantısı",
     "type": "conference",
     "theme": "nocode",
-    "url": "https://www.researchgate.net/publication/386372688_Endustriyel_Alanlarda_Uzman_Olmayanlar_icin_Kodsuz_Yapay_Zeka_Uygulama_Gelistirme_Platformu_No_Code_Artificial_Intelligence_Application_Development_Platform_for_Non-Experts_in_Industrial_Areas"
+    "url": "https://www.researchgate.net/publication/386372688_Endustriyel_Alanlarda_Uzman_Olmayanlar_icin_Kodsuz_Yapay_Zeka_Uygulama_Gelistirme_Platformu_No_Code_Artificial_Intelligence_Application_Development_Platform_for_Non-Experts_in_Industrial_Areas",
+    "projects": [
+      "EFICAS"
+    ]
   },
   {
     "year": 2024,
@@ -111,7 +141,10 @@
     "type": "article",
     "theme": "vv",
     "url": "https://doi.org/10.31796/ogummf.1348531",
-    "doi": "10.31796/ogummf.1348531"
+    "doi": "10.31796/ogummf.1348531",
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2023,
@@ -121,7 +154,10 @@
     "type": "conference",
     "theme": "vv",
     "url": "https://doi.org/10.1109/ASYU58738.2023.10296576",
-    "doi": "10.1109/ASYU58738.2023.10296576"
+    "doi": "10.1109/ASYU58738.2023.10296576",
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2022,
@@ -131,7 +167,10 @@
     "type": "article",
     "theme": "vv",
     "url": "https://doi.org/10.31796/ogummf.1054761",
-    "doi": "10.31796/ogummf.1054761"
+    "doi": "10.31796/ogummf.1054761",
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2022,
@@ -171,7 +210,10 @@
     "venue": "TOK 2021 — Otomatik Kontrol Türk Milli Komitesi Ulusal Kongresi",
     "type": "conference",
     "theme": "vv",
-    "url": "https://www.researchgate.net/publication/362093902_Arac_Saselerinin_Kalite_Kontrolu_icin_Simulasyon_Tabanli_Otonom_Endustriyel_Robot_Test_Sistemi_Gelistirilmesi_Development_of_Simulation_based_testing_for_automated_robot_cell_for_quality_inspection_of"
+    "url": "https://www.researchgate.net/publication/362093902_Arac_Saselerinin_Kalite_Kontrolu_icin_Simulasyon_Tabanli_Otonom_Endustriyel_Robot_Test_Sistemi_Gelistirilmesi_Development_of_Simulation_based_testing_for_automated_robot_cell_for_quality_inspection_of",
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2021,
@@ -183,7 +225,10 @@
     "theme": "vv",
     "url": "https://doi.org/10.53525/jster.979689",
     "doi": "10.53525/jster.979689",
-    "fullText": true
+    "fullText": true,
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2021,
@@ -193,7 +238,10 @@
     "type": "preprint",
     "theme": "vv",
     "url": "https://www.researchgate.net/publication/354268595_Manipulation_of_Camera_Sensor_Data_via_Fault_Injection_for_Anomaly_Detection_Studies_in_Verification_and_Validation_Activities_For_AI",
-    "fullText": true
+    "fullText": true,
+    "projects": [
+      "VALU3S"
+    ]
   },
   {
     "year": 2021,
