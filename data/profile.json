@@ -8,6 +8,12 @@
     { "icon": "briefcase", "title": "AI Tech Lead", "org": "ACD Veri Mühendisliği" },
     { "icon": "cap", "title": { "en": "MSc student, Electrical & Electronics Eng.", "tr": "Yüksek lisans, Elektrik-Elektronik Müh." }, "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" } }
   ],
+  "thesis": {
+    "title": "Quality Guided Synthetic Data Augmentation Methodology for Image Classification with Few Samples",
+    "type": { "en": "MSc thesis", "tr": "Yüksek lisans tezi" },
+    "year": 2026,
+    "ref": "10831298"
+  },
   "focus": [
     { "icon": "chip", "label": { "en": "Local LLMs", "tr": "Lokal LLM" } },
     { "icon": "sparkles", "label": { "en": "Generative AI", "tr": "Üretken YZ" } },
