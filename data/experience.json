@@ -25,7 +25,7 @@
     "icon": "cap",
     "roles": [
       { "title": { "en": "MSc", "tr": "Yüksek lisans" }, "icon": "doc", "from": "2025", "to": null },
-      { "title": { "en": "BSc", "tr": "Lisans" }, "icon": "book", "from": "2013-09", "to": "2019-10" }
+      { "title": { "en": "BSc", "tr": "Lisans" }, "icon": "book" }
     ]
   }
 ]

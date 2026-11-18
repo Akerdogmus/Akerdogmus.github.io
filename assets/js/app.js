@@ -209,14 +209,14 @@
       var current = e.roles.some(function (r) { return !r.to; });
       var orgDur = e.kind === 'work' ? dur(monthsBetween(orgFrom, current ? null : e.roles[0].to)) : '';
       var roles = e.roles.map(function (r) {
-        var now = !r.to;
+        var now = !!r.from && !r.to;   // a role without dates is shown without a date line
         var when = r.from ? ym(r.from) + ' – ' + (r.to ? ym(r.to) : t('present')) : '';
         var d = dur(monthsBetween(r.from, r.to));
         var chips = (d ? '<span class="xchip">' + ICON.clockSm + esc(d) + '</span>' : '') +
           (r.mode ? '<span class="xchip">' + (r.mode === 'hybrid' ? ICON.homeSm : ICON.buildingSm) + esc(t('mode')[r.mode]) + '</span>' : '') +
           (now ? '<span class="xchip xchip--now">' + esc(t('now')) + '</span>' : '');
         return '<li class="exp__role' + (now ? ' exp__role--now' : '') + '"><span class="exp__node" aria-hidden="true">' + (ICON[r.icon + 'Sm'] || ICON.dotSm) + '</span>' +
-          '<span class="exp__body"><b>' + esc(L(r.title)) + '</b><span class="exp__when">' + esc(when) + '</span>' +
+          '<span class="exp__body"><b>' + esc(L(r.title)) + '</b>' + (when ? '<span class="exp__when">' + esc(when) + '</span>' : '') +
           (chips ? '<span class="exp__chips">' + chips + '</span>' : '') + '</span></li>';
       }).join('');
       return '<div class="exp__org"><div class="exp__head"><span class="ico ico--soft">' + (ICON[e.icon] || '') + '</span>' +
