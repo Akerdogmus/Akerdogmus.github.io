@@ -3,22 +3,66 @@
   "initials": "AKE",
   "photo": "assets/img/avatar.webp",
   "handle": "akerdogmus",
-  "status": { "en": "currently working on local & industrial LLMs", "tr": "şu an: lokal ve endüstriyel LLM'ler üzerine çalışıyor" },
+  "status": {
+    "en": "currently working on local & industrial LLMs",
+    "tr": "şu an: lokal ve endüstriyel LLM'ler üzerine çalışıyor"
+  },
   "roles": [
-    { "icon": "briefcase", "title": "AI Tech Lead", "org": "ACD Veri Mühendisliği" },
-    { "icon": "cap", "title": { "en": "MSc student, Electrical & Electronics Eng.", "tr": "Yüksek lisans, Elektrik-Elektronik Müh." }, "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" } }
+    {
+      "icon": "briefcase",
+      "title": "AI Tech Lead",
+      "org": "ACD Veri Mühendisliği"
+    },
+    {
+      "icon": "cap",
+      "title": {
+        "en": "MSc student, Electrical & Electronics Eng.",
+        "tr": "Yüksek lisans, Elektrik-Elektronik Müh."
+      },
+      "org": {
+        "en": "Eskişehir Osmangazi University",
+        "tr": "Eskişehir Osmangazi Üniversitesi"
+      }
+    }
   ],
   "thesis": {
     "title": "Quality Guided Synthetic Data Augmentation Methodology for Image Classification with Few Samples",
-    "type": { "en": "MSc thesis", "tr": "Yüksek lisans tezi" },
+    "type": {
+      "en": "MSc thesis",
+      "tr": "Yüksek lisans tezi"
+    },
     "year": 2026,
     "ref": "10831298"
   },
   "focus": [
-    { "icon": "chip", "label": { "en": "Local LLMs", "tr": "Lokal LLM" } },
-    { "icon": "sparkles", "label": { "en": "Generative AI", "tr": "Üretken YZ" } },
-    { "icon": "robot", "label": { "en": "Robotics V&V", "tr": "Robotik V&V" } },
-    { "icon": "eye", "label": { "en": "Visual inspection", "tr": "Görsel denetim" } }
+    {
+      "icon": "chip",
+      "label": {
+        "en": "Local LLMs",
+        "tr": "Lokal LLM"
+      }
+    },
+    {
+      "icon": "sparkles",
+      "label": {
+        "en": "Generative AI",
+        "tr": "Üretken YZ"
+      }
+    },
+    {
+      "icon": "robot",
+      "label": {
+        "en": "Robotics V&V",
+        "tr": "Robotik V&V"
+      }
+    },
+    {
+      "icon": "eye",
+      "label": {
+        "en": "Visual inspection",
+        "tr": "Görsel denetim"
+      }
+    }
   ],
   "summary": [
     {
@@ -37,26 +81,64 @@
       "tr": "Bugünkü odağım, verinin kurum dışına çıkmadığı lokal ve endüstriyel LLM uygulamaları."
     }
   ],
-  "location": { "en": "Eskişehir, TR", "tr": "Eskişehir, Türkiye" },
+  "location": {
+    "en": "Eskişehir, TR",
+    "tr": "Eskişehir, Türkiye"
+  },
   "links": [
-    { "label": "github/Akerdogmus", "url": "https://github.com/Akerdogmus", "icon": "code" },
-    { "label": "linkedin/alim-kerem-erdogmus", "url": "https://www.linkedin.com/in/alim-kerem-erdogmus/", "icon": "linkedin" },
-    { "label": "researchgate", "url": "https://www.researchgate.net/profile/Alim-Erdogmus", "icon": "book" }
+    {
+      "label": "github/Akerdogmus",
+      "url": "https://github.com/Akerdogmus",
+      "icon": "code"
+    },
+    {
+      "label": "linkedin/alim-kerem-erdogmus",
+      "url": "https://www.linkedin.com/in/alim-kerem-erdogmus/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "researchgate",
+      "url": "https://www.researchgate.net/profile/Alim-Erdogmus",
+      "icon": "book"
+    }
   ],
   "stats": {
     "source": "researchgate",
     "asOf": "2026-11",
     "items": [
-      { "key": "publications", "value": "21" },
-      { "key": "books", "value": "1" },
-      { "key": "citations", "value": "46" },
-      { "key": "reads", "value": "1,575" }
+      {
+        "key": "publications",
+        "value": "21"
+      },
+      {
+        "key": "citations",
+        "value": "46"
+      },
+      {
+        "key": "hindex",
+        "value": "5"
+      },
+      {
+        "key": "ris",
+        "value": "38.6"
+      },
+      {
+        "key": "books",
+        "value": "1"
+      },
+      {
+        "key": "reads",
+        "value": "1,575"
+      }
     ]
   },
   "book": {
     "title": "ROS ile Robotik Uygulamalar",
     "publisher": "Nobel Akademik Yayıncılık",
-    "edition": { "en": "2nd edition, February 2024", "tr": "2. baskı, Şubat 2024" },
+    "edition": {
+      "en": "2nd edition, February 2024",
+      "tr": "2. baskı, Şubat 2024"
+    },
     "editor": "Prof. Dr. Ahmet Yazıcı",
     "cover": "assets/img/book-cover.webp",
     "pages": 200,
