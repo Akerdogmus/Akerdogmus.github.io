@@ -17,7 +17,8 @@
     "venue": "ASYU 2025",
     "type": "conference",
     "theme": "genai",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU67174.2025.11208487",
+    "doi": "10.1109/ASYU67174.2025.11208487"
   },
   {
     "year": 2025,
@@ -26,7 +27,8 @@
     "venue": "ASYU 2025",
     "type": "conference",
     "theme": "genai",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU67174.2025.11208495",
+    "doi": "10.1109/ASYU67174.2025.11208495"
   },
   {
     "year": 2025,
@@ -35,7 +37,8 @@
     "venue": "ASYU 2025",
     "type": "conference",
     "theme": "nocode",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU67174.2025.11208481",
+    "doi": "10.1109/ASYU67174.2025.11208481"
   },
   {
     "year": 2025,
@@ -44,7 +47,8 @@
     "venue": "Data in Brief",
     "type": "article",
     "theme": "ev",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research",
+    "url": "https://doi.org/10.1016/j.dib.2025.111933",
+    "doi": "10.1016/j.dib.2025.111933",
     "fullText": true
   },
   {
@@ -54,16 +58,18 @@
     "venue": "Pamukkale University Journal of Engineering Sciences",
     "type": "article",
     "theme": "vv",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.5505/pajes.2025.37200",
+    "doi": "10.5505/pajes.2025.37200"
   },
   {
     "year": 2025,
     "title": "Multi-Partner Project: Electric Vehicle Data Acquisition and Valorisation: A Perspective from the OPEVA Project",
     "authors": "A. Kanak, S. Ergün, I. Arif, … F. Gelati",
-    "venue": "Conference paper",
+    "venue": "DATE 2025 — Design, Automation & Test in Europe",
     "type": "conference",
     "theme": "ev",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.23919/DATE64628.2025.10992740",
+    "doi": "10.23919/DATE64628.2025.10992740"
   },
   {
     "year": 2024,
@@ -72,7 +78,8 @@
     "venue": "ASYU 2024",
     "type": "conference",
     "theme": "genai",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU62119.2024.10757052",
+    "doi": "10.1109/ASYU62119.2024.10757052"
   },
   {
     "year": 2024,
@@ -103,7 +110,8 @@
     "venue": "Eskişehir Osmangazi Üniversitesi Mühendislik ve Mimarlık Fakültesi Dergisi",
     "type": "article",
     "theme": "vv",
-    "url": "https://dergipark.org.tr/tr/pub/ogummf/issue/84150/1348531"
+    "url": "https://doi.org/10.31796/ogummf.1348531",
+    "doi": "10.31796/ogummf.1348531"
   },
   {
     "year": 2023,
@@ -112,7 +120,8 @@
     "venue": "ASYU 2023",
     "type": "conference",
     "theme": "vv",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU58738.2023.10296576",
+    "doi": "10.1109/ASYU58738.2023.10296576"
   },
   {
     "year": 2022,
@@ -121,7 +130,8 @@
     "venue": "Eskişehir Osmangazi Üniversitesi Mühendislik ve Mimarlık Fakültesi Dergisi",
     "type": "article",
     "theme": "vv",
-    "url": "https://dergipark.org.tr/en/pub/ogummf/issue/74024/1054761"
+    "url": "https://doi.org/10.31796/ogummf.1054761",
+    "doi": "10.31796/ogummf.1054761"
   },
   {
     "year": 2022,
@@ -130,7 +140,8 @@
     "venue": "Bilecik Şeyh Edebali Üniversitesi Fen Bilimleri Dergisi",
     "type": "article",
     "theme": "edu",
-    "url": "https://dergipark.org.tr/en/pub/bseufbd/issue/70447/1089501"
+    "url": "https://doi.org/10.35193/bseufbd.1089501",
+    "doi": "10.35193/bseufbd.1089501"
   },
   {
     "year": 2021,
@@ -146,10 +157,11 @@
     "year": 2021,
     "title": "Fuzzy-based Health Monitoring and Voice Assistance Featured Autonomous Elderly Care Service Robot",
     "authors": "M. B. Yelaldi, V. Öztürk, A. Gün, … R. Edizkan",
-    "venue": "Conference paper",
+    "venue": "ASYU 2021",
     "type": "conference",
     "theme": "other",
-    "url": "https://www.researchgate.net/profile/Alim-Erdogmus/research"
+    "url": "https://doi.org/10.1109/ASYU52992.2021.9598966",
+    "doi": "10.1109/ASYU52992.2021.9598966"
   },
   {
     "year": 2021,
@@ -169,7 +181,8 @@
     "venue": "Journal of Scientific Technology and Engineering Research",
     "type": "article",
     "theme": "vv",
-    "url": "https://dergipark.org.tr/tr/pub/jster/issue/61588/979689",
+    "url": "https://doi.org/10.53525/jster.979689",
+    "doi": "10.53525/jster.979689",
     "fullText": true
   },
   {
@@ -189,7 +202,8 @@
     "venue": "IEEE INISTA 2021",
     "type": "conference",
     "theme": "edu",
-    "url": "https://ieeexplore.ieee.org/document/9548503"
+    "url": "https://doi.org/10.1109/INISTA52262.2021.9548503",
+    "doi": "10.1109/INISTA52262.2021.9548503"
   },
   {
     "year": 2020,

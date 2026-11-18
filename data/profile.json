@@ -1,8 +1,9 @@
 {
   "name": "Alim Kerem Erdoğmuş",
   "initials": "AKE",
+  "photo": "assets/img/avatar.webp",
   "handle": "akerdogmus",
-  "status": { "en": "open to collaboration", "tr": "iş birliğine açık" },
+  "status": { "en": "now: local & industrial LLMs", "tr": "şu an: lokal ve endüstriyel LLM'ler" },
   "roles": {
     "en": ["AI Tech Lead, ACD Veri Mühendisliği", "MSc student, Eskişehir Osmangazi University"],
     "tr": ["AI Tech Lead, ACD Veri Mühendisliği", "Yüksek lisans öğrencisi, Eskişehir Osmangazi Üniversitesi"]
@@ -14,6 +15,7 @@
   "location": { "en": "Eskişehir, TR", "tr": "Eskişehir, Türkiye" },
   "links": [
     { "label": "github/Akerdogmus", "url": "https://github.com/Akerdogmus", "icon": "code" },
+    { "label": "linkedin/alim-kerem-erdogmus", "url": "https://www.linkedin.com/in/alim-kerem-erdogmus/", "icon": "linkedin" },
     { "label": "researchgate", "url": "https://www.researchgate.net/profile/Alim-Erdogmus", "icon": "book" }
   ],
   "stats": {
@@ -29,6 +31,9 @@
   "book": {
     "title": "ROS ile Robotik Uygulamalar",
     "publisher": "Nobel Akademik Yayıncılık",
+    "edition": { "en": "2nd edition, February 2024", "tr": "2. baskı, Şubat 2024" },
+    "editor": "Prof. Dr. Ahmet Yazıcı",
+    "cover": "assets/img/book-cover.webp",
     "pages": 200,
     "isbn": "978-625-417-418-6",
     "authors": "Uğur Yayan, Alim Kerem Erdoğmuş",

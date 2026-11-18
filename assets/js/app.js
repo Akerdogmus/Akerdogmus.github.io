@@ -17,7 +17,7 @@
       stat: { publications: 'publications', books: 'books', citations: 'citations', reads: 'reads' },
       asOf: 'as of',
       book: '// book', viewBook: 'View book →', otherStore: 'Kitapyurdu',
-      pages: 'pp',
+      pages: 'pp', editor: 'Editor', coverAlt: 'Cover of the book ROS ile Robotik Uygulamalar',
       liveDemo: 'Live demo ↗', source: 'Source code', screenshots: 'Screenshots',
       type: { article: 'Article', conference: 'Conference', preprint: 'Preprint' },
       fullText: 'full text',
@@ -37,7 +37,7 @@
       stat: { publications: 'yayın', books: 'kitap', citations: 'atıf', reads: 'okunma' },
       asOf: 'tarih',
       book: '// kitap', viewBook: 'Kitabı incele →', otherStore: 'Kitapyurdu',
-      pages: 's.',
+      pages: 's.', editor: 'Editör', coverAlt: 'ROS ile Robotik Uygulamalar kitabının kapağı',
       liveDemo: 'Canlı demo ↗', source: 'Kaynak kod', screenshots: 'Ekran görüntüleri',
       type: { article: 'Makale', conference: 'Bildiri', preprint: 'Ön baskı' },
       fullText: 'tam metin',
@@ -48,6 +48,7 @@
   var ICON = {
     code: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
     book: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
+    linkedin: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>',
     pin: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
     codeSm: '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'
   };
@@ -82,7 +83,7 @@
 
   function renderProfile() {
     var p = D.profile;
-    var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="">' : esc(p.initials);
+    var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="88" height="88">' : esc(p.initials);
     var links = p.links.map(function (l) { return '<a href="' + esc(l.url) + '">' + (ICON[l.icon] || '') + esc(l.label) + '</a>'; }).join('');
     $('profile').innerHTML =
       '<div class="avatar" aria-hidden="true">' + avatar + '</div>' +
@@ -135,7 +136,8 @@
           '<span class="paper__auth">' + esc(p.authors) + '</span>' +
           '<span class="paper__meta"><span>' + p.year + '</span><span>·</span><span>' + esc(p.venue) + '</span>' +
           '<span class="badge">' + esc(types[p.type] || p.type) + '</span>' +
-          (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') + '</span></li>';
+          (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') +
+          (p.doi ? '<a class="badge badge--doi" href="https://doi.org/' + esc(p.doi) + '">DOI ' + esc(p.doi) + '</a>' : '') + '</span></li>';
       }).join('');
       return '<article class="card theme"><div class="theme__info"><span class="chip">' + esc(L(th.project)) + '</span>' +
         '<h3 class="theme__name">' + esc(L(th.name)) + '</h3><p class="theme__desc">' + esc(L(th.description)) + '</p>' +
@@ -147,10 +149,13 @@
   function renderBook() {
     var b = D.profile.book;
     $('book').innerHTML =
-      '<div class="cover" aria-hidden="true"><small>NOBEL AKADEMİK</small><strong>' + esc(b.title) + '</strong></div>' +
+      (b.cover
+        ? '<img class="cover cover--img" src="' + esc(b.cover) + '" alt="' + esc(t('coverAlt')) + '" width="205" height="300">'
+        : '<div class="cover" aria-hidden="true"><small>NOBEL AKADEMİK</small><strong>' + esc(b.title) + '</strong></div>') +
       '<div class="book__body"><p class="eyebrow">' + esc(t('book')) + '</p><h2 id="bookTitle" class="book__title">' + esc(b.title) + '</h2>' +
       '<p class="book__desc">' + esc(L(b.description)) + '</p>' +
-      '<p class="book__meta">' + esc(b.publisher) + ' · ' + b.pages + ' ' + esc(t('pages')) + ' · ISBN ' + esc(b.isbn) + '</p></div>' +
+      '<p class="book__meta">' + esc(b.publisher) + (b.edition ? ' · ' + esc(L(b.edition)) : '') + ' · ' + b.pages + ' ' + esc(t('pages')) + ' · ISBN ' + esc(b.isbn) + '</p>' +
+      (b.editor ? '<p class="book__meta">' + esc(t('editor')) + ': ' + esc(b.editor) + '</p>' : '') + '</div>' +
       '<div class="book__actions"><a class="btn btn--outline" href="' + esc(b.url) + '">' + esc(t('viewBook')) + '</a>' +
       (b.altUrl ? '<a class="btn" href="' + esc(b.altUrl) + '">' + esc(t('otherStore')) + '</a>' : '') + '</div>';
   }
