@@ -9,7 +9,9 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me', statsTitle: '// stats', profileTitle: '// profile', liveBadge: '● live',
-      demo: 'demo', toProject: 'Go to the project card', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
+      demo: 'demo', toProject: 'Go to the project card',
+      pubCard: '// publication', abstract: 'Abstract', close: 'Close', readDoi: 'Read (publisher)', readRG: 'Read on ResearchGate', readSource: 'Read',
+      excerpt: 'Only the beginning of the abstract is available here; the full text is at the link below.', noAbstract: 'The abstract is not available here; use the link below to read the paper.', myShare: 'my involvement', fullRun: 'start to finish', sinceStart: 'since the start',
       units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
       yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
@@ -39,7 +41,9 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda', statsTitle: '// istatistikler', profileTitle: '// profil', liveBadge: '● canlı',
-      demo: 'demo', toProject: 'Proje kartına git', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
+      demo: 'demo', toProject: 'Proje kartına git',
+      pubCard: '// yayın', abstract: 'Özet', close: 'Kapat', readDoi: 'Oku (yayıncı)', readRG: "ResearchGate'te oku", readSource: 'Oku',
+      excerpt: 'Burada özetin yalnızca başı var; tamamı aşağıdaki bağlantıda.', noAbstract: 'Bu yayının özeti burada yok; okumak için aşağıdaki bağlantıyı kullanın.', myShare: 'projedeki katılımım', fullRun: 'baştan sona', sinceStart: 'başından beri',
       units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
       yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
@@ -353,7 +357,8 @@
       var icon = THEME_ICON[th.icon || THEME_DEFAULT_ICON[th.id]] || THEME_ICON.wave;
       var repos = (th.repos || []).map(function (r) { return '<a class="repo" href="' + esc(r.url) + '">' + ICON.codeSm + esc(r.name) + '</a>'; }).join('');
       var papers = ps.map(function (p) {
-        return '<li class="paper"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a>' +
+        // the title opens a card with the abstract; the direct link is still there for no-JS/ctrl-click
+        return '<li class="paper"><a class="paper__title" href="' + esc(p.url) + '" data-pub="' + D.pubs.indexOf(p) + '" aria-haspopup="dialog">' + esc(p.title) + '</a>' +
           (p.titleAlt ? '<span class="paper__alt">' + esc(p.titleAlt) + '</span>' : '') +
           '<span class="paper__auth">' + esc(p.authors) + '</span>' +
           '<span class="paper__meta"><span>' + p.year + '</span><span>·</span><span>' + esc(p.venue) + '</span>' +
@@ -429,7 +434,58 @@
     renderStatic(); renderProfile(); renderExperience(); renderStats(); renderProjects(); renderThemes(); renderBook(); renderApps();
   }
 
+  // ---- Publication card (abstract + read link) ----
+  function openPub(i) {
+    var p = D.pubs[i], dlg = $('pubModal');
+    if (!p || !dlg) return false;
+    var types = t('type');
+    var isDoi = !!p.doi;
+    var readUrl = p.url;
+    var readLabel = isDoi ? t('readDoi') : (/researchgate/.test(readUrl) ? t('readRG') : t('readSource'));
+    var projects = (p.projects || []).map(function (n) {
+      return '<a class="badge badge--proj" href="#' + projId(n) + '" data-proj="' + esc(n) + '">' + ICON.folderSm + esc(n) + '</a>';
+    }).join('');
+    dlg.innerHTML =
+      '<div class="modal__card">' + cardHead(ICON.docSm, t('pubCard'), types[p.type] || p.type) +
+      '<div class="modal__body">' +
+      '<p class="modal__meta">' + p.year + ' · ' + esc(p.venue) + '</p>' +
+      '<h3 id="pubModalTitle" class="modal__title">' + esc(p.title) + '</h3>' +
+      (p.titleAlt ? '<p class="modal__alt">' + esc(p.titleAlt) + '</p>' : '') +
+      '<p class="modal__authors">' + esc(p.authors) + '</p>' +
+      '<p class="modal__label">' + esc(t('abstract')) + '</p>' +
+      (p.abstract
+        ? '<div class="modal__abstract"><p>' + esc(p.abstract) + '</p>' + (p.abstractExcerpt ? '<p class="modal__note">' + esc(t('excerpt')) + '</p>' : '') + '</div>'
+        : '<p class="modal__note">' + esc(t('noAbstract')) + '</p>') +
+      ((projects || p.fullText) ? '<div class="modal__tags">' + projects + (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') + '</div>' : '') +
+      '</div>' +
+      '<div class="modal__actions"><a class="btn btn--primary" href="' + esc(readUrl) + '" target="_blank" rel="noopener">' + esc(readLabel) + ' ↗</a>' +
+      (isDoi ? '<span class="modal__doi">DOI ' + esc(p.doi) + '</span>' : '') +
+      '<button type="button" class="btn modal__close" data-close>' + esc(t('close')) + '</button></div></div>';
+    dlg._returnTo = document.activeElement;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    var c = dlg.querySelector('[data-close]'); if (c) c.focus();
+    return true;
+  }
+  // Esc closes the native dialog; give focus back to the title that opened it
+  if ($('pubModal')) $('pubModal').addEventListener('close', function () {
+    var d = $('pubModal'); if (d._returnTo && d._returnTo.focus) { d._returnTo.focus(); d._returnTo = null; }
+  });
+  function closePub() {
+    var dlg = $('pubModal');
+    if (!dlg || !dlg.open) return;
+    if (dlg.close) dlg.close(); else dlg.removeAttribute('open');
+    if (dlg._returnTo && dlg._returnTo.focus) dlg._returnTo.focus();
+  }
+
   document.addEventListener('click', function (e) {
+    var dlg = $('pubModal');
+    if (dlg && dlg.open) {
+      if (e.target === dlg || e.target.closest('[data-close]')) { closePub(); return; }   // backdrop or close button
+      var inside = e.target.closest('[data-proj]');
+      if (inside) { e.preventDefault(); closePub(); focusProject(inside.getAttribute('data-proj')); return; }
+    }
+    var pub = e.target.closest('[data-pub]');
+    if (pub && !(e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) && openPub(+pub.getAttribute('data-pub'))) { e.preventDefault(); return; }
     var pt = e.target.closest('[data-proj]');
     if (pt && focusProject(pt.getAttribute('data-proj'))) { e.preventDefault(); return; }
     var tab = e.target.closest('[data-theme]');

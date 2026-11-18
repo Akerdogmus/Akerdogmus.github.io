@@ -6,8 +6,8 @@
     "from": "2025-01",
     "to": "2027-01",
     "summary": {
-      "en": "Carbon-footprint monitoring for maritime transport: hyperspectral image analysis plus a vessel digital twin that tracks greenhouse-gas emissions along routes, for port authorities and EEXI/CII compliance.",
-      "tr": "Deniz taşımacılığı için karbon ayak izi izleme: hiperspektral görüntü analizi ve gemilerin rotalarındaki sera gazı salımını izleyen dijital ikiz; liman otoriteleri ve EEXI/CII uyumu için."
+      "en": "A EUREKA Eurostars project building a platform that monitors and reports ship greenhouse-gas emissions from satellite and hyperspectral imagery. Our team develops spectgen, which detects gases such as methane in hyperspectral images and quantifies them.",
+      "tr": "Gemilerin sera gazı salımını uydu ve hiperspektral görüntülerden izleyip raporlayan bir platform geliştiren EUREKA Eurostars projesi. Ekibimiz, hiperspektral görüntülerde metan gibi gazları tespit edip miktarını hesaplayan spectgen platformunu geliştiriyor."
     },
     "contrib": [
       {
@@ -48,8 +48,8 @@
     "from": "2024-03",
     "to": null,
     "summary": {
-      "en": "A software platform that automates data collection, tracks energy-related carbon-reduction activities and reports them for funding and verification. EUROGIA2030 project with FARADAI, Cranfield University, Vestel and others.",
-      "tr": "Veri toplamayı otomatikleştiren, enerjiyle ilgili karbon azaltım faaliyetlerini izleyip fonlama ve doğrulama için raporlayan yazılım platformu. FARADAI, Cranfield Üniversitesi, Vestel ve diğer ortaklarla EUROGIA2030 projesi."
+      "en": "A EUREKA Eurogia2030 project building a software platform that lets organisations plan, track and verifiably report their carbon-reduction projects. Partners include FARADAI, Cranfield University, Vestel and Istanbul Enerji.",
+      "tr": "Kurumların karbon azaltım projelerini planlayıp izlemesini ve doğrulanabilir biçimde raporlamasını sağlayan bir yazılım platformu geliştiren EUREKA Eurogia2030 projesi. FARADAI, Cranfield Üniversitesi, Vestel ve İstanbul Enerji gibi ortaklarla yürütülüyor."
     },
     "left": true,
     "contrib": [
@@ -71,8 +71,8 @@
     "from": "2024-03",
     "to": null,
     "summary": {
-      "en": "Secure situational awareness for ports and other critical cyber-physical systems, combining AI-enabled IoT with a zero-trust, distributed-ledger approach shared by multiple stakeholders.",
-      "tr": "Limanlar ve diğer kritik siber-fiziksel sistemler için güvenli durumsal farkındalık; yapay zekâlı IoT'yi çok paydaşlı, sıfır güven ve dağıtık defter yaklaşımıyla birleştirir."
+      "en": "A project on secure situational awareness for critical cyber-physical systems such as ports, so the right decisions can be made during accidents or attacks. It combines AI-enabled IoT data, a zero-trust approach and distributed ledgers for trusted data sharing between stakeholders.",
+      "tr": "Limanlar gibi kritik siber-fiziksel sistemlerde kaza ya da saldırı anında doğru karar verilebilmesi için güvenli durumsal farkındalık geliştiren proje. Yapay zekâlı IoT verisi, sıfır güven yaklaşımı ve dağıtık defter teknolojisiyle paydaşlar arasında güvenilir veri paylaşımı hedefleniyor."
     },
     "left": true,
     "contrib": [
@@ -94,8 +94,8 @@
     "from": "2023-10",
     "to": null,
     "summary": {
-      "en": "A reference architecture for reusing, exchanging and combining engineering models, with AI-assisted surrogate models built from heterogeneous data and IP management for model exploitation.",
-      "tr": "Mühendislik modellerinin yeniden kullanımı, paylaşımı ve birleştirilmesi için referans mimari; heterojen veriden yapay zekâ destekli vekil modeller ve model kullanımı için fikri mülkiyet yönetimi."
+      "en": "A project developing an open reference architecture in which engineering models from different sources can be reused and combined. It focuses on AI-assisted surrogate models built from heterogeneous data and on managing the models' intellectual property.",
+      "tr": "Farklı kaynaklardan gelen mühendislik modellerinin yeniden kullanılıp birleştirilebileceği açık bir referans mimari geliştiren proje. Heterojen veriden yapay zekâ destekli vekil (surrogate) modeller üretmeye ve modellerin fikri mülkiyetini yönetmeye odaklanıyor."
     },
     "left": true,
     "contrib": [
@@ -117,8 +117,8 @@
     "from": "2023-01",
     "to": "2025-12",
     "summary": {
-      "en": "Tackles range anxiety, price and charging limits to speed up EV adoption. Co-funded by the Key Digital Technologies Joint Undertaking under Horizon Europe.",
-      "tr": "Elektrikli araçların yaygınlaşması için menzil kaygısı, fiyat ve şarj kısıtlarını ele alır. Horizon Europe kapsamında Key Digital Technologies Joint Undertaking destekli."
+      "en": "A Horizon Europe (KDT JU) project tackling range anxiety and charging problems in electric vehicles with data. On the Musoshi L5 vehicle we built the OPEVA Edge Device that collects CAN-bus data, a driver HMI panel and an open SoC/range dataset.",
+      "tr": "Elektrikli araçlarda menzil kaygısı ve şarj sorunlarını veriyle çözmeyi hedefleyen Horizon Europe (KDT JU) projesi. Musoshi L5 elektrikli araç üzerinde CAN-bus verisini toplayan OPEVA Edge Device'ı, sürücü HMI panelini ve açık bir SoC/menzil veri setini geliştirdik."
     },
     "contrib": [
       {
@@ -159,8 +159,8 @@
     "from": "2023-01",
     "to": "2026-01",
     "summary": {
-      "en": "A modular framework of transferable technology for synthetic image generation tailored to each application, usable at industrial scale.",
-      "tr": "Uygulamaya göre uyarlanmış sentetik görüntü üretimi için endüstriyel ölçekte kullanılabilen, aktarılabilir teknolojilerden oluşan modüler çerçeve."
+      "en": "A project building a modular framework that generates synthetic data from a few real images for industrial visual inspection. With SynthVision Suite we brought fault injection, Stable Diffusion/LoRA image generation, model training and quality assessment into one platform.",
+      "tr": "Endüstriyel görsel denetim için az sayıda gerçek görüntüden sentetik veri üreten modüler bir çerçeve geliştiren proje. SynthVision Suite ile hata enjeksiyonu, Stable Diffusion/LoRA tabanlı görüntü üretimi, model eğitimi ve kalite değerlendirmesini tek platformda topladık."
     },
     "contrib": [
       {
@@ -207,8 +207,8 @@
     "from": "2023-01",
     "to": "2025-11",
     "summary": {
-      "en": "Research on DECT-2020 NR mesh radio for industrial IoT without spectrum licences: power-grid quality monitoring and machine condition monitoring towards digital twins.",
-      "tr": "Spektrum lisansı gerektirmeyen endüstriyel IoT için DECT-2020 NR mesh radyo araştırması: elektrik şebekesi kalite izleme ve dijital ikize yönelik makine durum izleme."
+      "en": "A CELTIC-NEXT project researching licence-free DECT-2020 NR mesh radio for industrial IoT. Use cases included power-grid monitoring, machine condition monitoring and asset localisation in factories.",
+      "tr": "Lisans gerektirmeyen DECT-2020 NR mesh radyo teknolojisinin endüstriyel IoT'de kullanımını araştıran CELTIC-NEXT projesi. Elektrik şebekesi izleme ile fabrikada makine durum izleme ve varlık konumlandırma senaryoları üzerinde çalışıldı."
     },
     "contrib": [
       {
@@ -233,8 +233,8 @@
     "from": "2022-01",
     "to": "2024-09",
     "summary": {
-      "en": "A scalable software platform for energy-efficient deployment of AI on heterogeneous multicore hardware, from local and distributed computation to cloud offloading.",
-      "tr": "Yapay zekâ algoritmalarını heterojen çok çekirdekli donanımlarda enerji verimli çalıştıran ölçeklenebilir yazılım platformu; yerel, dağıtık ve bulut hesaplamayı kapsar."
+      "en": "A project building a scalable software platform to run AI models energy-efficiently on mobile and embedded systems. Within it, our team built a no-code AI platform where domain experts train models and deploy them to devices without writing code.",
+      "tr": "Yapay zekâ modellerini mobil ve gömülü sistemlerde enerji verimli çalıştırmak için ölçeklenebilir bir yazılım platformu geliştiren proje. Bu kapsamda ekibimiz, alan uzmanlarının kod yazmadan model eğitip cihaza aktarabildiği kodsuz YZ platformunu geliştirdi."
     },
     "contrib": [
       {
@@ -251,8 +251,8 @@
     "from": "2022-01",
     "to": "2024-01",
     "summary": {
-      "en": "Flexible, scalable production through multi-method workstations; a transmutable simulation validates configurations and AI/ML optimises the production setup.",
-      "tr": "Çok yöntemli iş istasyonlarıyla esnek ve ölçeklenebilir üretim; dönüştürülebilir simülasyon yapılandırmayı doğrular, YZ/ML üretim düzenini optimize eder."
+      "en": "A project aiming at flexibly scalable production lines through multi-method workstations that support both manual and automated processes. We built the Unity-based Factory Digital Twin (FDT), which plans factory layouts in 2D/3D and schedules production with simulated annealing and genetic algorithms.",
+      "tr": "Manuel ve otomatik süreçleri bir arada destekleyen çok yöntemli iş istasyonlarıyla üretim hatlarını esnek ölçeklemeyi hedefleyen proje. Fabrika yerleşimini 2B/3B planlayan, tavlama benzetimi ve genetik algoritmayla üretimi çizelgeleyen Unity tabanlı Fabrika Dijital İkizi'ni (FDT) geliştirdik."
     },
     "contrib": [
       {
@@ -293,8 +293,8 @@
     "from": "2020-05",
     "to": "2023-07",
     "summary": {
-      "en": "ECSEL JU project building a multi-domain V&V framework to cut the time and cost of verifying automated systems for safety, cybersecurity and privacy. 41 partners from 10 countries.",
-      "tr": "Otomatik sistemlerin emniyet, siber güvenlik ve mahremiyet doğrulamasının süre ve maliyetini düşüren çok alanlı V&V çerçevesi geliştiren ECSEL JU projesi. 10 ülkeden 41 ortak."
+      "en": "An H2020 ECSEL project with 41 partners from 10 countries, building a multi-domain V&V framework that speeds up verifying automated systems for safety, cybersecurity and privacy. For the ROKOS robotic cell that inspects bus chassis, we built the SRVT simulation test system and the CamFITool camera fault injection tool.",
+      "tr": "Otomatik sistemlerin emniyet, siber güvenlik ve mahremiyet açısından doğrulanmasını hızlandıran çok alanlı bir V&V çerçevesi geliştiren, 10 ülkeden 41 ortaklı H2020 ECSEL projesi. Otobüs şasesi kalite kontrolü yapan ROKOS robotik denetim hücresi için SRVT simülasyon test sistemini ve CamFITool kamera hata enjeksiyon aracını geliştirdik."
     },
     "contrib": [
       {

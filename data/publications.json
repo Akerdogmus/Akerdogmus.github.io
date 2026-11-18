@@ -11,7 +11,8 @@
     "fullText": true,
     "projects": [
       "CLEARS"
-    ]
+    ],
+    "abstract": "Uydu tabanlı hiperspektral gözlemlerden sera gazı anomalilerinin tespiti ve nicelenmesinde kullanılan eşleştirilmiş süzgeçlerde, hedef imzası arka plan ortalaması üzerinden oluşturulurken fiziksel bozulma pikselin kendi spektrumuyla ölçeklenmektedir. Bu duyarlılık uyumsuzluğu literatürde bilinmektedir; çalışmada uyumsuzluk, gazsız arka plan ile enjeksiyon sonrası gözlem ayrıştırılarak kovaryans-ağırlıklı kapalı form bir artımsal kazanç ifadesiyle nicelenmekte ve ek enjeksiyon gerektirmeden hesaplanan tanısal bir duyarlılık haritası elde edilmektedir. İfade, arka plan istatistikleri sabit tutularak dört gerçek EMIT sahnesindeki 64 sonda noktasında doğrulanmıştır (r=1,000, eğim 0,944); istatistikler enjekte edilmiş sahneden yeniden kestirildiğinde eğim 0,796'ya inmekte ve aradaki %15,7 hedef kirlenmesi bileşenini vermektedir. Analitik kazanç, gaz retrieval penceresindeki yerel/küresel reflektans oranıyla r=0,9985 düzeyinde ilişkilidir. Uçtan uca düzeltme katsayısı analiz kapsamına bağlıdır (altı sahnede 384/128 oranı 1,12-1,37); kestirici kazancı bu bağımlılığı göstermediğinden etki maskeleme adımından kaynaklanmaktadır. Karar aşamasında sahne-koşullu eşikleme ve boş dağılımın üst yüzdeliğinden boyutlandırılan bileşen kapısı önerilmiş; 512 boş gerçekleştirmede yanlış alarm oranı %1,37, bağımsız doğrulama kümesinde %2,23 ölçülmüştür. Tüm ölçümler spectgen platformuyla üretilmiştir."
   },
   {
     "year": 2025,
@@ -24,7 +25,8 @@
     "doi": "10.1109/ASYU67174.2025.11208487",
     "projects": [
       "TASTI"
-    ]
+    ],
+    "abstract": "With the rapid advancements in the artificial intelligence era, generative AI technologies have begun to be utilized across various domains. This study introduces the SynthVision Suite, a platform that enables end-to-end workflows for synthetic image generation, model fine-tuning, quality assessment, and anomaly detection-without requiring any coding knowledge from users. The platform comprises several integrated modules: CamFITool, which performs automatic fault injection on reference images; CamGenTool, which utilizes Stable Diffusion and LoRA-based text-to-image and image-to-image generations; CamTrainTool, which trains customized LoRA models using the DreamBooth framework; CamQTool, which conducts both anomaly detection and quality evaluations; and the Generative Zoo, a collection of various generative AI models. Featuring a user-friendly interface, and real-time processing capabilities, the platform facilitates the simulation of rare visual defects, task-specific data augmentation, model fine-tuning, and image quality assessment across diverse use cases. To demonstrate the capabilities of the SynthVision Suite, an application was conducted using imagery of an Airbus A320 fuselage in a surface inspection scenario. The results revealed the platform's ability to inject faults into a limited number of images, synthetically augment image data, and evaluate the generated images, thereby validating its applicability in real-world scenarios."
   },
   {
     "year": 2025,
@@ -37,7 +39,8 @@
     "doi": "10.1109/ASYU67174.2025.11208495",
     "projects": [
       "TASTI"
-    ]
+    ],
+    "abstract": "Industrial quality control processes are of vital importance for the optimization of production lines. This study presents a comprehensive performance evaluation of various generative AI models for image-based anomaly detection in industrial quality control processes. Using a dataset composed of real-world images collected from a bus chassis production line, a comparative analysis was conducted across different architectures based on metrics such as ACC, AUC, resource usage, and training time. Experimental results revealed that the AdversarialVAE model achieved the highest performance, attaining 83% accuracy and 88% AUC with input size. Moreover, the AdversarialVAE model has been shown to be effective not only in terms of classification performance but also in terms of computational efficiency. These findings clearly demonstrate that the Generative Zoo framework, which encompasses a variety of model architectures, serves as a powerful toolkit for industrial anomaly detection. They also underscore the critical importance of selecting the most appropriate model based on the specific requirements of the application."
   },
   {
     "year": 2025,
@@ -50,7 +53,8 @@
     "doi": "10.1109/ASYU67174.2025.11208481",
     "projects": [
       "EFICAS"
-    ]
+    ],
+    "abstract": "The growing demand for artificial intelligence (AI) solutions has accelerated the development of platforms that minimize the need for technical expertise and offer ease of use. EFICAS is a no-code AI platform that enables users to develop AI-based applications without requiring programming knowledge. Developed using modern technologies, EFICAS provides a flexible and scalable data processing infrastructure. Through its integration with FIWARE, the platform supports real-time data management and is compatible with real-time systems. This study presents a detailed introduction of the EFICAS platform's overall architecture, core components, and AI modeling capabilities. The platform offers a comprehensive model library for a variety of tasks, including time series analysis, image processing, and real-time analysis. Additionally, it supports CNN model customization, allowing domain experts to tailor solutions to their specific needs. Experimental results demonstrate that EFICAS facilitates rapid prototyping in industrial use cases and enables users to develop effective AI solutions without technical expertise."
   },
   {
     "year": 2025,
@@ -64,7 +68,8 @@
     "fullText": true,
     "projects": [
       "OPEVA"
-    ]
+    ],
+    "abstract": "Light electric vehicles contribute to sustainable urban logistics. However, range anxiety is a significant problem in the use of electric vehicles. State of Charge and range estimation are of critical importance to reduce range anxiety. Although there are studies and datasets on the State of Charge and Range Estimation of passenger electric vehicles, the literature on L5 type electric vehicles is not yet mature enough. In this study, measurement data are obtained from an L5 class electric vehicle for urban cargo transportation under different driving dynamics and load conditions. The raw sensor data obtained via the Controller Area Network Bus in the vehicle are stored in 35 separate comma-seperated value files and recording frequencies of up to 800 per second are captured. Then, the cleaning process converts the raw data into one-second intervals. The data is recorded during test drives performed on a loop route of approximately two kilometres, under different slopes and environmental conditions, at speeds of 15, 25 and 35 km/h, both loaded and unloaded. The presented ESOGU-ML5EV dataset provides a reusable and organized infrastructure for those who want to analyse the energy consumption of electric vehicles used in urban logistics, examine the factors affecting consumption, conduct range estimation studies, or investigate electric vehicle routing problems."
   },
   {
     "year": 2025,
@@ -77,7 +82,8 @@
     "doi": "10.5505/pajes.2025.37200",
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "This study introduces a new tool suite for robotic system safety and reliability in manufacturing. Developed for a vehicle chassis inspection project, it includes a simulation-based verification tool and a camera fault injection tool. Evaluated across three scenarios with robust testing, the tools demonstrated significant improvements in system efficiency and robustness. Unique for being open-source and ROS-compatible, they fill a gap in robotic system verification and validation. Results showed a 95.39% robustness in fault detection, a 27% efficiency increase in planning, and an 80% resistance to camera faults. This advancement marks a significant leap in reducing testing costs and time for industrial robotics."
   },
   {
     "year": 2025,
@@ -103,7 +109,8 @@
     "doi": "10.1109/ASYU62119.2024.10757052",
     "projects": [
       "TASTI"
-    ]
+    ],
+    "abstract": "The rapid advancement of technology has significantly influenced synthetic image generation methodologies, widely applied in fields such as healthcare, manufacturing, and automative. This study explores the integration of Stable Diffusion models and Low-Rank Adaptation (LoRA) techniques to generate high-quality synthetic images, aiming to overcome the limitations of high costs and the need for extensive annotated datasets in industrial applications. We employed the Stable Diffusion model for its precision and customizability, enhanced by a LoRA model trained on Otokar quality inspection datasets. This combination facilitates faster, high-quality image generation with minimal data. The quality of the generated image was evaluated using various metrics such as SSIM, PSNR and MSE. The results show that the synthetically generated images are of sufficient quality and will overcome the limitations of traditional data collection methods, especially those involved in inspection systems. In the future, we will extend the application to other areas, incorporating advanced generative models, and developing user-friendly platform for seamless industrial integration."
   },
   {
     "year": 2024,
@@ -117,7 +124,8 @@
     "fullText": true,
     "projects": [
       "OPEVA"
-    ]
+    ],
+    "abstract": "Günümüzde elektrikli araçların yaygın kullanımı ve bu araçların dijital ve son teknoloji yazılımlarla desteklenmesi, araç durumlarını gösteren verilerin anlık ve doğru bir şekilde toplanması gerekliliğini ortaya çıkarmıştır. Bu çalışma, elektrikli araçlardan veri toplamak ve bu verileri bir HMI panelde göstermek için bir uç cihazın nasıl entegre edildiğini ve uygulandığını ele almaktadır. Bu amaç kapsamında, bir Jetson Nano geliştirici kiti, çeşitli sensörler ve yazılım bileşenleri kullanılarak veri toplama cihazı tasarlanmış ve test edilmiştir. Toplanan veriler CAN BUS üzerinden alınmış ve MQTT protokolü ile bir sunucuya iletilmiştir. Bu verilere FIWARE platformu kullanılarak güvenli veri transferi standardı kazandırılmış ve aktarılan bilgiler HMI panelde kullanıcılara gösterilmiştir. Yapılan örnek test sürüşleri ile elde edilen sonuçlar, veri toplama cihazı ve HMI panelinin etkinliğini ortaya koymakta ve gelecek çalışmalar için bir altyapı oluşturmaktadır."
   },
   {
     "year": 2024,
@@ -130,7 +138,8 @@
     "url": "https://www.researchgate.net/publication/386372688_Endustriyel_Alanlarda_Uzman_Olmayanlar_icin_Kodsuz_Yapay_Zeka_Uygulama_Gelistirme_Platformu_No_Code_Artificial_Intelligence_Application_Development_Platform_for_Non-Experts_in_Industrial_Areas",
     "projects": [
       "EFICAS"
-    ]
+    ],
+    "abstract": "Hızla gelişen dijital dünyada, yazılım çözümlerine olan talep, iş ihtiyaçlarının verimli bir şekilde karşılanmasını sağlayan düşük kodlu veya kodsuz (LCNC) platformların benimsenmesini hızlandırmıştır. Aynı zamanda, Yapay Zekâ (AI) teknolojilerindeki ilerlemeler, çeşitli endüstrileri dönüştürerek veri odaklı karar verme süreçlerini teşvik etmiştir. Ancak, karmaşık algoritmalar ve geniş kapsamlı kodlama gereksinimleri, uzman olmayan kişiler için AI uygulama geliştirmeyi çoğu zaman zorlaştırmaktadır. Bu çalışma, endüstriyel kullanım durumlarında hızlı AI prototip geliştirmeyi kolaylaştırmak amacıyla tasarlanmış bir No Code AI Platformu sunmaktadır. Kullanıcı dostu platform, kapsamlı bir AI kütüphanesi ve gerekli ön işleme aşamalarını içermekte ve alan uzmanlarının programlama bilgisi olmadan bağımsız olarak uygulamalar geliştirmesine olanak tanımaktadır. Bir kullanım durumu çalışması ile yapılan deneyler, platformun kullanıcı odaklı tasarımını ve operasyonel verimliliğini vurgulamaktadır. Gelecekteki iyileştirmeler, gelişmiş AI tekniklerinin, gerçek zamanlı işlemenin ve zenginleştirilmiş model kütüphanelerinin entegrasyonunu hedefleyerek platformu erişilebilir AI çözümlerinin önemli bir sağlayıcısı olarak konumlandırmayı amaçlamaktadır."
   },
   {
     "year": 2024,
@@ -144,7 +153,8 @@
     "doi": "10.31796/ogummf.1348531",
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "Günümüzde, gelişen görüntü işleme teknikleri ile birlikte kamera tabanlı robotik inceleme sistemleri oldukça popülerlik kazanmıştır. Bu tür sistemler gıdadan, askeriyeye birçok sektörde yoğun olarak kullanılmaktadır. Bu sistemler geliştirilirken gerekli olan doğrulama ve onaylama süreçleri oldukça uzun ve maliyetli olmaktadır. Bu çalışma, kamera tabanlı endüstriyel robotik sistemler üzerinde doğrulama ve onaylama faaliyetlerini gerçekleştirmek ve iyileştirmek amacıyla geliştirilmiştir. RGB ve TOF kameralara farklı türlerde (Open, Close, Dilation, Erosion, Gradient, Motionblur, Tuz&Biber, Gaussian ve Poisson) hata enjeksiyon yöntemleri kullanılmasını mümkün Kamera Hata Enjeksiyon Aracı (CamFITool) ile gerçekleştirilmiş testler ve sonuçlar açıklanmıştır. Yapılan çalışma, VALU3S projesi kapsamında, OTOKAR’ın ROKOS robotik sistemine, CamFITool ile gerçek ortamdan alınmış kamera görüntülerinden oluşan kitaplıklara, çeşitli konfigürasyonlarda hatalar enjekte edilip, bu enjeksiyonun sisteme etkilerinin incelenmesine odaklanmıştır. Bu kapsamda 49 farklı test komfigürasyonunda hata enjeksiyonu gerçekleştirilmiştir. Sonuç olarak, kamera tabanlı endüstriyel robotik sistemlerin daha güvenli ve stabil çalışmalarının sağlanması için, bu sistemlerin hataya dayanıklı olup olmadıklarını test eden açık kaynaklı bir hata enjeksiyon aracı olan CamFITool önerilmiştir."
   },
   {
     "year": 2023,
@@ -157,7 +167,8 @@
     "doi": "10.1109/ASYU58738.2023.10296576",
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "Ensuring operational safety in industrial robotics systems, particularly human-robot interaction, poses significant challenges. This paper presents a comprehensive Verification and Validation (V&V) toolchain specifically designed for quality control of automotive body-in-white in industrial robot inspection cells. The proposed toolchain incorporates simulation-based testing and fault injection to address safety. The VALU3S frameworks and V&V methods encompass simulation-based robot verification and fault injection-based testing. Furthermore, three software tools, SRVT, CamFITool, and IM-FIT, are introduced. These tools provide essential functionalities for robot verification, camera fault injection, and fault injection. By leveraging this integrated toolchain, safety evaluation in automated robot inspection cells has been accomplished, demonstrating its effectiveness in ensuring the quality control of automotive body-in-white."
   },
   {
     "year": 2022,
@@ -170,7 +181,8 @@
     "doi": "10.31796/ogummf.1054761",
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "Günümüzde robotik sistemlerde kamera tabanlı algılama en popüler konulardan biridir. Mevcut araç ve yöntemlerle kamera tabanlı algılama sistemlerinin doğrulanması da çok önemli ve zordur. Bu çalışma, robotik sistemlerde doğrulama ve doğrulama faaliyetlerini gerçekleştirmek için RGB ve TOF kameralara farklı türlerde hata enjeksiyon yöntemleri sağlayan Kamera Hatası Enjeksiyon Aracını (CamFITool) önermektedir. Ayrıca CamFITool tarafından oluşturulan hata enjekte edilmiş resim veri kümesi tanıtılmaktadır. Buna ek olarak çalışma, CamFITool ile mevcut görüntü kitaplıklarına veya kamera akışlarına hatalar enjekte ederek yeni veri kümeleri oluşturmak için okuyuculara rehberlik etmektedir. Sonuç olarak, hataya dayanıklı sistemlerin emniyet ve güvenliğini değerlendirmek için kritik bir araç olan açık kaynaklı bir hata enjeksiyon aracı olan CamFITool önerilmiştir. Ayrıca robotik sistemlerde kamera tabanlı algılama çalışmalarının doğrulanması için CamFITool tarafından oluşturulan hata enjekte edilmiş görüntü veri kümesi verilmiştir."
   },
   {
     "year": 2022,
@@ -180,7 +192,8 @@
     "type": "article",
     "theme": "edu",
     "url": "https://doi.org/10.35193/bseufbd.1089501",
-    "doi": "10.35193/bseufbd.1089501"
+    "doi": "10.35193/bseufbd.1089501",
+    "abstract": "Robotic era is near, has never been before. In this new era, robotic education must have quality and accessibility for everyone. In this study, a disruptive technology for future of distance education based on virtual robotic laboratory (U-Plat) is presented. The created robotics education platform allows users to access a virtual robotics laboratory and training programs using internet interfaces. This environment allows them to control simulated robots, analyze and evaluate the results of experiments performed. U-Plat gives researchers, students and people working in the field of robotics the chance to learn Robot Operating System (ROS) and increase their knowledge with robotics training from beginner to advanced level. Also, U-Plat gives researchers opportunity to try their codes in online platform. Compared to traditional learning methods, U-Plat can be seen as an easier and more effective learning/teaching platform for ROS exercises, as it is an open source system. The user experience has been tried to be provided in all training tools with a very simplified and easily understandable interface. All designed training tools are provided through a web interface supported by advanced cloud systems and Docker container infrastructure. As a result, U-Plat is a novel robotic learning platform that can lead future laboratory research and distance robotic education."
   },
   {
     "year": 2021,
@@ -190,7 +203,8 @@
     "type": "conference",
     "theme": "edu",
     "url": "https://www.researchgate.net/publication/358090181_Development_of_Educational_Robot_and_User_Interfaces_for_Robotic_Applications",
-    "fullText": true
+    "fullText": true,
+    "abstract": "There is a limited number of current resources that can be found on the internet or in books about Robot Operating System (ROS) and robotic programming. People trying to learn these platforms cope with various problems due to limited resources. In this study, we introduce a low cost modular education robot, called the Halikarnas Modular Education Robot (HAMER). The platform is equipped with some basic sensors and a visual camera. We designed experiments involving many ROS packages to introduce robotic programming concepts to users. These experiments have been arranged starting from basic level concepts to more complex robotic programming applications. In addition to the hardware design, a graphical user interface (GUI) for HAMER that can be executed on a personal computer has been developed to manage the learning outcomes in the study. The students can easily perform the experiments on the student screen of this interface and the teachers can follow and test the students' experiments on the teacher's screen to observe the outputs. This design not only contributes to the learning outcome, but also ensures that the learning process is effectively controlled and maintained. In this article, we present the hardware and software designs of the Halikarnas modular education robot. The main motivation of this study is to facilitate the learning of ROS applications through the designed educational robot and thus to inspire readers to create various mobile robot designs to fulfill specific tasks."
   },
   {
     "year": 2021,
@@ -200,7 +214,8 @@
     "type": "conference",
     "theme": "other",
     "url": "https://doi.org/10.1109/ASYU52992.2021.9598966",
-    "doi": "10.1109/ASYU52992.2021.9598966"
+    "doi": "10.1109/ASYU52992.2021.9598966",
+    "abstract": "The age of the world population is getting older year by year. The increasing old age rate will bring together some difficulties for caring elderly person. Young people population who will take care of the elderly in the following years will not be able to meet this need. The fact that elderly people and family members live in the same environment also creates family quarrels and psychological problems. This results in the need for a new alternative to take care of. With the rapid development of technology today, robots have entered our lives in the service sector as well as in many sectors such as education, health, production. In this study, the service and assistant mobile robot that is developed for the growing elderly population in our country and in the world will help the user to meet their daily needs and support living alone. The mobile robot, with artificial intelligence-supported voice communication capability, will be able to receive voice commands and provide assistant support to the user. Also, with the robot's autonomous mobility, it will go to the locations that the user says and will be next to the person. At the same time, thanks to the health tracking system that working with the robot simultaneously, it is aimed to monitor health values and prevent health problems that may arise both short term and long term. It is aimed to increase human-robot interaction by providing interface support with the screen to be placed on the robot."
   },
   {
     "year": 2021,
@@ -213,7 +228,8 @@
     "url": "https://www.researchgate.net/publication/362093902_Arac_Saselerinin_Kalite_Kontrolu_icin_Simulasyon_Tabanli_Otonom_Endustriyel_Robot_Test_Sistemi_Gelistirilmesi_Development_of_Simulation_based_testing_for_automated_robot_cell_for_quality_inspection_of",
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "Bu çalışmada, VALU3S projesi kapsamında bir simülasyon tabanlı robot doğrulama sistemi oluşturulması ve bu sistem içerisinde örnek bir robotik sistemin simulasyon ortamına aktarımı incelenmiş, bu aktarımın metotları üzerinde çalışılmıştır. Bu kapsamda ortaya çıkarılmış “Simulasyon tabanlı Robot Doğrulama Test Aracı” (SRVT) olarak adlandırılan sistemin, bir robotik kalite kontrol sistemi olan ROKOS robot kolları özelinde nasıl çalıştığı, simülasyon ortamının nasıl oluşturulduğu ve ROKOS’un görev mekanizmalarının SRVT üzerinde nasıl inşa edildiği açıklanmıştır. Çalışmada kullanılan ROKOS sistemi, VALU3S projesi kapsamında çalışılan \"Araç Şase Kalite Kontrolü için Otonom Robot Denetleme Hücresi” kullanım senaryosu olarak tanımlanmış ve bu sistem içinde kullanılan örnek bir otobüs şasesinin, SRVT sistemine aktarılması ve bu sistemi oluşturan temel araçlar incelenmiştir. Bu çalışmayla birlikte, sahada aktif olarak kullanılan ROKOS sistemi, detaylı bir şekilde simülasyon ortamına aktarılmış, kalite kontrol testleri, robot hareket testleri ve yazılım geliştirme gibi çalışmaların maliyetinin düşürülmesi, sürelerinin kısaltılması ve daha emniyetli çalışmalar yapılmasının sağlanması amaçlanmıştır."
   },
   {
     "year": 2021,
@@ -228,7 +244,8 @@
     "fullText": true,
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "Robotik çalışmalarında, endüstriyel robot sistemleri için hareket ve yörünge planlama, aktif olarak çalışılan konuların başında gelmektedir. Otonom sistemlerin doğrulanması ve onaylanması (V&V) için çalışmalar yürütülen VALU3S projesi kapsamında Kullanım Senaryosu olarak \"Araç Şase Kalite Kontrolü için Otonom Robot Denetleme Hücresi (ROKOS)\" tanımlanmıştır. Bu çalışmada, tanımlanmış kullanım senaryosunun doğrulanması ve onaylanması amacıyla gerçek ortamda geliştirilmiş ROKOS sistemi, GAZEBO simülasyon ortamına aktarılarak SRVT (Simulasyon Tabanlı Robot Doğrulama Test Sistemi) ortaya çıkarılmış ve bu sistem üzerinde ise proje kapsamında oluşturulan değerlendirme senaryolarının simülasyon tabanlı testleri yapılmıştır. Bu çalışmada, değerlendirme senaryolarından “Emniyetli Yörünge Optimizasyon” kapsamında, simülasyon ortamına aktarılmış olan otobüs şasesinin kalite kontrolü için ROKOS sistemine ait robot kollarının belirlenen değerlendirme kriterine göre emniyetli bir şekilde hareket edecekleri yörüngelerin oluşturularak geliştirilen yazılımların doğrulama ve onaylama işlemlerinin yapılması hedeflenmiştir. Bu kapsamda, ROS MoveIt aracına ait OMPL ve EST yörünge planlama algoritmaları üzerinde çalışılmış, bu algoritmaların artı ve eksi yönleri belirlenmiştir. Bu algoritmaların simülasyon ortamında doğrulanmaları için kullanım senaryosu üzerinde detaylı testler yapılmış ve sonuçları analiz edilmiştir. Testler 3 farklı senaryo (Hızlı test, Resetli Tam Test ve Resetsiz Tam Test) için yapılmış ve SRVT’ye aktarılmış mevcut ROKOS sistemi için doğrulama faaliyetleri zaman ve maliyet açısından iyileştirilmiştir."
   },
   {
     "year": 2021,
@@ -241,7 +258,9 @@
     "fullText": true,
     "projects": [
       "VALU3S"
-    ]
+    ],
+    "abstract": "In this study, the creation of a database consisting of images obtained as a result of deformation in the images recorded by these cameras by injecting errors into the robot camera nodes and the alternative uses of this database are explained. The study is based on an existing camera fault injection software that injects faults into the cameras of…",
+    "abstractExcerpt": true
   },
   {
     "year": 2021,
@@ -251,7 +270,8 @@
     "type": "conference",
     "theme": "edu",
     "url": "https://doi.org/10.1109/INISTA52262.2021.9548503",
-    "doi": "10.1109/INISTA52262.2021.9548503"
+    "doi": "10.1109/INISTA52262.2021.9548503",
+    "abstract": "With the onset of the COVID-19 epidemic, distance education technologies have become critical for the whole world. With the development of these technologies, it is now possible for us to access educational tools and contents from anywhere, anytime. We see that robotic systems are also increasing in importance in this age of isolation. This situation requires that robotic education be expanded and made easily accessible. In this study, a few examples of mobile robots that can be used for robotic education and the virtual robotics laboratory system Uplat, which will make the use of these robots quite accessible, are described. The system allows users (or students) to access the virtual robotics lab via the web, control the simulated robots through interfaces, analyze and evaluate the experimental results. Compared to traditional learning methods, UPlat is an easier and better learning platform with open-source ROS tutorials. These tutorials can be launched from anywhere without dealing with complex Linux and ROS installations. All tools required for training are presented in a simplified interface, taking user experiences into account. These tools are presented to the user through the web interface using cloud technology and container technology. In this system, task trainings of four different types of mobile robots (EvaMars, EvaSec, ATEKS and AGV-OTA) designed to be used in many different robotic fields are presented with detailed learning outcomes. Thanks to these robots and improved robotics trainings, a wide perspective of robotics usage will be presented to those who will receive training in this field."
   },
   {
     "year": 2020,
@@ -261,6 +281,8 @@
     "type": "preprint",
     "theme": "edu",
     "url": "https://www.researchgate.net/publication/347797057_Robot_Operating_System_Compatible_Mobile_Robots_for_Education_and_Research",
-    "fullText": true
+    "fullText": true,
+    "abstract": "The use of mobile robots has inevitably increased in recent years. The increase in the companies that produce products in this field, the popularity of the studies in the robotic field and the technological competence to serve many different areas have revealed this increase in usage. The importance of mobile robots used as health, education, pro-d…",
+    "abstractExcerpt": true
   }
 ]
