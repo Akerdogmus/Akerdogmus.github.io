@@ -255,11 +255,13 @@
       return '<span class="xchip">' + (ICON[c.icon + 'Sm'] || ICON[c.icon] || '') + esc(L(c)) + '</span>';
     }).join('');
     var dl = p.deliverable;
+    // Each part is a direct child of the card so rows line up across cards (CSS subgrid);
+    // empty slots keep their row so neighbouring cards stay aligned.
     var deliverable = dl ? '<p class="proj__deliv"><span class="proj__delivIcon">' + (THEME_ICON[dl.icon] || '') + '</span><span>' + esc(L(dl)) +
-      (dl.url ? ' <a href="' + esc(dl.url) + '">' + esc(dl.linkLabel || 'link') + ' ↗</a>' : '') + '</span></p>' : '';
+      (dl.url ? ' <a href="' + esc(dl.url) + '">' + esc(dl.linkLabel || 'link') + ' ↗</a>' : '') + '</span></p>' : '<div class="proj__slot" aria-hidden="true"></div>';
     return '<div class="proj__inv"><div class="proj__invHead"><span>' + esc(t('myShare')) + '</span><span class="proj__pct">%' + pct + ' · ' + esc(note) + '</span></div>' +
-      '<div class="proj__bar" role="img" aria-label="' + esc(t('myShare') + ': %' + pct) + '"><span style="margin-left:' + offset + '%;width:' + Math.min(pct, 100 - offset) + '%"></span></div>' +
-      (chips ? '<div class="proj__chips">' + chips + '</div>' : '') + deliverable + '</div>';
+      '<div class="proj__bar" role="img" aria-label="' + esc(t('myShare') + ': %' + pct) + '"><span style="margin-left:' + offset + '%;width:' + Math.min(pct, 100 - offset) + '%"></span></div></div>' +
+      '<div class="proj__chips">' + chips + '</div>' + deliverable;
   }
 
   function renderProjects() {

@@ -129,8 +129,12 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 
 /* R&D projects */
 .proj__note { color: var(--muted); font-size: 12px; }
-.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 14px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: 14px; }
 .proj { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+/* Line up the sections of cards that sit side by side: top, title, summary, involvement, chips, deliverable */
+@supports (grid-template-rows: subgrid) {
+  .proj { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 10px; align-content: start; }
+}
 .proj__top { display: flex; gap: 12px; align-items: center; }
 .proj__head { min-width: 0; }
 .proj__name { font-family: var(--mono); font-size: 17px; font-weight: 700; color: var(--accent); }
@@ -139,13 +143,14 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .proj__state--live { border-color: #2E5E37; color: var(--ok); }
 .proj__full { font-size: 13px; font-weight: 600; line-height: 1.35; }
 .proj__sum { font-size: 12.5px; line-height: 1.55; color: var(--text-2); }
-.proj__inv { margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--line-strong); display: flex; flex-direction: column; gap: 8px; }
+.proj__inv { align-self: end; padding-top: 12px; border-top: 1px dashed var(--line-strong); display: flex; flex-direction: column; gap: 8px; }
 .proj__invHead { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
 .proj__pct { color: var(--accent); white-space: nowrap; }
 .proj__bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; display: flex; }
 .proj__bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #C8922C, var(--accent)); }
-.proj__chips { display: flex; flex-wrap: wrap; gap: 5px; }
-.proj__deliv { display: flex; gap: 8px; align-items: flex-start; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); border: 1px solid #4A3B1A; font-size: 12.5px; line-height: 1.45; color: var(--text); }
+.proj__chips { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; }
+.proj__slot { min-height: 0; }
+.proj__deliv { display: flex; gap: 8px; align-items: center; align-self: stretch; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); border: 1px solid #4A3B1A; font-size: 12.5px; line-height: 1.45; color: var(--text); }
 .proj__delivIcon { flex: 0 0 auto; display: inline-flex; color: var(--accent); }
 .proj__delivIcon svg { width: 16px; height: 16px; }
 .proj__deliv a { font-weight: 600; white-space: nowrap; }
