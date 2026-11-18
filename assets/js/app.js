@@ -513,6 +513,7 @@
     .then(function (r) {
       D = { profile: r[0], pubs: r[1].slice().sort(function (a, b) { return b.year - a.year; }), themes: r[2], apps: r[3], experience: r[4], projects: r[5] };
       renderAll();
+      document.dispatchEvent(new Event('contentrendered'));   // lets the hero scene re-measure its column
       // a shared link like #proj-valu3s lands on and highlights that card
       var hit = D.projects.filter(function (p) { return '#' + projId(p.name) === location.hash; })[0];
       if (hit) focusProject(hit.name);

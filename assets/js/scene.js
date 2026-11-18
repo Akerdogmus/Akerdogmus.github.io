@@ -378,6 +378,18 @@
   }
   document.addEventListener('visibilitychange', wake);
   window.addEventListener('resize', resize);
+  // The column width changes after the page content loads (sidebar/rail fill in, fonts swap),
+  // which is not a window resize — watch the container itself and redraw when it changes.
+  if ('ResizeObserver' in window) {
+    var lastW = 0;
+    new ResizeObserver(function (entries) {
+      var w = Math.floor(entries[0].contentRect.width);
+      if (w && Math.abs(w - lastW) > 1) { lastW = w; resize(); }
+    }).observe(cv.parentElement);
+  }
+  // Also re-measure once the page content has rendered and once everything has loaded.
+  document.addEventListener('contentrendered', resize);
+  window.addEventListener('load', resize);
   document.addEventListener('langchange', function () { if (reduce || !raf) render(reduce ? 7.3 : (performance.now() - start) / 1000); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (reduce) render(7.3); });
   resize();
