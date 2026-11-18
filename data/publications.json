@@ -96,7 +96,8 @@
     "doi": "10.23919/DATE64628.2025.10992740",
     "projects": [
       "OPEVA"
-    ]
+    ],
+    "abstract": "The OPtimization of Electric Vehicle Autonomy (OPEVA) project enhances data aggregation for Electric Vehicles (EVs) by collecting critical real-time data (i.e., vehicle performance, battery health, charging behaviours) through heterogeneous data acquisition devices built on robust HW and integrated with Internet of Things (IoT) protocols. By combining internal sensor data and driver-specific behaviours with external information (e.g., road conditions, charging station availability), OPEVA maximizes vehicles performance, establishing secure and seamless data communication between EVs and the infrastructure, and using IoT and cloud computing tools alongside Vehicle-to-Everything (V2X) devices and networks. This paper focuses on the extensible data model ensuring semantic data integrity considering in- and out-vehicle factors, presenting data acquisition solutions dealing with OPEVA's semantic data model and their use in various Artificial Intelligence (AI)-powered use cases (e.g., range prediction, route optimization, battery management)."
   },
   {
     "year": 2024,
