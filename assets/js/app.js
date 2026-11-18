@@ -142,7 +142,8 @@
       '<p class="loc">' + ICON.pin + esc(L(p.location)) + '</p>';
   }
 
-  function ym(s) { if (!s) return ''; var p = s.split('-'); return t('months')[+p[1] - 1] + ' ' + p[0]; }
+  // "2024-03" → "Mar 2024"; a bare year ("2025") stays as is
+  function ym(s) { if (!s) return ''; var p = String(s).split('-'); return p.length < 2 ? p[0] : t('months')[+p[1] - 1] + ' ' + p[0]; }
 
   function renderExperience() {
     var items = D.experience.map(function (e) {
@@ -161,9 +162,11 @@
 
   function renderProjects() {
     $('projectList').innerHTML = D.projects.map(function (p) {
-      var live = !p.to;
+      // finished = has an end date, or marked done when the exact end month is unknown
+      var live = !p.to && !p.done;
+      var when = p.to ? ym(p.from) + ' – ' + ym(p.to) : (live ? ym(p.from) + ' –' : ym(p.from));
       return '<article class="card proj"><div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
-        '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(ym(p.from) + ' – ' + (p.to ? ym(p.to) : '')) +
+        '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
         '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(live ? t('ongoing') : t('done')) + '</span></span></div></div>' +
         '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p></article>';
     }).join('');

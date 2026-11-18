@@ -43,7 +43,7 @@
     "name": "OPEVA",
     "full": "OPtimization of Electric Vehicle Autonomy",
     "icon": "battery",
-    "from": "2023-01", "to": null,
+    "from": "2023-01", "to": "2025-12",
     "summary": {
       "en": "Tackles range anxiety, price and charging limits to speed up EV adoption. Co-funded by the Key Digital Technologies Joint Undertaking under Horizon Europe.",
       "tr": "Elektrikli araçların yaygınlaşması için menzil kaygısı, fiyat ve şarj kısıtlarını ele alır. Horizon Europe kapsamında Key Digital Technologies Joint Undertaking destekli."
@@ -53,7 +53,7 @@
     "name": "TASTI",
     "full": "Application-Tailored Synthetic Image Generation",
     "icon": "sparkles",
-    "from": "2023-01", "to": null,
+    "from": "2023-01", "to": null, "done": true,
     "summary": {
       "en": "A modular framework of transferable technology for synthetic image generation tailored to each application, usable at industrial scale.",
       "tr": "Uygulamaya göre uyarlanmış sentetik görüntü üretimi için endüstriyel ölçekte kullanılabilen, aktarılabilir teknolojilerden oluşan modüler çerçeve."
@@ -63,7 +63,7 @@
     "name": "USWA",
     "full": "Ultra Scalable Wireless Access",
     "icon": "radio",
-    "from": "2023-01", "to": null,
+    "from": "2023-01", "to": "2025-11",
     "summary": {
       "en": "Research on DECT-2020 NR mesh radio for industrial IoT without spectrum licences: power-grid quality monitoring and machine condition monitoring towards digital twins.",
       "tr": "Spektrum lisansı gerektirmeyen endüstriyel IoT için DECT-2020 NR mesh radyo araştırması: elektrik şebekesi kalite izleme ve dijital ikize yönelik makine durum izleme."

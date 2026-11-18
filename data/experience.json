@@ -20,7 +20,7 @@
     "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" },
     "icon": "cap",
     "roles": [
-      { "title": { "en": "MSc, Electrical & Electronics Engineering", "tr": "Yüksek lisans, Elektrik-Elektronik Mühendisliği" }, "from": null, "to": null, "note": { "en": "ongoing", "tr": "devam ediyor" } },
+      { "title": { "en": "MSc, Electrical & Electronics Engineering", "tr": "Yüksek lisans, Elektrik-Elektronik Mühendisliği" }, "from": "2025", "to": null },
       { "title": { "en": "BSc, Electrical & Electronics Engineering", "tr": "Lisans, Elektrik-Elektronik Mühendisliği" }, "from": "2013-09", "to": "2019-10" }
     ]
   }
