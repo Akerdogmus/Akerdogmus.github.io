@@ -100,6 +100,11 @@
       "label": "researchgate",
       "url": "https://www.researchgate.net/profile/Alim-Erdogmus",
       "icon": "book"
+    },
+    {
+      "label": "orcid/0000-0001-5111-5965",
+      "url": "https://orcid.org/0000-0001-5111-5965",
+      "icon": "orcid"
     }
   ],
   "stats": {
