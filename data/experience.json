@@ -1,27 +1,31 @@
 [
   {
     "org": "acd | veri mühendisliği",
+    "kind": "work",
     "place": { "en": "Eskişehir · full-time", "tr": "Eskişehir · tam zamanlı" },
-    "icon": "briefcase",
+    "icon": "building",
     "roles": [
-      { "title": "AI Tech Lead", "from": "2026-08", "to": null, "note": { "en": "Hybrid", "tr": "Hibrit" } },
-      { "title": { "en": "R&D Projects Team Lead", "tr": "Ar-Ge Projeleri Ekip Lideri" }, "from": "2022-08", "to": "2026-08" },
-      { "title": { "en": "R&D Software Engineer", "tr": "Ar-Ge Yazılım Mühendisi" }, "from": "2020-10", "to": "2022-08" }
+      { "title": "AI Tech Lead", "icon": "spark", "from": "2026-08", "to": null, "mode": "hybrid" },
+      { "title": { "en": "R&D Projects Team Lead", "tr": "Ar-Ge Projeleri Ekip Lideri" }, "icon": "users", "from": "2022-08", "to": "2026-08", "mode": "office" },
+      { "title": { "en": "R&D Software Engineer", "tr": "Ar-Ge Yazılım Mühendisi" }, "icon": "code", "from": "2020-10", "to": "2022-08", "mode": "office" }
     ]
   },
   {
     "org": "İnovasyon Mühendislik Ltd. Şti.",
-    "icon": "briefcase",
+    "kind": "work",
+    "icon": "building",
     "roles": [
-      { "title": { "en": "Intern", "tr": "Stajyer" }, "from": "2019-06", "to": "2019-07" }
+      { "title": { "en": "Intern", "tr": "Stajyer" }, "icon": "seed", "from": "2019-06", "to": "2019-07" }
     ]
   },
   {
     "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" },
+    "kind": "edu",
+    "place": { "en": "Electrical & Electronics Engineering", "tr": "Elektrik-Elektronik Mühendisliği" },
     "icon": "cap",
     "roles": [
-      { "title": { "en": "MSc, Electrical & Electronics Engineering", "tr": "Yüksek lisans, Elektrik-Elektronik Mühendisliği" }, "from": "2025", "to": null },
-      { "title": { "en": "BSc, Electrical & Electronics Engineering", "tr": "Lisans, Elektrik-Elektronik Mühendisliği" }, "from": "2013-09", "to": "2019-10" }
+      { "title": { "en": "MSc", "tr": "Yüksek lisans" }, "icon": "doc", "from": "2025", "to": null },
+      { "title": { "en": "BSc", "tr": "Lisans" }, "icon": "book", "from": "2013-09", "to": "2019-10" }
     ]
   }
 ]

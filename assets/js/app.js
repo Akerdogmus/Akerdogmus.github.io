@@ -9,6 +9,8 @@
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       about: 'About', aboutTitle: 'about me',
+      units: ['yr', 'mo'], now: 'current', mode: { hybrid: 'Hybrid', office: 'On-site' },
+      yearsExp: function (n) { return n + '+ yrs experience'; },
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       langBtn: '[TR]', langLabel: "Türkçe'ye geç",
@@ -36,6 +38,8 @@
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       about: 'Hakkımda', aboutTitle: 'hakkımda',
+      units: ['yıl', 'ay'], now: 'şu an', mode: { hybrid: 'Hibrit', office: 'Ofisten' },
+      yearsExp: function (n) { return n + '+ yıl deneyim'; },
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
       months: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
       langBtn: '[EN]', langLabel: 'Switch to English',
@@ -71,6 +75,18 @@
     codeSm: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 14),
     briefcase: svg('<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path>'),
     cap: svg('<path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path>'),
+    building: svg('<rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"></path>'),
+    briefcaseSm: svg('<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>', 14),
+    sparkSm: svg('<path d="M11 3l1.9 4.9L18 10l-5.1 2.1L11 17l-1.9-4.9L4 10l5.1-2.1z"></path>', 13),
+    usersSm: svg('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>', 13),
+    codeSm2: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 13),
+    seedSm: svg('<path d="M12 22V12"></path><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"></path><path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z"></path>', 13),
+    docSm: svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline>', 13),
+    bookSm: svg('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>', 13),
+    dotSm: svg('<circle cx="12" cy="12" r="4"></circle>', 13),
+    clockSm: svg('<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>', 11),
+    homeSm: svg('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>', 11),
+    buildingSm: svg('<rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path>', 11),
     info: svg('<circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>', 14),
     factory: svg('<path d="M2 20V9l6 4V9l6 4V4h4l2 16z"></path><path d="M2 20h20"></path>'),
     globe: svg('<circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>'),
@@ -164,19 +180,53 @@
   // "2024-03" → "Mar 2024"; a bare year ("2025") stays as is
   function ym(s) { if (!s) return ''; var p = String(s).split('-'); return p.length < 2 ? p[0] : t('months')[+p[1] - 1] + ' ' + p[0]; }
 
+  // Whole months between two "YYYY-MM" values, counting both ends (LinkedIn style); null for bare years
+  function monthsBetween(from, to) {
+    if (!from || String(from).length < 7) return null;
+    var end = to || new Date().toISOString().slice(0, 7);
+    var a = from.split('-'), b = end.split('-');
+    return (+b[0] - +a[0]) * 12 + (+b[1] - +a[1]) + 1;
+  }
+  function dur(m) {
+    if (m == null || m < 1) return '';
+    var y = Math.floor(m / 12), mo = m % 12, u = t('units');
+    return [y ? y + ' ' + u[0] : '', mo ? mo + ' ' + u[1] : ''].filter(Boolean).join(' ');
+  }
+
   function renderExperience() {
+    var workStart = null;
+    D.experience.forEach(function (e) {
+      if (e.kind !== 'work') return;
+      e.roles.forEach(function (r) { if (r.from && String(r.from).length >= 7 && (!workStart || r.from < workStart)) workStart = r.from; });
+    });
+    // full-time experience starts with the first role longer than an internship
+    var fullTime = D.experience.filter(function (e) { return e.kind === 'work' && e.place; });
+    var ftStart = fullTime.length ? fullTime[0].roles.map(function (r) { return r.from; }).sort()[0] : workStart;
+    var years = Math.floor((monthsBetween(ftStart, null) || 0) / 12);
+
     var items = D.experience.map(function (e) {
+      var orgFrom = e.roles.map(function (r) { return r.from; }).filter(Boolean).sort()[0];
+      var current = e.roles.some(function (r) { return !r.to; });
+      var orgDur = e.kind === 'work' ? dur(monthsBetween(orgFrom, current ? null : e.roles[0].to)) : '';
       var roles = e.roles.map(function (r) {
+        var now = !r.to;
         var when = r.from ? ym(r.from) + ' – ' + (r.to ? ym(r.to) : t('present')) : '';
-        var note = r.note ? L(r.note) : '';
-        return '<li class="exp__role"><span class="exp__dot' + (r.to ? '' : ' exp__dot--now') + '" aria-hidden="true"></span>' +
-          '<span><b>' + esc(L(r.title)) + '</b><span class="exp__when">' + esc([when, note].filter(Boolean).join(' · ')) + '</span></span></li>';
+        var d = dur(monthsBetween(r.from, r.to));
+        var chips = (d ? '<span class="xchip">' + ICON.clockSm + esc(d) + '</span>' : '') +
+          (r.mode ? '<span class="xchip">' + (r.mode === 'hybrid' ? ICON.homeSm : ICON.buildingSm) + esc(t('mode')[r.mode]) + '</span>' : '') +
+          (now ? '<span class="xchip xchip--now">' + esc(t('now')) + '</span>' : '');
+        return '<li class="exp__role' + (now ? ' exp__role--now' : '') + '"><span class="exp__node" aria-hidden="true">' + (ICON[r.icon + 'Sm'] || ICON.dotSm) + '</span>' +
+          '<span class="exp__body"><b>' + esc(L(r.title)) + '</b><span class="exp__when">' + esc(when) + '</span>' +
+          (chips ? '<span class="exp__chips">' + chips + '</span>' : '') + '</span></li>';
       }).join('');
       return '<div class="exp__org"><div class="exp__head"><span class="ico ico--soft">' + (ICON[e.icon] || '') + '</span>' +
-        '<span><b>' + esc(L(e.org)) + '</b>' + (e.place ? '<span class="exp__place">' + esc(L(e.place)) + '</span>' : '') + '</span></div>' +
+        '<span class="exp__headtxt"><b>' + esc(L(e.org)) + '</b>' + (e.place ? '<span class="exp__place">' + esc(L(e.place)) + '</span>' : '') + '</span>' +
+        (orgDur ? '<span class="exp__total">' + esc(orgDur) + '</span>' : '') + '</div>' +
         '<ul class="exp__roles">' + roles + '</ul></div>';
     }).join('');
-    $('experience').innerHTML = '<p id="expTitle" class="eyebrow">' + esc(t('expTitle')) + '</p>' + items;
+    $('experience').innerHTML =
+      '<div class="exp__title"><span class="about__badge">' + ICON.briefcaseSm + '</span><span id="expTitle">' + esc(t('expTitle')) + '</span>' +
+      (years ? '<span class="exp__years">' + esc(t('yearsExp')(years)) + '</span>' : '') + '</div>' + items;
   }
 
   function renderProjects() {
