@@ -3,7 +3,7 @@
   "initials": "AKE",
   "photo": "assets/img/avatar.webp",
   "handle": "akerdogmus",
-  "status": { "en": "now: local & industrial LLMs", "tr": "şu an: lokal ve endüstriyel LLM'ler" },
+  "status": { "en": "currently working on local & industrial LLMs", "tr": "şu an: lokal ve endüstriyel LLM'ler üzerine çalışıyor" },
   "roles": [
     { "icon": "briefcase", "title": "AI Tech Lead", "org": "ACD Veri Mühendisliği" },
     { "icon": "cap", "title": { "en": "MSc student, Electrical & Electronics Eng.", "tr": "Yüksek lisans, Elektrik-Elektronik Müh." }, "org": { "en": "Eskişehir Osmangazi University", "tr": "Eskişehir Osmangazi Üniversitesi" } }
