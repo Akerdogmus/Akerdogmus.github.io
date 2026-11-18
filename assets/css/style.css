@@ -101,8 +101,10 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 
 /* Experience timeline */
 .exp { padding: 0 0 18px; display: flex; flex-direction: column; gap: 18px; overflow: hidden; }
-.exp__title { display: flex; align-items: center; gap: 8px; padding: 12px 20px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(242,184,75,0.06), rgba(242,184,75,0)); font-family: var(--mono); font-size: 12px; color: var(--accent); }
-.exp__years { margin-left: auto; padding: 2px 8px; border-radius: 999px; border: 1px solid #4A3B1A; background: var(--accent-soft); font-size: 11px; color: var(--accent); white-space: nowrap; }
+/* Shared amber card header (experience, stats, book) */
+.chead { display: flex; align-items: center; gap: 8px; padding: 12px 20px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgba(242,184,75,0.06), rgba(242,184,75,0)); font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.chead__icon { display: inline-flex; color: var(--accent); }
+.chead__badge { margin-left: auto; padding: 2px 8px; border-radius: 999px; border: 1px solid #4A3B1A; background: var(--accent-soft); font-size: 11px; color: var(--accent); white-space: nowrap; }
 .exp__org { padding: 0 20px; }
 .exp__head { display: flex; gap: 12px; align-items: center; font-size: 14px; line-height: 1.35; }
 .exp__headtxt { flex: 1; min-width: 0; }
@@ -135,7 +137,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .proj__sum { font-size: 12.5px; line-height: 1.55; color: var(--text-2); }
 
 /* Terminal stats + years */
-.term { font-family: var(--mono); font-size: 13px; line-height: 1.9; padding: 18px 20px; }
+.term { font-family: var(--mono); font-size: 13px; line-height: 1.9; padding: 0; overflow: hidden; }
+.term__body { padding: 14px 20px 18px; }
 .term .prompt { color: var(--ok); }
 .stats__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; color: var(--muted); }
 .stats__grid b { color: var(--text); font-weight: 500; }
@@ -149,7 +152,8 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .yr__c { flex: 0 0 16px; text-align: right; }
 
 /* Book (sidebar card) */
-.book { padding: 20px; }
+.book { padding: 0; overflow: hidden; }
+.book__inner { padding: 18px 20px 20px; }
 .book__row { display: flex; gap: 16px; align-items: flex-start; }
 .cover { flex: 0 0 96px; width: 96px; height: auto; aspect-ratio: 205 / 300; border-radius: 3px; object-fit: cover; box-shadow: 0 12px 24px -12px rgba(0,0,0,.9); }
 .book__body { min-width: 0; }
