@@ -20,6 +20,8 @@ Alan değerleri:
 
 - `type`: `article` · `conference` · `preprint`
 - `theme`: `vv` · `genai` · `nocode` · `ev` · `edu` · `other`
+- Tema ikonu: `themes.json` içinde `"icon"` alanı (`robot`, `sparkles`, `blocks`, `battery`, `cap`, `wave`); yoksa tema `id`'sine göre seçilir
+- CSS/JS değiştirince `index.html` içindeki `?v=` numarasını artır (tarayıcı önbelleği için)
 - `doi` → yayının altında tıklanabilir DOI etiketi çıkar (`url` alanı da `https://doi.org/...` olmalı)
 - `fullText: true` → yayında "tam metin" etiketi görünür
 - `titleAlt` → Türkçe başlıklı yayınlar için İngilizce başlık

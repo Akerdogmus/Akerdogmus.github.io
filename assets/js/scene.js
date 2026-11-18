@@ -84,51 +84,87 @@
     ctx.fillStyle = C.text; ctx.fillText('· ' + T().labels[i], p.x + 36, p.y + p.h - 12);
   }
 
-  // 01 — robot arm picking parts from a conveyor, camera cone scanning
+  // 01 — robot inspection cell: an arm with a camera tool sweeps a vehicle chassis.
+  // Two-link inverse kinematics keeps the tool on a smooth path just above the body.
   function drawRobot(p, t) {
-    var bottom = p.y + p.h - 44, left = p.x + 16, right = p.x + p.w - 16;
-    // conveyor
+    var floor = p.y + p.h - 40;
+    // chassis (body-in-white) on the right
+    var cx0 = p.x + p.w * 0.40, cx1 = p.x + p.w - 14, ctop = floor - 46, cbot = floor - 12;
+    var ribs = 7, rw = (cx1 - cx0) / ribs;
+    // arm geometry
+    var sx = p.x + Math.max(34, p.w * 0.17), sy = floor - 30;
+    var ty = ctop - Math.max(26, p.h * 0.12);
+    var room = sy - (p.y + 12);                       // keep the elbow inside the panel
+    var far = Math.hypot(cx1 - rw * 0.5 - sx, ty - sy);
+    var L = Math.min(far * 0.53, room * 0.98);
+    var L1 = L, L2 = L * 0.92;
+    var reach = (L1 + L2) * 0.97;
+    var xMax = Math.min(cx1 - rw * 0.5, sx + Math.sqrt(Math.max(0, reach * reach - (ty - sy) * (ty - sy))));
+    var xMin = cx0 + rw * 0.5;
+    // eased back-and-forth sweep with a short dwell at each end
+    var ph = (t * 0.32) % 2, dirRight = ph < 1, u = dirRight ? ph : 2 - ph;
+    u = u < 0.08 ? 0 : u > 0.92 ? 1 : (u - 0.08) / 0.84;
+    u = u * u * (3 - 2 * u);
+    var tx = xMin + (xMax - xMin) * u;
+    var bob = Math.sin(t * 2.4) * 1.5;
+    // IK (elbow up)
+    var dx = tx - sx, dy = (ty + bob) - sy, d = Math.min(Math.hypot(dx, dy), L1 + L2 - 0.5);
+    var c2 = (d * d - L1 * L1 - L2 * L2) / (2 * L1 * L2); c2 = Math.max(-1, Math.min(1, c2));
+    var q2 = Math.acos(c2);
+    var q1 = Math.atan2(dy, dx) - Math.atan2(L2 * Math.sin(q2), L1 + L2 * Math.cos(q2));
+    var ex = sx + L1 * Math.cos(q1), ey = sy + L1 * Math.sin(q1);
+    var wx = ex + L2 * Math.cos(q1 + q2), wy = ey + L2 * Math.sin(q1 + q2);
+
+    // floor and rail
     ctx.strokeStyle = C.dim; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(left, bottom); ctx.lineTo(right, bottom); ctx.stroke();
-    var speed = 26, spacing = 64, off = (t * speed) % spacing;
-    for (var bx = left - spacing + off; bx < right; bx += spacing) {
-      if (bx < left - 2) continue;
-      ctx.fillStyle = '#2B3442'; ctx.fillRect(bx, bottom - 14, 22, 12);
-      ctx.strokeStyle = C.blue; ctx.lineWidth = 1; ctx.strokeRect(bx + 0.5, bottom - 13.5, 21, 11);
+    ctx.beginPath(); ctx.moveTo(p.x + 12, floor); ctx.lineTo(p.x + p.w - 12, floor); ctx.stroke();
+    // chassis frame
+    ctx.fillStyle = '#1A212C'; rr(cx0, ctop, cx1 - cx0, cbot - ctop, 6); ctx.fill();
+    for (var r = 0; r < ribs; r++) {
+      var rx = cx0 + r * rw, mid = rx + rw / 2;
+      var scanned = dirRight ? mid < tx - rw * 0.3 : mid > tx + rw * 0.3;
+      if (scanned) { ctx.fillStyle = 'rgba(126,231,135,0.10)'; ctx.fillRect(rx + 2, ctop + 2, rw - 4, cbot - ctop - 4); }
+      ctx.strokeStyle = '#2A3340'; ctx.lineWidth = 1;
+      if (r) { ctx.beginPath(); ctx.moveTo(rx, ctop + 3); ctx.lineTo(rx, cbot - 3); ctx.stroke(); }
+      if (scanned && rw > 18) {
+        ctx.strokeStyle = C.ok; ctx.lineWidth = 1.5; ctx.beginPath();
+        ctx.moveTo(mid - 4, ctop + 12); ctx.lineTo(mid - 1, ctop + 15); ctx.lineTo(mid + 5, ctop + 9); ctx.stroke();
+      }
     }
-    for (var rx = left + ((t * speed) % 12); rx < right; rx += 12) { ctx.fillStyle = C.dim; ctx.fillRect(rx, bottom + 3, 6, 2); }
-    // arm
-    var s = Math.min(p.w, p.h * 1.1);
-    var bxA = p.x + p.w * 0.36, byA = bottom - 2, L1 = s * 0.29, L2 = s * 0.24;
-    var a1 = -Math.PI / 2 + 0.55 * Math.sin(t * 1.15);
-    var a2 = 1.0 + 0.55 * Math.sin(t * 1.15 + 1.2);
-    var jx = bxA + L1 * Math.cos(a1), jy = byA + L1 * Math.sin(a1);
-    var ex = jx + L2 * Math.cos(a1 + a2), ey = jy + L2 * Math.sin(a1 + a2);
-    ctx.fillStyle = '#2B3442'; ctx.fillRect(bxA - 16, byA - 6, 32, 8);
+    ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5; rr(cx0, ctop, cx1 - cx0, cbot - ctop, 6); ctx.stroke();
+    ctx.fillStyle = '#0D1117'; ctx.strokeStyle = C.dim; ctx.lineWidth = 2;
+    [cx0 + (cx1 - cx0) * 0.18, cx1 - (cx1 - cx0) * 0.18].forEach(function (wxp) { ctx.beginPath(); ctx.arc(wxp, cbot + 4, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); });
+
+    // camera cone onto the body + inspection window
+    var camY = wy + 14;
+    var g = ctx.createLinearGradient(wx, camY, wx, ctop);
+    g.addColorStop(0, 'rgba(126,231,135,0.32)'); g.addColorStop(1, 'rgba(126,231,135,0.05)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(wx - 3, camY); ctx.lineTo(wx - rw * 0.55, ctop); ctx.lineTo(wx + rw * 0.55, ctop); ctx.lineTo(wx + 3, camY); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = C.ok; ctx.setLineDash([3, 3]); ctx.lineWidth = 1;
+    ctx.strokeRect(wx - rw * 0.55, ctop + 2, rw * 1.1, cbot - ctop - 4); ctx.setLineDash([]);
+
+    // pedestal + base
+    ctx.fillStyle = '#2B3442';
+    ctx.beginPath(); ctx.moveTo(sx - 22, floor); ctx.lineTo(sx - 14, sy + 10); ctx.lineTo(sx + 14, sy + 10); ctx.lineTo(sx + 22, floor); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#323C4C'; rr(sx - 12, sy - 4, 24, 16, 4); ctx.fill();
+    // links
     ctx.lineCap = 'round';
-    ctx.strokeStyle = C.acc; ctx.lineWidth = 7;
-    ctx.beginPath(); ctx.moveTo(bxA, byA - 4); ctx.lineTo(jx, jy); ctx.stroke();
-    ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(jx, jy); ctx.lineTo(ex, ey); ctx.stroke();
-    ctx.fillStyle = C.panel; ctx.strokeStyle = C.acc; ctx.lineWidth = 2;
-    [[bxA, byA - 4, 6], [jx, jy, 5]].forEach(function (j) { ctx.beginPath(); ctx.arc(j[0], j[1], j[2], 0, Math.PI * 2); ctx.fill(); ctx.stroke(); });
-    var g = 0.6 + 0.4 * Math.sin(t * 2.3);
-    var ang = a1 + a2;
-    ctx.strokeStyle = C.hi; ctx.lineWidth = 2;
-    for (var k = -1; k <= 1; k += 2) {
-      ctx.beginPath(); ctx.moveTo(ex, ey);
-      ctx.lineTo(ex + 9 * Math.cos(ang + k * 0.5 * g), ey + 9 * Math.sin(ang + k * 0.5 * g)); ctx.stroke();
-    }
+    ctx.strokeStyle = '#B98A2F'; ctx.lineWidth = 11; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(ex, ey); ctx.stroke();
+    ctx.strokeStyle = C.acc; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(ex, ey); ctx.stroke();
+    ctx.strokeStyle = '#B98A2F'; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(wx, wy); ctx.stroke();
+    ctx.strokeStyle = C.acc; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(wx, wy); ctx.stroke();
+    // wrist always points down to the body
+    ctx.strokeStyle = C.acc; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(wx, wy); ctx.lineTo(wx, wy + 8); ctx.stroke();
     ctx.lineCap = 'butt';
-    // camera + scanning cone
-    var cx = right - 18, cy = p.y + 24, sweep = 0.35 * Math.sin(t * 0.9);
-    var dir = Math.PI * 0.62 + sweep, spread = 0.22, len = (bottom - cy) * 1.15;
-    var grd = ctx.createLinearGradient(cx, cy, cx + Math.cos(dir) * len, cy + Math.sin(dir) * len);
-    grd.addColorStop(0, 'rgba(126,231,135,0.28)'); grd.addColorStop(1, 'rgba(126,231,135,0)');
-    ctx.fillStyle = grd; ctx.beginPath(); ctx.moveTo(cx, cy);
-    ctx.lineTo(cx + Math.cos(dir - spread) * len, cy + Math.sin(dir - spread) * len);
-    ctx.lineTo(cx + Math.cos(dir + spread) * len, cy + Math.sin(dir + spread) * len); ctx.closePath(); ctx.fill();
-    ctx.fillStyle = '#2B3442'; ctx.fillRect(cx - 10, cy - 7, 20, 14);
-    ctx.fillStyle = C.ok; ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI * 2); ctx.fill();
+    // joints
+    [[sx, sy, 7], [ex, ey, 6], [wx, wy, 4.5]].forEach(function (j) {
+      ctx.fillStyle = C.panel; ctx.strokeStyle = C.acc; ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.arc(j[0], j[1], j[2], 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    });
+    // camera tool
+    ctx.fillStyle = '#2B3442'; rr(wx - 8, wy + 7, 16, 9, 2); ctx.fill();
+    ctx.strokeStyle = C.ok; ctx.lineWidth = 1; rr(wx - 8, wy + 7, 16, 9, 2); ctx.stroke();
+    ctx.fillStyle = (Math.floor(t * 4) % 2) ? C.ok : '#3E7A45'; ctx.beginPath(); ctx.arc(wx, wy + 11.5, 2, 0, Math.PI * 2); ctx.fill();
   }
 
   // 02 — reference part image, scan line, cycling injected faults
@@ -228,7 +264,9 @@
     var tx = x1 + 22, tw = Math.min(p.x + p.w - tx - 14, 46);
     if (tw > 18) {
       for (var g = 0; g < 3; g++) {
-        var ty = top + g * (tw + 10), dev = Math.min(1, Math.max(0, ((t + g * 0.8) % 3.6) / 2.4));
+        var ty = top + g * (tw + 10);
+        if (ty + tw > p.y + p.h - 34) break;
+        var dev = Math.min(1, Math.max(0, ((t + g * 0.8) % 3.6) / 2.4));
         ctx.fillStyle = '#1D2532'; ctx.fillRect(tx, ty, tw, tw);
         var cells = 6, cs = tw / cells;
         for (var cx = 0; cx < cells; cx++) for (var cy = 0; cy < cells; cy++) {

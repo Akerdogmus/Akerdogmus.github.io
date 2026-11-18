@@ -10,7 +10,7 @@
       heroEyebrow: '// what I work on', heroTitle: 'From robot inspection cells to local LLMs',
       mapEyebrow: '// research map', mapTitle: 'Themes, projects, papers & code',
       appsEyebrow: '// apps & software', appsTitle: "Things I've built",
-      toolsTitle: '// robotics & simulation tools',
+      toolsTitle: '// robotics & simulation tools', allRepos: 'All repositories on GitHub →',
       built: 'built with GitHub Pages',
       all: 'All', filterLabel: 'Filter by theme',
       perYear: '// publications per year',
@@ -20,6 +20,7 @@
       book: '// book', viewBook: 'View book →', otherStore: 'Kitapyurdu',
       pages: 'pp', editor: 'Editor', coverAlt: 'Cover of the book ROS ile Robotik Uygulamalar',
       liveDemo: 'Live demo ↗', source: 'Source code', screenshots: 'Screenshots',
+      papers: function (n) { return n + (n === 1 ? ' paper' : ' papers'); },
       type: { article: 'Article', conference: 'Conference', preprint: 'Preprint' },
       fullText: 'full text',
       loadError: 'Content could not be loaded. If you opened the file directly, serve the folder over HTTP (e.g. python -m http.server).'
@@ -31,7 +32,7 @@
       heroEyebrow: '// neler üzerinde çalışıyorum', heroTitle: "Robot denetim hücrelerinden lokal LLM'lere",
       mapEyebrow: '// araştırma haritası', mapTitle: 'Alanlar, projeler, yayınlar ve kod',
       appsEyebrow: '// uygulamalar ve yazılım', appsTitle: 'Geliştirdiklerim',
-      toolsTitle: '// robotik ve simülasyon araçları',
+      toolsTitle: '// robotik ve simülasyon araçları', allRepos: "GitHub'daki tüm depolar →",
       built: 'GitHub Pages ile yayında',
       all: 'Tümü', filterLabel: 'Alana göre filtrele',
       perYear: '// yıllara göre yayınlar',
@@ -41,19 +42,34 @@
       book: '// kitap', viewBook: 'Kitabı incele →', otherStore: 'Kitapyurdu',
       pages: 's.', editor: 'Editör', coverAlt: 'ROS ile Robotik Uygulamalar kitabının kapağı',
       liveDemo: 'Canlı demo ↗', source: 'Kaynak kod', screenshots: 'Ekran görüntüleri',
+      papers: function (n) { return n + ' yayın'; },
       type: { article: 'Makale', conference: 'Bildiri', preprint: 'Ön baskı' },
       fullText: 'tam metin',
       loadError: 'İçerik yüklenemedi. Dosyayı doğrudan açtıysanız klasörü bir HTTP sunucusuyla açın (ör. python -m http.server).'
     }
   };
 
+  function svg(body, size) {
+    var s = size || 18;
+    return '<svg aria-hidden="true" width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + body + '</svg>';
+  }
   var ICON = {
-    code: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
-    book: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-    linkedin: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>',
-    pin: '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
-    codeSm: '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>'
+    code: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>'),
+    book: svg('<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>'),
+    linkedin: svg('<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>'),
+    pin: svg('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>'),
+    codeSm: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 14)
   };
+  // One icon per research theme (themes.json may name another with "icon")
+  var THEME_ICON = {
+    robot: svg('<path d="M3 21h11"></path><path d="M6 21v-3l3.5-5"></path><circle cx="9.5" cy="13" r="1.6"></circle><path d="M10.8 12l5.2-4.4"></path><circle cx="16.5" cy="7.2" r="1.6"></circle><path d="M17.8 8.4l2.4 2.4"></path><path d="M19 13.5v2"></path><path d="M21 14.5h-4"></path>', 26),
+    sparkles: svg('<path d="M11 3l1.9 4.9L18 10l-5.1 2.1L11 17l-1.9-4.9L4 10l5.1-2.1z"></path><path d="M19 15l.8 2.1 2.2.9-2.2.9-.8 2.1-.8-2.1-2.2-.9 2.2-.9z"></path>', 26),
+    blocks: svg('<rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><path d="M17.25 14v7"></path><path d="M13.75 17.5h7"></path>', 26),
+    battery: svg('<rect x="2" y="7" width="17" height="10" rx="2"></rect><path d="M22 11v2"></path><path d="M11.5 8.5l-3 4h4l-3 4"></path>', 26),
+    cap: svg('<path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path><path d="M22 10v6"></path>', 26),
+    wave: svg('<path d="M2 12h3l2.5-7 4 14 3.5-10 2 3H22"></path>', 26)
+  };
+  var THEME_DEFAULT_ICON = { vv: 'robot', genai: 'sparkles', nocode: 'blocks', ev: 'battery', edu: 'cap', other: 'wave' };
 
   var state = { lang: initialLang(), theme: 'all', shots: {} };
   var D = null;
@@ -85,7 +101,7 @@
 
   function renderProfile() {
     var p = D.profile;
-    var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="88" height="88">' : esc(p.initials);
+    var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="80" height="80">' : esc(p.initials);
     var links = p.links.map(function (l) { return '<a href="' + esc(l.url) + '">' + (ICON[l.icon] || '') + esc(l.label) + '</a>'; }).join('');
     $('profile').innerHTML =
       '<div class="avatar" aria-hidden="true">' + avatar + '</div>' +
@@ -94,25 +110,21 @@
       '<p class="roles">' + L(p.roles).map(esc).join('<br>') + '</p>' +
       '<p class="summary">' + esc(L(p.summary)) + '</p>' +
       '<nav class="links" aria-label="Profiles">' + links + '<span>' + ICON.pin + esc(L(p.location)) + '</span></nav>';
-
-    var labels = t('stat');
-    var w = Math.max.apply(null, p.stats.items.map(function (s) { return labels[s.key].length; })) + 1;
-    var rows = p.stats.items.map(function (s) {
-      var lab = labels[s.key];
-      return '<div><span class="k">' + esc(lab + ' ' + Array(Math.max(1, w - lab.length)).join('.')) + '</span> <span class="v">' + esc(s.value) + '</span></div>';
-    }).join('');
-    $('stats').innerHTML =
-      '<div><span class="prompt">$</span> ' + esc(t('statsCmd')) + '</div>' + rows +
-      '<div><span class="prompt">$</span> <span class="caret">▍</span></div>' +
-      '<p class="note">' + esc(t('asOf')) + ' ' + esc(p.stats.asOf) + ' · ResearchGate</p>';
   }
 
-  function renderYears() {
+  function renderStats() {
+    var p = D.profile, labels = t('stat');
     var c = {};
-    D.pubs.forEach(function (p) { c[p.year] = (c[p.year] || 0) + 1; });
+    D.pubs.forEach(function (x) { c[x.year] = (c[x.year] || 0) + 1; });
     var ys = Object.keys(c).sort().reverse();
     var max = Math.max.apply(null, ys.map(function (y) { return c[y]; }));
-    $('years').innerHTML = '<p class="eyebrow eyebrow--muted" style="font-size:13px">' + esc(t('perYear')) + '</p><div class="years__list">' +
+    $('stats').innerHTML =
+      '<div><span class="prompt">$</span> ' + esc(t('statsCmd')) + '</div>' +
+      '<div class="stats__grid">' + p.stats.items.map(function (s) {
+        return '<span>' + esc(labels[s.key]) + ' <b>' + esc(s.value) + '</b></span>';
+      }).join('') + '</div>' +
+      '<p class="note">' + esc(t('asOf')) + ' ' + esc(p.stats.asOf) + ' · ResearchGate</p>' +
+      '<p class="years__title">' + esc(t('perYear')) + '</p><div class="years__list">' +
       ys.map(function (y) {
         return '<div class="yr"><span class="yr__y">' + y + '</span><span class="yr__bar" role="img" aria-label="' + y + ': ' + c[y] + '"><span style="width:' + Math.round(c[y] / max * 100) + '%"></span></span><span class="yr__c">' + c[y] + '</span></div>';
       }).join('') + '</div>';
@@ -132,8 +144,10 @@
     var types = t('type');
     $('themes').classList.toggle('themes--single', list.length === 1);
     $('themes').innerHTML = list.map(function (th) {
+      var ps = papersOf(th.id);
+      var icon = THEME_ICON[th.icon || THEME_DEFAULT_ICON[th.id]] || THEME_ICON.wave;
       var repos = (th.repos || []).map(function (r) { return '<a class="repo" href="' + esc(r.url) + '">' + ICON.codeSm + esc(r.name) + '</a>'; }).join('');
-      var papers = papersOf(th.id).map(function (p) {
+      var papers = ps.map(function (p) {
         return '<li class="paper"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a>' +
           (p.titleAlt ? '<span class="paper__alt">' + esc(p.titleAlt) + '</span>' : '') +
           '<span class="paper__auth">' + esc(p.authors) + '</span>' +
@@ -142,9 +156,12 @@
           (p.fullText ? '<span class="badge badge--ok">' + esc(t('fullText')) + '</span>' : '') +
           (p.doi ? '<a class="badge badge--doi" href="https://doi.org/' + esc(p.doi) + '">DOI ' + esc(p.doi) + '</a>' : '') + '</span></li>';
       }).join('');
-      return '<article class="card theme"><div class="theme__info"><span class="chip">' + esc(L(th.project)) + '</span>' +
-        '<h3 class="theme__name">' + esc(L(th.name)) + '</h3><p class="theme__desc">' + esc(L(th.description)) + '</p>' +
-        (repos ? '<div class="repos">' + repos + '</div>' : '') + '</div>' +
+      return '<article class="card theme"><div class="theme__top"><span class="theme__icon">' + icon + '</span>' +
+        '<div class="theme__head"><div class="theme__meta"><span class="chip">' + esc(L(th.project)) + '</span>' +
+        '<span class="theme__count">' + esc(t('papers')(ps.length)) + '</span></div>' +
+        '<h3 class="theme__name">' + esc(L(th.name)) + '</h3></div></div>' +
+        '<p class="theme__desc">' + esc(L(th.description)) + '</p>' +
+        (repos ? '<div class="repos">' + repos + '</div>' : '') +
         '<ul class="papers">' + papers + '</ul></article>';
     }).join('');
   }
@@ -152,31 +169,31 @@
   function renderBook() {
     var b = D.profile.book;
     $('book').innerHTML =
-      (b.cover
-        ? '<img class="cover cover--img" src="' + esc(b.cover) + '" alt="' + esc(t('coverAlt')) + '" width="205" height="300">'
-        : '<div class="cover" aria-hidden="true"><small>NOBEL AKADEMİK</small><strong>' + esc(b.title) + '</strong></div>') +
-      '<div class="book__body"><p class="eyebrow">' + esc(t('book')) + '</p><h2 id="bookTitle" class="book__title">' + esc(b.title) + '</h2>' +
+      '<p class="eyebrow">' + esc(t('book')) + '</p>' +
+      '<div class="book__row" style="margin-top:12px">' +
+      (b.cover ? '<img class="cover" src="' + esc(b.cover) + '" alt="' + esc(t('coverAlt')) + '" width="205" height="300" loading="lazy">' : '') +
+      '<div class="book__body"><h2 id="bookTitle" class="book__title">' + esc(b.title) + '</h2>' +
+      '<p class="book__meta">' + esc(b.publisher) + (b.edition ? '<br>' + esc(L(b.edition)) : '') + ' · ' + b.pages + ' ' + esc(t('pages')) +
+      '<br>ISBN ' + esc(b.isbn) + (b.editor ? '<br>' + esc(t('editor')) + ': ' + esc(b.editor) : '') + '</p></div></div>' +
       '<p class="book__desc">' + esc(L(b.description)) + '</p>' +
-      '<p class="book__meta">' + esc(b.publisher) + (b.edition ? ' · ' + esc(L(b.edition)) : '') + ' · ' + b.pages + ' ' + esc(t('pages')) + ' · ISBN ' + esc(b.isbn) + '</p>' +
-      (b.editor ? '<p class="book__meta">' + esc(t('editor')) + ': ' + esc(b.editor) + '</p>' : '') + '</div>' +
       '<div class="book__actions"><a class="btn btn--outline" href="' + esc(b.url) + '">' + esc(t('viewBook')) + '</a>' +
       (b.altUrl ? '<a class="btn" href="' + esc(b.altUrl) + '">' + esc(t('otherStore')) + '</a>' : '') + '</div>';
   }
 
   function renderApps() {
-    $('featured').innerHTML = D.apps.featured.map(function (a, i) {
+    $('featured').innerHTML = D.apps.featured.map(function (a) {
       var cur = state.shots[a.id] || 0;
       var s = a.shots[cur];
       var thumbs = a.shots.length > 1 ? '<div class="shots" role="group" aria-label="' + esc(t('screenshots')) + '">' + a.shots.map(function (sh, j) {
         return '<button type="button" class="tab" data-app="' + esc(a.id) + '" data-shot="' + j + '" aria-pressed="' + (j === cur) + '">' + esc(L(sh.label)) + '</button>';
       }).join('') + '</div>' : '';
-      var feats = L(a.features).map(function (f) { return '<li><span><b>' + esc(f[0]) + '</b> <span>— ' + esc(f[1]) + '</span></span></li>'; }).join('');
-      return '<article class="app">' +
-        '<div class="app__media"><div class="window"><div class="window__bar"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="window__url">' + esc(a.bar) + '</span></div>' +
-        '<img src="' + esc(s.src) + '" alt="' + esc(s.alt) + '" width="' + s.w + '" height="' + s.h + '" loading="lazy" decoding="async"></div>' + thumbs + '</div>' +
-        '<div class="app__info"><span class="app__kind">0' + (i + 1) + ' · ' + esc(L(a.kind)) + '</span>' +
-        '<h3 class="app__name">' + esc(a.name) + '</h3><p class="app__tag">' + esc(L(a.tagline)) + '</p>' +
-        '<p class="app__desc">' + esc(L(a.description)) + '</p><ul class="feats">' + feats + '</ul>' +
+      var feats = L(a.features).slice(0, 3).map(function (f) { return '<li><span><b>' + esc(f[0]) + '</b> — ' + esc(f[1]) + '</span></li>'; }).join('');
+      return '<article class="card app">' +
+        '<img class="app__shot" src="' + esc(s.src) + '" alt="' + esc(s.alt) + '" width="' + s.w + '" height="' + s.h + '" loading="lazy" decoding="async">' +
+        '<div class="app__body"><div class="app__top"><h3 class="app__name">' + esc(a.name) + '</h3><span class="app__kind">' + esc(L(a.kind)) + '</span></div>' +
+        thumbs +
+        '<p class="app__tag">' + esc(L(a.tagline)) + '</p>' +
+        '<ul class="feats">' + feats + '</ul>' +
         '<div class="stack">' + a.stack.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
         '<div class="app__actions">' + (a.live ? '<a class="btn btn--primary" href="' + esc(a.live) + '">' + esc(t('liveDemo')) + '</a>' : '') +
         '<a class="btn" href="' + esc(a.code) + '">' + ICON.codeSm + esc(t('source')) + '</a></div></div></article>';
@@ -189,7 +206,7 @@
   }
 
   function renderAll() {
-    renderStatic(); renderProfile(); renderYears(); renderThemes(); renderBook(); renderApps();
+    renderStatic(); renderProfile(); renderStats(); renderThemes(); renderBook(); renderApps();
   }
 
   document.addEventListener('click', function (e) {
