@@ -21,8 +21,8 @@
     { "icon": "eye", "label": { "en": "Visual inspection", "tr": "Görsel denetim" } }
   ],
   "summary": {
-    "en": "Industrial AI, generative models for visual inspection, and verification of robotic systems.",
-    "tr": "Endüstriyel yapay zekâ, görsel denetim için üretken modeller ve robotik sistemlerin doğrulanması."
+    "en": "I build industrial AI solutions as AI Tech Lead at ACD Veri Mühendisliği. Since 2020 I have worked on EU-funded R&D projects such as VALU3S, OPEVA, TASTI and CLEARS, covering verification of robotic systems, generative models for visual inspection and electric-vehicle data. My current focus is local and industrial LLM applications that keep data on-premise.",
+    "tr": "ACD Veri Mühendisliği'nde AI Tech Lead olarak endüstriyel yapay zekâ çözümleri geliştiriyorum. 2020'den bu yana VALU3S, OPEVA, TASTI ve CLEARS gibi AB destekli Ar-Ge projelerinde robotik sistemlerin doğrulanması, görsel denetim için üretken modeller ve elektrikli araç verisi üzerine çalıştım. Bugünkü odağım, verinin kurum dışına çıkmadığı lokal ve endüstriyel LLM uygulamaları."
   },
   "location": { "en": "Eskişehir, TR", "tr": "Eskişehir, Türkiye" },
   "links": [
