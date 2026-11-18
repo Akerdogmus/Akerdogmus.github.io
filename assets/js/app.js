@@ -17,7 +17,7 @@
       statsCmd: 'stats --source researchgate',
       stat: { publications: 'publications', books: 'books', citations: 'citations', reads: 'reads' },
       asOf: 'as of',
-      book: '// book', viewBook: 'View book →', otherStore: 'Kitapyurdu',
+      book: '// book', viewBook: 'View book →', readMore: 'Read more', otherStore: 'Kitapyurdu',
       pages: 'pp', editor: 'Editor', coverAlt: 'Cover of the book ROS ile Robotik Uygulamalar',
       liveDemo: 'Live demo ↗', source: 'Source code', screenshots: 'Screenshots',
       papers: function (n) { return n + (n === 1 ? ' paper' : ' papers'); },
@@ -39,7 +39,7 @@
       statsCmd: 'stats --source researchgate',
       stat: { publications: 'yayın', books: 'kitap', citations: 'atıf', reads: 'okunma' },
       asOf: 'tarih',
-      book: '// kitap', viewBook: 'Kitabı incele →', otherStore: 'Kitapyurdu',
+      book: '// kitap', viewBook: 'Kitabı incele →', readMore: 'Devamını oku', otherStore: 'Kitapyurdu',
       pages: 's.', editor: 'Editör', coverAlt: 'ROS ile Robotik Uygulamalar kitabının kapağı',
       liveDemo: 'Canlı demo ↗', source: 'Kaynak kod', screenshots: 'Ekran görüntüleri',
       papers: function (n) { return n + ' yayın'; },
@@ -166,6 +166,15 @@
     }).join('');
   }
 
+  // Description may be one string or a list of paragraphs; extra paragraphs fold under "read more".
+  function bookDesc(d) {
+    var ps = Array.isArray(d) ? d : [d];
+    var first = '<p class="book__desc">' + esc(ps[0]) + '</p>';
+    if (ps.length < 2) return first;
+    return first + '<details class="book__more"><summary>' + esc(t('readMore')) + '</summary>' +
+      ps.slice(1).map(function (p) { return '<p class="book__desc">' + esc(p) + '</p>'; }).join('') + '</details>';
+  }
+
   function renderBook() {
     var b = D.profile.book;
     $('book').innerHTML =
@@ -175,7 +184,7 @@
       '<div class="book__body"><h2 id="bookTitle" class="book__title">' + esc(b.title) + '</h2>' +
       '<p class="book__meta">' + esc(b.publisher) + (b.edition ? '<br>' + esc(L(b.edition)) : '') + ' · ' + b.pages + ' ' + esc(t('pages')) +
       '<br>ISBN ' + esc(b.isbn) + (b.editor ? '<br>' + esc(t('editor')) + ': ' + esc(b.editor) : '') + '</p></div></div>' +
-      '<p class="book__desc">' + esc(L(b.description)) + '</p>' +
+      bookDesc(L(b.description)) +
       '<div class="book__actions"><a class="btn btn--outline" href="' + esc(b.url) + '">' + esc(t('viewBook')) + '</a>' +
       (b.altUrl ? '<a class="btn" href="' + esc(b.altUrl) + '">' + esc(t('otherStore')) + '</a>' : '') + '</div>';
   }

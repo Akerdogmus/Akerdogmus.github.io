@@ -38,8 +38,18 @@
     "isbn": "978-625-417-418-6",
     "authors": "Uğur Yayan, Alim Kerem Erdoğmuş",
     "description": {
-      "en": "A hands-on Turkish guide to the Robot Operating System: from ROS fundamentals to example applications and simulation environments. Co-authored with Uğur Yayan.",
-      "tr": "Robot İşletim Sistemi'ne (ROS) uygulamalı bir giriş: temel kavramlardan örnek uygulamalara ve simülasyon ortamlarına. Uğur Yayan ile birlikte."
+      "tr": [
+        "Günümüzde robotik, hemen her alanda uygulamaları olan bir bilim dalı hâline gelmiştir. Robotik çalışmalarında robotların uygulamaya özel programlanması için birçok yazılım aracı geliştirilmiştir. Bunlardan biri olan Robot Operating System (ROS), dünya çapında standart hâline gelmiş bir açık kaynak kodlu arakatman yazılımıdır. Bu sayede robotik alanında kişiler geçmişten gelen tüm bilgi birikimini kullanarak çalışmalarında çok daha hızlı ilerleyebilmektedir.",
+        "Kitapta, okuyucunun ezberden ziyade konuyu anlamasını sağlamak amacıyla gerçekte var olan birçok gezgin robot için çeşitli senaryolar kurgulanmış ve tüm anlatımlar bu senaryoların gerçeklenmesi üzerinden yapılmıştır. Kitapta; Mars keşif görevi, karanlık fabrika robotları görevi, hastane hizmet görevi ve ofis güvenliği sağlama görevleri gibi gezgin robotların sahada aktif olarak kullanım senaryoları kurgulanmış ve bu senaryolar üzerinden çeşitli eğitim görevleri hazırlanarak kullanıcının bu görevleri tamamlayacak yazılımları geliştirmesi hedeflenmiştir.",
+        "Aynı zamanda bu kitapta; ROS temelleri üzerine kurulacak çeşitli ROS araçları geliştirme, algoritmalar tasarlama ve yazılımların hazırlanmış simülasyon ortamlarında gerçeklenmesine odaklanılmıştır. Her bir bölümde detaylı olarak yazılan kodlar ve hazırlanan ROS içerikleri açıklanmış ve okuyucunun tüm konuya hâkim olması amaçlanmıştır. Bunların ötesinde, robot yazılımı testi ve sanal robotik laboratuvar kullanılarak uygulamaların yapılabilmesi için de özel bölümler oluşturulmuştur.",
+        "Kitabın amacı, ileri seviyede robotik uygulamalar geliştirmek isteyen okuyucuya ROS temellerinden yola çıkılan sistematik olarak ilerleyen bir seviyede örnek ROS uygulamalarını keşfetmesini sağlamak ve kendi ROS uyumlu yazılımlarını geliştirebilir seviyeye getirmektir."
+      ],
+      "en": [
+        "Robotics has become a discipline with applications in almost every field. Many software tools have been developed to program robots for specific applications; one of them, the Robot Operating System (ROS), is an open-source middleware that has become a worldwide standard. It lets people in robotics build on the accumulated knowledge of the field and move much faster in their work.",
+        "To help readers understand the subject rather than memorise it, the book builds scenarios around many real mobile robots and explains everything by implementing those scenarios. Field use cases such as a Mars exploration mission, dark-factory robots, hospital service and office security are set up, and training tasks built on them guide the reader to develop the software that completes each task.",
+        "The book also focuses on building ROS tools on top of ROS fundamentals, designing algorithms, and running the software in prepared simulation environments. The code written in each chapter and the ROS content prepared for it are explained in detail so that the reader masters the whole topic. Dedicated chapters also cover robot software testing and doing the exercises in a virtual robotics laboratory.",
+        "The aim of the book is to let readers who want to develop advanced robotic applications explore example ROS applications that progress systematically from ROS fundamentals, and to bring them to the point where they can develop their own ROS-compatible software."
+      ]
     },
     "url": "https://www.nobelyayin.com/ros-ile-robotik-uygulamalar-18224.html",
     "altUrl": "https://www.kitapyurdu.com/kitap/ros-ile-robotik-uygulamalar/614727.html"
