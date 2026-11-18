@@ -81,7 +81,13 @@ h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
 .thesis__label { display: block; font-family: var(--mono); font-size: 11px; color: var(--ok); }
 .thesis__title { display: block; margin-top: 3px; font-weight: 600; color: var(--text); }
 .thesis__ref { display: block; margin-top: 4px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
-.summary { margin-top: 14px; font-size: 14px; line-height: 1.6; color: var(--text-2); }
+.about { margin-top: 14px; border: 1px solid #4A3B1A; border-radius: 10px; background: linear-gradient(180deg, rgba(242,184,75,0.06), rgba(242,184,75,0) 60%); overflow: hidden; }
+.about__head { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-bottom: 1px solid #3A2F16; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--accent); }
+.about__badge { display: inline-flex; color: var(--accent); }
+.about__list { list-style: none; margin: 0; padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+.about__list li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55; color: var(--text-2); }
+.about__list .ico { width: 28px; height: 28px; border-radius: 7px; }
+.about__list .ico svg { width: 15px; height: 15px; }
 .focus__list { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 .focus { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line-strong); font-family: var(--mono); font-size: 11.5px; color: var(--text-2); }
 .focus svg { color: var(--accent); }

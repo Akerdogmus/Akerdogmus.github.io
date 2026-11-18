@@ -8,6 +8,7 @@
       navMap: './research-map', navBook: './book', navApps: './apps', navProjects: './projects',
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
       expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
+      about: 'About', aboutTitle: 'about me',
       authors: 'Authors', thesisRef: 'CoHE Thesis Centre no.',
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       langBtn: '[TR]', langLabel: "Türkçe'ye geç",
@@ -34,6 +35,7 @@
       navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar', navProjects: './projeler',
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
       expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
+      about: 'Hakkımda', aboutTitle: 'hakkımda',
       authors: 'Yazarlar', thesisRef: 'YÖK Tez Merkezi ref. no',
       months: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
       langBtn: '[EN]', langLabel: 'Switch to English',
@@ -69,6 +71,10 @@
     codeSm: svg('<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>', 14),
     briefcase: svg('<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path>'),
     cap: svg('<path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 2 9 2 12 0v-5"></path>'),
+    info: svg('<circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>', 14),
+    factory: svg('<path d="M2 20V9l6 4V9l6 4V4h4l2 16z"></path><path d="M2 20h20"></path>'),
+    globe: svg('<circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>'),
+    target: svg('<circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle>'),
     doc: svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M8 13h8M8 17h5"></path>'),
     chipSm: svg('<rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path>', 13),
     sparklesSm: svg('<path d="M11 3l1.9 4.9L18 10l-5.1 2.1L11 17l-1.9-4.9L4 10l5.1-2.1z"></path><path d="M19 15l.8 2.1 2.2.9-2.2.9-.8 2.1-.8-2.1-2.2-.9 2.2-.9z"></path>', 13),
@@ -120,6 +126,15 @@
     $('year').textContent = new Date().getFullYear();
   }
 
+  // "About" info box: summary is a list of {icon, en, tr} rows (a plain {en, tr} string still works)
+  function aboutBox(s) {
+    var rows = Array.isArray(s) ? s : [{ icon: 'info', en: s && s.en, tr: s && s.tr }];
+    return '<section class="about" aria-label="' + esc(t('about')) + '"><p class="about__head"><span class="about__badge">' + ICON.info + '</span>' + esc(t('aboutTitle')) + '</p>' +
+      '<ul class="about__list">' + rows.map(function (r) {
+        return '<li><span class="ico ico--soft">' + (ICON[r.icon] || ICON.info) + '</span><span>' + esc(L(r)) + '</span></li>';
+      }).join('') + '</ul></section>';
+  }
+
   function renderProfile() {
     var p = D.profile;
     var avatar = p.photo ? '<img src="' + esc(p.photo) + '" alt="" width="80" height="80">' : esc(p.initials);
@@ -140,7 +155,7 @@
       (p.thesis ? '<div class="thesis"><span class="ico ico--soft">' + ICON.doc + '</span><span><span class="thesis__label">' + esc(L(p.thesis.type)) + ' · ' + p.thesis.year + '</span>' +
         '<b class="thesis__title">' + esc(p.thesis.title) + '</b>' +
         (p.thesis.ref ? '<span class="thesis__ref">' + esc(t('thesisRef')) + ' ' + esc(p.thesis.ref) + '</span>' : '') + '</span></div>' : '') +
-      '<p class="summary">' + esc(L(p.summary)) + '</p>' +
+      aboutBox(p.summary) +
       (focus ? '<div class="focus__list">' + focus + '</div>' : '') +
       '<nav class="links" aria-label="Profiles">' + links + '</nav>' +
       '<p class="loc">' + ICON.pin + esc(L(p.location)) + '</p>';
