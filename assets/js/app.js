@@ -7,7 +7,7 @@
       skip: 'Skip to content',
       navMap: './research-map', navBook: './book', navApps: './apps', navProjects: './projects',
       projEyebrow: '// r&d projects', projTitle: "Projects I've worked on", projNote: 'EU & national R&D, via acd | veri mühendisliği',
-      expTitle: '// experience', present: 'present', ongoing: 'ongoing', done: 'completed',
+      expTitle: '// experience', present: 'present', ongoing: 'active', done: 'completed', left: 'my part ended', planned: 'planned',
       authors: 'Authors',
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       langBtn: '[TR]', langLabel: "Türkçe'ye geç",
@@ -33,7 +33,7 @@
       skip: 'İçeriğe geç',
       navMap: './araştırma', navBook: './kitap', navApps: './uygulamalar', navProjects: './projeler',
       projEyebrow: '// ar-ge projeleri', projTitle: 'Çalıştığım projeler', projNote: 'AB ve ulusal Ar-Ge, acd | veri mühendisliği bünyesinde',
-      expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'devam ediyor', done: 'tamamlandı',
+      expTitle: '// deneyim', present: 'devam ediyor', ongoing: 'aktif', done: 'tamamlandı', left: 'katkım sona erdi', planned: 'planlanan',
       authors: 'Yazarlar',
       months: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
       langBtn: '[EN]', langLabel: 'Switch to English',
@@ -162,12 +162,16 @@
 
   function renderProjects() {
     $('projectList').innerHTML = D.projects.map(function (p) {
-      // finished = has an end date, or marked done when the exact end month is unknown
-      var live = !p.to && !p.done;
-      var when = p.to ? ym(p.from) + ' – ' + ym(p.to) : (live ? ym(p.from) + ' –' : ym(p.from));
+      // Status: "left" = my part ended (project may go on); a future "to" = planned end, still active;
+      // no "to" = ongoing unless marked "done" (finished, end month unknown).
+      var now = new Date().toISOString().slice(0, 7);
+      var planned = p.to && p.to > now;
+      var live = !p.left && !p.done && (!p.to || planned);
+      var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : (live ? ym(p.from) + ' –' : ym(p.from));
+      var stateLabel = p.left ? t('left') : (live ? t('ongoing') : t('done'));
       return '<article class="card proj"><div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
         '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
-        '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(live ? t('ongoing') : t('done')) + '</span></span></div></div>' +
+        '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(stateLabel) + '</span></span></div></div>' +
         '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p></article>';
     }).join('');
   }

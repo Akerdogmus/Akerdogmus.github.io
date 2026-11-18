@@ -15,7 +15,7 @@ sayfa İngilizce/Türkçe olarak gösterilir (sağ üstteki `[TR]` / `[EN]` dü�
 | Uygulama / ekran görüntüsü | `data/apps.json` — görseller `assets/img/` altına (tercihen `.webp`) |
 | Profil, istatistikler, kitap | `data/profile.json` |
 | Deneyim zaman çizelgesi | `data/experience.json` (`to: null` → "devam ediyor") |
-| Ar-Ge projeleri | `data/projects.json` (`to: null` → "devam ediyor") |
+| Ar-Ge projeleri | `data/projects.json` — `to` gelecekteyse "aktif (planlanan bitiş)", geçmişteyse "tamamlandı"; `"left": true` → "katkım sona erdi"; bitiş ayı bilinmiyorsa `"done": true` |
 | Arayüz metinleri (TR/EN) | `assets/js/app.js` içindeki `UI` nesnesi |
 
 Alan değerleri:
