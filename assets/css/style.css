@@ -172,6 +172,19 @@ a.swtag:hover { border-color: var(--accent); text-decoration: none; color: var(-
 .term .prompt { color: var(--ok); }
 .stats__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; color: var(--muted); }
 .stats__grid b { color: var(--text); font-weight: 500; }
+.tip { position: relative; cursor: help; text-decoration: underline dotted rgba(157,167,179,0.6); text-underline-offset: 3px; border-radius: 3px; }
+.tip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tip::after { content: attr(data-tip); position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translate(-50%, 4px); white-space: nowrap; padding: 5px 9px; border-radius: 7px; background: var(--accent); color: #0D1117; font-family: var(--mono); font-size: 11px; font-weight: 600; line-height: 1.3; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.8); opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; z-index: 6; }
+.tip::before { content: ""; position: absolute; left: 50%; bottom: calc(100% + 3px); transform: translate(-50%, 4px); border: 5px solid transparent; border-top-color: var(--accent); border-bottom: 0; opacity: 0; transition: opacity .15s ease, transform .15s ease; z-index: 6; }
+.tip:hover::after, .tip:focus-visible::after, .tip:hover::before, .tip:focus-visible::before { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .tip::after, .tip::before { transition: none; } }
+/* keep bubbles inside the stats card: left column opens to the right, right column to the left */
+.stats__grid .tip:nth-child(odd)::after { left: 0; transform: translate(0, 4px); }
+.stats__grid .tip:nth-child(odd)::before { left: 14px; transform: translate(0, 4px); }
+.stats__grid .tip:nth-child(even)::after { left: auto; right: 0; transform: translate(0, 4px); }
+.stats__grid .tip:nth-child(even)::before { left: auto; right: 14px; transform: translate(0, 4px); }
+.stats__grid .tip:hover::after, .stats__grid .tip:focus-visible::after,
+.stats__grid .tip:hover::before, .stats__grid .tip:focus-visible::before { transform: translate(0, 0); }
 .term .note { font-size: 11px; color: var(--muted); line-height: 1.5; }
 .years__title { margin: 14px 0 6px; color: var(--muted); }
 .years__list { display: flex; flex-direction: column; gap: 2px; }

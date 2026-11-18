@@ -26,6 +26,7 @@
       perYear: '// publications per year',
       statsCmd: 'stats --source researchgate',
       stat: { publications: 'publications', books: 'books', citations: 'citations', reads: 'reads', hindex: 'h-index', ris: 'RI score' },
+      statTip: { ris: 'Research Interest Score · ResearchGate', hindex: 'h-index · ResearchGate' },
       asOf: 'as of',
       book: '// book', viewBook: 'View book →', readMore: 'Read more', otherStore: 'Kitapyurdu',
       pages: 'pp', editor: 'Editor', coverAlt: 'Cover of the book ROS ile Robotik Uygulamalar',
@@ -58,6 +59,7 @@
       perYear: '// yıllara göre yayınlar',
       statsCmd: 'stats --source researchgate',
       stat: { publications: 'yayın', books: 'kitap', citations: 'atıf', reads: 'okunma', hindex: 'h-indeks', ris: 'RI skoru' },
+      statTip: { ris: 'Research Interest Score · ResearchGate', hindex: 'h-indeks · ResearchGate' },
       asOf: 'tarih',
       book: '// kitap', viewBook: 'Kitabı incele →', readMore: 'Devamını oku', otherStore: 'Kitapyurdu',
       pages: 's.', editor: 'Editör', coverAlt: 'ROS ile Robotik Uygulamalar kitabının kapağı',
@@ -331,7 +333,11 @@
     $('stats').innerHTML = cardHead(ICON.chartSm, t('statsTitle'), ym(p.stats.asOf)) +
       '<div class="term__body"><div><span class="prompt">$</span> ' + esc(t('statsCmd')) + '</div>' +
       '<div class="stats__grid">' + p.stats.items.map(function (s) {
-        return '<span>' + esc(labels[s.key]) + ' <b>' + esc(s.value) + '</b></span>';
+        // abbreviated labels get a small bubble with the full name on hover / keyboard focus
+        var tip = t('statTip')[s.key];
+        return tip
+          ? '<span class="tip" tabindex="0" data-tip="' + esc(tip) + '" aria-label="' + esc(tip + ': ' + s.value) + '">' + esc(labels[s.key]) + ' <b>' + esc(s.value) + '</b></span>'
+          : '<span>' + esc(labels[s.key]) + ' <b>' + esc(s.value) + '</b></span>';
       }).join('') + '</div>' +
       '<p class="years__title">' + esc(t('perYear')) + '</p><div class="years__list">' +
       ys.map(function (y) {
