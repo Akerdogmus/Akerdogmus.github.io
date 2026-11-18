@@ -24,7 +24,12 @@
     "deliverable": {
       "icon": "wave",
       "en": "Hyperspectral image analysis software (in development)",
-      "tr": "Hiperspektral görüntü analiz yazılımı (geliştiriliyor)"
+      "tr": "Hiperspektral görüntü analiz yazılımı (geliştiriliyor)",
+      "software": [
+        {
+          "name": "spectgen"
+        }
+      ]
     },
     "media": {
       "type": "loop",
@@ -130,7 +135,15 @@
     "deliverable": {
       "icon": "battery",
       "en": "Data acquisition software for electric vehicles",
-      "tr": "Elektrikli araçtan veri toplama yazılımı"
+      "tr": "Elektrikli araçtan veri toplama yazılımı",
+      "software": [
+        {
+          "name": "Musoshi Edge Device"
+        },
+        {
+          "name": "HMI Panel"
+        }
+      ]
     },
     "media": {
       "type": "loop",
@@ -167,7 +180,18 @@
     "deliverable": {
       "icon": "sparkles",
       "en": "Synthetic image generation software (automotive)",
-      "tr": "Sentetik görüntü üretim yazılımı (otomotiv)"
+      "tr": "Sentetik görüntü üretim yazılımı (otomotiv)",
+      "software": [
+        {
+          "name": "SynthVision Suite"
+        },
+        {
+          "name": "CamGenTool"
+        },
+        {
+          "name": "CamFITool"
+        }
+      ]
     },
     "media": {
       "type": "loop",
@@ -248,7 +272,12 @@
     "deliverable": {
       "icon": "factory",
       "en": "Factory digital twin software",
-      "tr": "Fabrika dijital ikiz yazılımı"
+      "tr": "Fabrika dijital ikiz yazılımı",
+      "software": [
+        {
+          "name": "Factory Digital Twin (FDT)"
+        }
+      ]
     },
     "media": {
       "type": "loop",
@@ -284,10 +313,17 @@
     ],
     "deliverable": {
       "icon": "robot",
-      "en": "Robotic test application: CamFITool, camera fault injection for robot V&V",
-      "tr": "Robotik test uygulaması: robot doğrulaması için kamera hata enjeksiyon aracı CamFITool",
-      "url": "https://github.com/inomuh/camfitool",
-      "linkLabel": "GitHub"
+      "en": "Robotic test applications: camera fault injection and simulation-based robot verification",
+      "tr": "Robotik test uygulamaları: kamera hata enjeksiyonu ve simülasyon tabanlı robot doğrulama",
+      "software": [
+        {
+          "name": "CamFITool",
+          "url": "https://github.com/inomuh/camfitool"
+        },
+        {
+          "name": "SRVT"
+        }
+      ]
     },
     "media": {
       "type": "loop",

@@ -245,9 +245,7 @@
   // Cards without media keep an empty slot so rows stay aligned.
   function projMedia(p) {
     var m = p.media;
-    // no media: a patterned banner with the project icon keeps every card the same shape
-    if (!m) return '<figure class="proj__media proj__media--icon" aria-hidden="true"><span class="proj__bigicon">' +
-      (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span><span class="proj__bannername">' + esc(p.name) + '</span></figure>';
+    if (!m) return '';
     var alt = esc(L(m.alt));
     var img = m.type === 'loop'
       ? '<picture><source media="(prefers-reduced-motion: reduce)" srcset="' + esc(m.poster) + '"><img src="' + esc(m.src) + '" alt="' + alt + '" width="640" height="360" loading="lazy" decoding="async"></picture>'
@@ -273,15 +271,22 @@
     var dl = p.deliverable;
     // Each part is a direct child of the card so rows line up across cards (CSS subgrid);
     // empty slots keep their row so neighbouring cards stay aligned.
-    var deliverable = dl ? '<p class="proj__deliv"><span class="proj__delivIcon">' + (THEME_ICON[dl.icon] || '') + '</span><span>' + esc(L(dl)) +
-      (dl.url ? ' <a href="' + esc(dl.url) + '">' + esc(dl.linkLabel || 'link') + ' ↗</a>' : '') + '</span></p>' : '<div class="proj__slot" aria-hidden="true"></div>';
+    // software names I built, as mono tags (linked when public), above the one-line description
+    var sw = dl && dl.software ? '<span class="proj__sw">' + dl.software.map(function (s) {
+      return s.url ? '<a class="swtag" href="' + esc(s.url) + '">' + esc(s.name) + ' ↗</a>' : '<span class="swtag">' + esc(s.name) + '</span>';
+    }).join('') + '</span>' : '';
+    var deliverable = dl ? '<div class="proj__deliv"><span class="proj__delivIcon">' + (THEME_ICON[dl.icon] || '') + '</span><span class="proj__delivBody">' + sw + '<span>' + esc(L(dl)) +
+      (dl.url ? ' <a href="' + esc(dl.url) + '">' + esc(dl.linkLabel || 'link') + ' ↗</a>' : '') + '</span></span></div>' : '<div class="proj__slot" aria-hidden="true"></div>';
     return '<div class="proj__inv"><div class="proj__invHead"><span>' + esc(t('myShare')) + '</span><span class="proj__pct">%' + pct + ' · ' + esc(note) + '</span></div>' +
       '<div class="proj__bar" role="img" aria-label="' + esc(t('myShare') + ': %' + pct) + '"><span style="margin-left:' + offset + '%;width:' + Math.min(pct, 100 - offset) + '%"></span></div></div>' +
       '<div class="proj__chips">' + chips + '</div>' + deliverable;
   }
 
   function renderProjects() {
-    $('projectList').innerHTML = D.projects.map(function (p) {
+    // Projects with media first, then those without (each keeping its order), so the two cards
+    // in a row are always the same kind and no card carries an empty media gap.
+    var ordered = D.projects.filter(function (p) { return p.media; }).concat(D.projects.filter(function (p) { return !p.media; }));
+    $('projectList').innerHTML = ordered.map(function (p) {
       // Status: "left" = my part ended (project may go on); a future "to" = planned end, still active;
       // no "to" = ongoing unless marked "done" (finished, end month unknown).
       var now = new Date().toISOString().slice(0, 7);
@@ -289,7 +294,7 @@
       var live = !p.left && !p.done && (!p.to || planned);
       var when = p.to ? ym(p.from) + ' – ' + ym(p.to) + (planned ? ' (' + t('planned') + ')' : '') : ((live || p.left) ? ym(p.from) + ' –' : ym(p.from));
       var stateLabel = p.left ? t('left') : (live ? t('ongoing') : t('done'));
-      return '<article class="card proj">' + projMedia(p) + '<div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
+      return '<article class="card proj' + (p.media ? '' : ' proj--nomedia') + '">' + projMedia(p) + '<div class="proj__top"><span class="theme__icon">' + (THEME_ICON[p.icon] || THEME_ICON.wave) + '</span>' +
         '<div class="proj__head"><h3 class="proj__name">' + esc(p.name) + '</h3><span class="proj__when">' + esc(when) +
         '<span class="proj__state' + (live ? ' proj__state--live' : '') + '">' + esc(stateLabel) + '</span></span></div></div>' +
         '<p class="proj__full">' + esc(p.full) + '</p><p class="proj__sum">' + esc(L(p.summary)) + '</p>' +
