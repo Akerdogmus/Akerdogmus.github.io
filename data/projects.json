@@ -138,10 +138,7 @@
       "tr": "Elektrikli araçtan veri toplama yazılımı",
       "software": [
         {
-          "name": "Musoshi Edge Device"
-        },
-        {
-          "name": "HMI Panel"
+          "name": "OPEVA Edge Device"
         }
       ]
     },
